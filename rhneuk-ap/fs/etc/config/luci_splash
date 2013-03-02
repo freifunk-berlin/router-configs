@@ -1,0 +1,12 @@
+
+config core 'general'
+	option leasetime '1'
+
+config iface
+	option network 'wireless0dhcp'
+	option zone 'freifunk'
+
+config subnet
+	option ipaddr '104.0.0.0'
+	option netmask '255.0.0.0'
+

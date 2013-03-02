@@ -1,0 +1,4 @@
+
+config autoipv6node 'olsr_node'
+	option enable '1'
+
