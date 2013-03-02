@@ -1,0 +1,27 @@
+
+config wifi-device 'radio0'
+	option type 'mac80211'
+	option macaddr 'dc:9f:db:e4:f5:78'
+	option hwmode '11na'
+	list ht_capab 'SHORT-GI-40'
+	list ht_capab 'TX-STBC'
+	list ht_capab 'RX-STBC1'
+	list ht_capab 'DSSS_CCK-40'
+	option disabled '0'
+	option country 'DE'
+	option channel '116'
+	option outdoor '1'
+	option distance '5000'
+	option txpower '20'
+	option htmode 'HT40-'
+
+config wifi-iface
+	option network 'wireless0'
+	option encryption 'none'
+	option device 'radio0'
+	option bssid '12:16:CA:FF:EE:EE'
+	option bgscan '0'
+	option probereq '1'
+	option mode 'adhoc'
+	option ssid 'ch116.freifunk.net'
+

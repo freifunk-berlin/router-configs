@@ -1,0 +1,7 @@
+
+config heartbeat 'heartbeat'
+	option enabled '1'
+
+config server 'server'
+	option url 'http://heartbeat.basicinside.de'
+

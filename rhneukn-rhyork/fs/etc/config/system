@@ -1,0 +1,19 @@
+
+config system
+	option hostname 'rhneukn-rhyorck'
+	option zonename 'Europe/Berlin'
+	option timezone 'CET-1CEST,M3.5.0,M10.5.0/3'
+	option nodeid '95ebf7f672cd0644036029322f378c46'
+	option location 'Rathaus Neukölln'
+	option cronloglevel '10'
+	option longitude '13.434985125521752'
+	option latlon '52.481403140608722 13.434985125521752'
+	option latitude '52.481403140608722'
+
+config timeserver 'ntp'
+	list server '0.openwrt.pool.ntp.org'
+	list server '1.openwrt.pool.ntp.org'
+	list server '2.openwrt.pool.ntp.org'
+	list server '3.openwrt.pool.ntp.org'
+	option enable_server '0'
+
