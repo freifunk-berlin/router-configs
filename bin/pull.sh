@@ -15,6 +15,5 @@ then
     exit
 fi
 
-scp "root@$ip:/etc/config/*" "$dst/fs/etc/config"
-scp "root@$ip:/root/.ssh/authorized_keys" "$dst/fs/root/.ssh/"
+ssh "root@$ip" "sysupgrade -b -" | tar -xz -C "$dst/fs"
 ssh "root@$ip" opkg list_installed > "$dst/packages"
