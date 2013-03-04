@@ -1,0 +1,14 @@
+config wifi-device  radio0
+	option type     mac80211
+	option channel  10
+	option hwmode	11g
+	option path	'pci0000:00/0000:00:03.0'
+
+config wifi-iface wireless0
+	option device   radio0
+	option network  wireless0
+	option mode     adhoc
+	option ssid     olsr.freifunk.net
+	option bssid	02:ca:ff:ee:ba:be
+	option encryption none
+
