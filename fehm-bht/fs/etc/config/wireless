@@ -1,0 +1,26 @@
+
+config wifi-device 'radio0'
+	option type 'mac80211'
+	option macaddr 'dc:9f:db:ea:c9:60'
+	option hwmode '11na'
+	#list ht_capab 'SHORT-GI-40'
+	#list ht_capab 'TX-STBC'
+	#list ht_capab 'RX-STBC1'
+	#list ht_capab 'DSSS_CCK-40'
+	option country 'DE'
+	option channel '36'
+	#option outdoor '1'
+	#option distance '1000'
+	#option txpower '15'
+	option htmode 'HT20'
+	#option disabled '0'
+
+config wifi-iface
+	option ssid 'BHT-FOKUS'
+	option encryption 'none'
+	option device 'radio0'
+	#option bgscan '0'
+	#option probereq '1'
+	option network 'wireless0'
+	option mode 'sta'
+
