@@ -14,7 +14,7 @@ config extern 'flash_keep'
 	option uploads '/lib/uci/upload/'
 
 config internal 'languages'
-	option en 'English'
+	option de 'Deutsch'
 
 config internal 'sauth'
 	option sessionpath '/tmp/luci-sessions'
@@ -24,5 +24,8 @@ config internal 'ccache'
 	option enable '1'
 
 config internal 'themes'
-	option OpenWrt '/luci-static/openwrt.org'
+	option Bootstrap '/luci-static/bootstrap'
+
+config internal 'general'
+	option resolve '0'
 

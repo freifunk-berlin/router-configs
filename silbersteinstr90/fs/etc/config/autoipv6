@@ -1,0 +1,7 @@
+
+config autoipv6 'tunnel'
+	option enable '1'
+
+config autoipv6 'olsr_node'
+	option enable '0'
+

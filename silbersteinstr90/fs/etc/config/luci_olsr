@@ -1,2 +1,4 @@
-config 'olsr' 'general'
-	option 'resolve' '1'
+
+config olsr 'general'
+	option resolve '0'
+

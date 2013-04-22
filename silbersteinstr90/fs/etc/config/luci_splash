@@ -1,0 +1,8 @@
+
+config core 'general'
+	option leasetime '1'
+
+config iface
+	option network 'wireless0dhcp'
+	option zone 'freifunk'
+

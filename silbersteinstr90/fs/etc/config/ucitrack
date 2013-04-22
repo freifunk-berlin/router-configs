@@ -53,6 +53,3 @@ config tinyproxy
 config olsrd
 	option init 'olsrd'
 
-config meshwizard 'meshwizard'
-	option exec '/usr/bin/meshwizard/wizard.sh'
-
