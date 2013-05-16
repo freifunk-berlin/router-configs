@@ -1,0 +1,4 @@
+
+config olsr 'general'
+	option resolve '0'
+
