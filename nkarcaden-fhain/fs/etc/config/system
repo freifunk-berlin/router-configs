@@ -1,0 +1,19 @@
+
+config system
+	option zonename 'Europe/Berlin'
+	option timezone 'CET-1CEST,M3.5.0,M10.5.0/3'
+	option nodeid '903ad55f154f2a27f03064cc9244475c'
+	option cronloglevel '10'
+	option hostname 'nkarcaden-fhain'
+	option location 'Neukoelln Arcaden Parkdeck'
+	option latlon '52.481948731564158 13.433281922797996'
+	option latitude '52.481948731564158'
+	option longitude '13.433281922797996'
+
+config timeserver 'ntp'
+	list server '0.openwrt.pool.ntp.org'
+	list server '1.openwrt.pool.ntp.org'
+	list server '2.openwrt.pool.ntp.org'
+	list server '3.openwrt.pool.ntp.org'
+	option enable_server '0'
+
