@@ -56,12 +56,12 @@ config LoadPlugin
 	option library 'olsrd_watchdog.so.0.1'
 
 config LoadPlugin
-	option lon '52.465990000000000'
+	option lon '13.349857992728651'
 	option services_file '/var/etc/services.olsr'
 	option library 'olsrd_nameservice.so.0.3'
 	option suffix '.olsr'
 	option latlon_file '/var/run/latlon.js'
-	option lat '52.465990000000000'
+	option lat '52.540503'
 	option hosts_file '/var/etc/hosts.olsr'
 
 config LoadPlugin
