@@ -2,16 +2,24 @@
 
 dst=$1
 
+usage()
+{
+    echo "Usage:"
+    echo "$0 path host"
+}
+
 if [[ ! -a $dst ]]
 then
-    echo "$dst does not exist. Nothing to do."
+    echo "Bad path. Maybe you should use create.sh first?"
+    usage
     exit
 fi
 
 ip=$2
 if [[ -z "$ip" ]]
 then
-    echo "Second paramter must be a ip."
+    echo "No host specified."
+    usage
     exit
 fi
 
