@@ -94,7 +94,7 @@ config zone
 	option forward 'REJECT'
 	option name 'freifunk'
 	option output 'ACCEPT'
-	option network 'wireless0 wireless0dhcp'
+	option network 'wireless0 wireless0dhcp airos'
 	list masq_src '255.255.255.255/32'
 	list masq_src '192.168.1.1/24'
 

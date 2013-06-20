@@ -47,7 +47,12 @@ config Hna4
 
 config Hna6
 	option prefix '64'
-	option netaddr 'FDCA:FFEE:6A95:0:0:0:0:0'
+	option netaddr 'FDCA:FFEE:96C7:0:0:0:0:0'
+
+config Interface
+	option Mode 'ether'
+	option ignore '0'
+	option interface 'airos'
 
 config LoadPlugin
 	option interval '30'
@@ -67,3 +72,6 @@ config LoadPlugin
 	option library 'olsrd_dyn_gw_plain.so.0.4'
 	option ignore '1'
 
+config Hna4
+	option netmask '255.255.255.240'
+	option netaddr '104.204.3.128'
