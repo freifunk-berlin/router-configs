@@ -25,3 +25,6 @@ fi
 
 ssh "root@$ip" "sysupgrade -b -" | tar -xz -C "$dst/fs"
 ssh "root@$ip" opkg list_installed > "$dst/packages"
+
+# remove wireless keys if present
+sed -i.backup '/key/d' "$dst/fs/etc/config/wireless"

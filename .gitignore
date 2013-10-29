@@ -1,3 +1,4 @@
 shadow
 dropbear_rsa_host_key
 dropbear_dss_host_key
+*.backup
