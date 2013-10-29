@@ -1,0 +1,13 @@
+
+config process
+	option process 'dropbear'
+	option initscript '/etc/init.d/dropbear'
+
+config process
+	option process 'crond'
+	option initscript '/etc/init.d/cron'
+
+config process
+	option process 'dnsmasq'
+	option initscript '/etc/init.d/dnsmasq'
+

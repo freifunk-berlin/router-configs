@@ -1,0 +1,126 @@
+config defaults
+	option syn_flood	1
+	option input		ACCEPT
+	option output		ACCEPT
+	option forward		REJECT
+# Uncomment this line to disable ipv6 rules
+#	option disable_ipv6	1
+
+config zone
+	option name		lan
+	list   network		'lan'
+	option input		ACCEPT
+	option output		ACCEPT
+	option forward		REJECT
+
+config zone
+	option name		freifunk
+	list   network		olsr
+	list   network		rhnk
+	list   network		zwingli
+	list   network		ipb
+	list   network		zoo
+	list   network		monument
+	list   network		emmaus
+	list   network		manstein
+	list   network		5no
+	list   network		5nodhcp
+	list   network		5nw
+	list   network		5nwdhcp
+	list   network		5sw
+	list   network		5swdhcp
+	list   network		5so
+	list   network		5sodhcp
+	option input		ACCEPT
+	option output		ACCEPT
+	option forward		REJECT
+	option masq		1
+	list masq_src '10.133.7.2/24'
+
+config forwarding
+	option src		lan
+	option dest		freifunk
+
+config forwarding
+	option src		freifunk
+	option dest		freifunk
+	
+# include a file with users custom iptables rules
+config include
+	option path /etc/firewall.user
+
+
+### EXAMPLE CONFIG SECTIONS
+# do not allow a specific ip to access wan
+#config rule
+#	option src		lan
+#	option src_ip	192.168.45.2
+#	option dest		wan
+#	option proto	tcp
+#	option target	REJECT
+
+# block a specific mac on wan
+#config rule
+#	option dest		wan
+#	option src_mac	00:11:22:33:44:66
+#	option target	REJECT
+
+# block incoming ICMP traffic on a zone
+#config rule
+#	option src		lan
+#	option proto	ICMP
+#	option target	DROP
+
+# port redirect port coming in on wan to lan
+#config redirect
+#	option src			wan
+#	option src_dport	80
+#	option dest			lan
+#	option dest_ip		192.168.16.235
+#	option dest_port	80
+#	option proto		tcp
+
+# port redirect of remapped ssh port (22001) on wan
+#config redirect
+#	option src		wan
+#	option src_dport	22001
+#	option dest		lan
+#	option dest_port	22
+#	option proto		tcp
+
+# allow IPsec/ESP and ISAKMP passthrough
+#config rule
+#	option src		wan
+#	option dest		lan
+#	option protocol		esp
+#	option target		ACCEPT
+
+#config rule
+#	option src		wan
+#	option dest		lan
+#	option src_port		500
+#	option dest_port	500
+#	option proto		udp
+#	option target		ACCEPT
+
+### FULL CONFIG SECTIONS
+#config rule
+#	option src		lan
+#	option src_ip	192.168.45.2
+#	option src_mac	00:11:22:33:44:55
+#	option src_port	80
+#	option dest		wan
+#	option dest_ip	194.25.2.129
+#	option dest_port	120
+#	option proto	tcp
+#	option target	REJECT
+
+#config redirect
+#	option src		lan
+#	option src_ip	192.168.45.2
+#	option src_mac	00:11:22:33:44:55
+#	option src_port		1024
+#	option src_dport	80
+#	option dest_ip	194.25.2.129
+#	option dest_port	120
+#	option proto	tcp
