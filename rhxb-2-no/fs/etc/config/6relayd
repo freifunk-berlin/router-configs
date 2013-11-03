@@ -1,0 +1,11 @@
+
+config server 'default'
+	option always_assume_default '1'
+	option compat_ula '1'
+	option rd 'server'
+	option dhcpv6 'server'
+	option management_level '1'
+	list network 'wireless0'
+	list network 'wireless0dhcp'
+	list network 'lan'
+
