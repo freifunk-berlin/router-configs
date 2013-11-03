@@ -1,0 +1,7 @@
+50  * * * *	/usr/sbin/owm.lua
+*/4 * * * *     /usr/bin/auto_ipv6_node
+*/5 * * * *	killall -HUP dnsmasq
+*/5 * * * *	/usr/sbin/ff_olsr_watchdog
+* * * * *	/usr/sbin/ffwatchd running || /etc/init.d/freifunk-watchdog restart
+0 6 * * * 	ifup wan
+*/2 * * * *     [ -z "$( ps | grep olsrd | grep -v grep | grep olsrd\.conf\.ipv4 )" -o -z "$( cat /var/etc/olsrd.conf.ipv4 | grep wlan1 )" ] && /etc/init.d/olsrd restart
