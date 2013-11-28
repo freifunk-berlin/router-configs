@@ -1,3 +1,4 @@
+
 config process
 	option process 'dropbear'
 	option initscript '/etc/init.d/dropbear'
@@ -5,3 +6,12 @@ config process
 config process
 	option process 'crond'
 	option initscript '/etc/init.d/cron'
+
+config process
+	option initscript '/etc/init.d/openvpn'
+	option process 'openvpn'
+
+config process
+	option initscript '/etc/init.d/openvpn'
+	option process 'openvpn'
+

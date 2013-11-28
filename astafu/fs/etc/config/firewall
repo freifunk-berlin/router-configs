@@ -13,20 +13,6 @@ config zone
 	option output 'ACCEPT'
 	option forward 'ACCEPT'
 
-config zone
-	option name 'wan'
-	list network 'wan'
-	list network 'wan6'
-	option input 'REJECT'
-	option output 'ACCEPT'
-	option forward 'REJECT'
-	option masq '1'
-	option mtu_fix '1'
-
-config forwarding
-	option src 'lan'
-	option dest 'wan'
-
 config rule
 	option name 'Allow-DHCP-Renew'
 	option src 'wan'
@@ -92,17 +78,23 @@ config rule
 config include
 	option path '/etc/firewall.user'
 
+config include
+	option path '/etc/firewall.freifunk'
+
+config advanced
+	option tcp_westwood '1'
+	option tcp_ecn '0'
+	option ip_conntrack_max '8192'
+
 config zone 'zone_freifunk'
 	option masq '1'
 	option input 'ACCEPT'
 	option forward 'REJECT'
 	option name 'freifunk'
 	option output 'ACCEPT'
-	option network 'wifi-ap-5ghz wifi-ap-2ghz wifi-olsr'
 	list masq_src '255.255.255.255/32'
-	list masq_src '10.104.215.33/27'
-	list masq_src '10.104.101.1/27'
 	list masq_src '192.168.1.1/24'
+	option network 'tunl0 freifunk olsr ffvpn'
 
 config forwarding
 	option dest 'freifunk'
@@ -166,11 +158,33 @@ config rule
 	option target 'ACCEPT'
 	option proto 'tcp'
 
-config include
-	option path '/etc/firewall.freifunk'
+config zone
+	option masq '1'
+	option network 'wan'
+	option input 'REJECT'
+	option forward 'REJECT'
+	option name 'wan'
+	option output 'ACCEPT'
+	option local_restrict '1'
 
-config advanced
-	option tcp_westwood '1'
-	option tcp_ecn '0'
-	option ip_conntrack_max '8192'
+config forwarding
+	option dest 'wan'
+	option src 'freifunk'
+
+config forwarding
+	option dest 'freifunk'
+	option src 'wan'
+
+config forwarding
+	option dest 'wan'
+	option src 'lan'
+
+config rule
+	option dest_port '1194'
+	option proto 'udp'
+	option name 'Reject-VPN-over-ff'
+	option dest 'freifunk'
+	option dest_ip '77.87.48.10'
+	option target 'REJECT'
+	option family 'ipv4'
 

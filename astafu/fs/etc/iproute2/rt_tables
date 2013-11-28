@@ -14,3 +14,4 @@
 113 olsr-tunnel
 200 gw-check
 201 gw-check-olsr
+110 localnets
