@@ -1,0 +1,37 @@
+
+config system
+	option zonename 'Europe/Berlin'
+	option timezone 'CET-1CEST,M3.5.0,M10.5.0/3'
+	option location 'Suedblock'
+	option cronloglevel '10'
+	option hostname 'Suedblock'
+	option latlon '52.498535386349261 13.416818523864928'
+	option latitude '52.498535386349261'
+	option longitude '13.416818523864928'
+
+config timeserver 'ntp'
+	list server '0.openwrt.pool.ntp.org'
+	list server '1.openwrt.pool.ntp.org'
+	list server '2.openwrt.pool.ntp.org'
+	list server '3.openwrt.pool.ntp.org'
+	option enable_server '0'
+
+config led 'led_usb1'
+	option name 'USB1'
+	option sysfs 'tp-link:green:usb1'
+	option trigger 'usbdev'
+	option dev '1-1.1'
+	option interval '50'
+
+config led 'led_usb2'
+	option name 'USB2'
+	option sysfs 'tp-link:green:usb2'
+	option trigger 'usbdev'
+	option dev '1-1.2'
+	option interval '50'
+
+config led 'led_wlan2g'
+	option name 'WLAN2G'
+	option sysfs 'tp-link:blue:wlan2g'
+	option trigger 'phy0tpt'
+

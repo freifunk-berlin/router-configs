@@ -1,0 +1,116 @@
+
+config interface 'loopback'
+	option ifname 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config interface 'lan'
+	option ifname 'eth0.1'
+	option type 'bridge'
+	option proto 'static'
+	option ipaddr '192.168.1.1'
+	option netmask '255.255.255.0'
+	option ip6assign '64'
+
+config interface 'wan'
+	option ifname 'eth0.2'
+	option proto 'dhcp'
+
+config switch
+	option name 'eth0'
+	option reset '1'
+	option enable_vlan '1'
+
+config switch_vlan
+	option device 'eth0'
+	option vlan '1'
+	option ports '0t 2 3 4 5'
+
+config switch_vlan
+	option device 'eth0'
+	option vlan '2'
+	option ports '0t 1'
+
+config globals 'globals'
+	option ula_prefix 'fd8b:e3e1:fd8c::/48'
+
+config interface 'ffvpn'
+	option ifname 'ffvpn'
+	option proto 'none'
+
+config rule 'henet_relay'
+	option priority '100'
+	option dest '216.66.86.114/32'
+	option goto '32766'
+
+config rule '6to4_relay'
+	option priority '100'
+	option dest '192.88.99.1/32'
+	option goto '32766'
+
+config rule 'ffvpn_server'
+	option priority '100'
+	option dest '77.87.48.10/32'
+	option goto '32766'
+
+config rule 'ffvpn_backup_server'
+	option priority '100'
+	option dest '78.41.116.65/32'
+	option goto '32766'
+
+config rule 'dus_net'
+	option priority '100'
+	option dest '83.125.8.0/22'
+	option goto '32766'
+
+config rule 'pbx_net'
+	option priority '100'
+	option dest '46.182.250.0/25'
+	option goto '32766'
+
+config rule 'pbx_net_1'
+	option priority '100'
+	option dest '178.238.128.0/20'
+	option goto '32766'
+
+config rule 'freevoipdeal'
+	option priority '100'
+	option dest '77.72.174.0/24'
+	option goto '32766'
+
+config rule 'sipgate'
+	option priority '100'
+	option dest '217.10.64.0/20'
+	option goto '32766'
+
+config interface 'tunl0'
+	option ifname 'tunl0'
+	option proto 'none'
+
+config interface 'olsr'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option ip6assign '64'
+	option netmask '255.0.0.0'
+	option ipaddr '104.192.0.152'
+	option proto 'static'
+
+config interface 'freifunk'
+	option ipaddr '104.192.3.1'
+	option type 'bridge'
+	option netmask '255.255.255.128'
+	option ip6assign '64'
+	option proto 'static'
+
+config rule 'olsripv4'
+	option lookup 'olsr'
+	option priority '1000'
+
+config rule 'localnetsipv4'
+	option lookup 'localnets'
+	option priority '2000'
+
+config rule 'olsr_defaultipv4'
+	option lookup 'olsr-default'
+	option priority '100000'
+
