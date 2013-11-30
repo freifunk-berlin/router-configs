@@ -1,0 +1,18 @@
+
+config system
+	option zonename 'Europe/Berlin'
+	option timezone 'CET-1CEST,M3.5.0,M10.5.0/3'
+	option location 'Neukoelln Arcaden'
+	option cronloglevel '10'
+	option hostname 'arcaden-rhxb-kindl'
+	option latlon '52.481961799529463 13.433048570613945'
+	option latitude '52.481961799529463'
+	option longitude '13.433048570613945'
+
+config timeserver 'ntp'
+	list server '0.openwrt.pool.ntp.org'
+	list server '1.openwrt.pool.ntp.org'
+	list server '2.openwrt.pool.ntp.org'
+	list server '3.openwrt.pool.ntp.org'
+	option enable_server '0'
+
