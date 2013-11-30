@@ -1,0 +1,46 @@
+
+config interface 'loopback'
+	option ifname 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config interface 'lan'
+	option ifname 'eth0'
+	option proto 'static'
+	option ip6assign '64'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option ipaddr '104.204.0.48'
+	option netmask '255.0.0.0'
+	
+config route 'nanostm5route'
+	option 'interface' 'lan'
+	option 'targent' '104.204.0.49'
+	option 'netmask' '255.255.255.255'
+
+config interface 'wan'
+	option ifname 'eth1'
+	option ip6assign '64'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option proto 'static'
+	option ipaddr '104.204.0.33'
+	option netmask '255.255.255.240'
+
+config globals 'globals'
+	option ula_prefix 'fd88:eecb:653b::/48'
+
+config interface 'nanobridge0'
+	option ifname 'eth1.20'
+	option proto 'static'
+	option ipaddr '104.201.4.2'
+	option netmask '255.255.255.248'
+	option ip6assign '64'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+
+config interface 'wireless0'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option ip6assign '64'
+	option netmask '255.0.0.0'
+	option ipaddr '104.204.0.160'
+	option proto 'static'
+
