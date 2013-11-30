@@ -94,6 +94,7 @@ olsrd-mod-arprefresh - 0.6.6-3
 olsrd-mod-dyn-gw-plain - 0.6.6-3
 olsrd-mod-jsoninfo - 0.6.6-3
 olsrd-mod-nameservice - 0.6.6-3
+olsrd-mod-txtinfo - 0.6.6-2
 olsrd-mod-watchdog - 0.6.6-3
 opkg - 618-6
 procd - 2013-11-20-21d307367eb991f7494ce43087a5edb94288d08f

@@ -86,13 +86,13 @@ config 'statistics' 'collectd_logfile'
 	option 'Timestamp' '1'
 
 config 'statistics' 'collectd_netlink'
-	option 'enable' '0'
+	option 'enable' '1'
 	option 'IgnoreSelected' '0'
 	option 'VerboseInterfaces' 'eth0.2 br-freifunk'
 	option 'QDiscs' 'eth0.2 br-freifunk'
 
 config 'statistics' 'collectd_network'
-	option 'enable' '0'
+	option 'enable' '1'
 
 config 'statistics' 'collectd_processes'
 	option 'enable' '1'

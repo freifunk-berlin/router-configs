@@ -37,7 +37,7 @@ config wifi-iface
 	option mode 'ap'
 	option network 'freifunk'
 	option device 'radio0'
-	option ssid 'freifunk-klunkerkranich-5ghz'
+	option ssid 'freifunk-klunkerkranich'
 
 config wifi-iface
 	option network 'freifunk'
