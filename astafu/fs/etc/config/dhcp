@@ -21,7 +21,7 @@ config dhcp 'wan'
 
 config dhcp 'freifunk'
 	option ignore '0'
-	option leasetime '30m'
+	option leasetime '5m'
 	option start '2'
 	option force '1'
 	option limit '27'

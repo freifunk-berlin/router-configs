@@ -37,7 +37,7 @@ config wifi-iface
 	option mode 'ap'
 	option network 'freifunk'
 	option device 'radio0'
-	option ssid 'freifunk-astafu-5ghz'
+	option ssid 'freifunk-astafu'
 
 config wifi-iface
 	option network 'freifunk'
