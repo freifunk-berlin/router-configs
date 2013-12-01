@@ -26,13 +26,6 @@ config wifi-device 'radio1'
 	list ht_capab	DSSS_CCK-40
 
 config wifi-iface
-	option device     'radio0'
-	option network    'lan'
-	option mode       'ap'
-	option ssid       'freifunk-klunkerkranich-mgmt'
-	option encryption 'psk2'
-
-config wifi-iface
 	option encryption 'none'
 	option mode 'ap'
 	option network 'freifunk'
