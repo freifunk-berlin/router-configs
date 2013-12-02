@@ -34,3 +34,5 @@ config 'statistics' 'collectd_olsrd'
 
 config 'statistics' 'collectd_iwinfo'
 	option 'enable' '1'
+	option 'Interfaces' 'wlan0-1'
+	option 'IgnoreSelected' '1'
