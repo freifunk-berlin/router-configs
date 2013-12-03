@@ -1,0 +1,17 @@
+#
+# reserved values
+#
+255	local
+254	main
+253	default
+0	unspec
+#
+# local
+#
+#1	inr.ruhep
+111 olsr
+112 olsr-default
+113 olsr-tunnel
+200 gw-check
+201 gw-check-olsr
+110 localnets
