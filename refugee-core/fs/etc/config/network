@@ -56,7 +56,7 @@ config interface 'lan'
 	
 config interface 'mesh'
 	option ifname 'bat0'
-#	option type 'bridge'
+	option type 'bridge'
 	option proto 'static'
 	option ipaddr '104.193.23.1'
 	option netmask '255.255.255.0'
