@@ -8,13 +8,17 @@ config interface 'loopback'
 config globals 'globals'
 	option ula_prefix 'fd9a:d305:09fe::/48'
 
-config interface 'wan'
+config interface 'olsr'
+	option proto 'static'
 	option ifname 'eth1'
 	option ipaddr '104.204.0.59'
 	option netmask '255.255.255.248'
 	option ip6assign '64'
 	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
-	option proto 'static'
+
+config interface 'olsr6'
+	option ifname '@olsr'
+	option proto 'dhcpv6'
 
 config switch
 	option name 'switch0'
@@ -52,7 +56,7 @@ config interface 'lan'
 	
 config interface 'mesh'
 	option ifname 'bat0'
-	option type 'bridge'
+#	option type 'bridge'
 	option proto 'static'
 	option ipaddr '104.193.23.1'
 	option netmask '255.255.255.0'

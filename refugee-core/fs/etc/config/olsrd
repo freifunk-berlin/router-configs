@@ -39,7 +39,7 @@ config LoadPlugin
 config Interface
 	option Mode 'ether'
 	option ignore '0'
-	option interface 'wan'
+	option interface 'olsr'
 
 config LoadPlugin
 	option interval '30'
@@ -57,7 +57,7 @@ config LoadPlugin
 
 config Hna4
 	option netmask '255.255.255.0'
-	option netaddr '104.193.23.1'
+	option netaddr '104.193.23.0'
 
 config Hna6
 	option prefix '48'
