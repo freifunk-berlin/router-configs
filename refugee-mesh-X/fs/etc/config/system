@@ -4,9 +4,9 @@ config system
 	option zonename 'Europe/Berlin'
 	option timezone 'CET-1CEST,M3.5.0,M10.5.0/3'
 	option location 'Ohlauer Str.'
-        option latlon '52.49661 13.43006'
-        option latitude '52.49661'
-        option longitude '13.43006'
+	option latlon '52.49661 13.43006'
+	option latitude '52.49661'
+	option longitude '13.43006'
 
 config timeserver 'ntp'
 	list server '0.openwrt.pool.ntp.org'
