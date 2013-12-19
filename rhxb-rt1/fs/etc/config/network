@@ -16,6 +16,7 @@ config interface 'lan'
 	option netmask '255.255.255.0'
 	option macaddr 'f8:1a:67:a5:fc:88'
 	option ip6assign '64'
+	list ip6prefix '2001:470:5038:A8B8:0:0:0:0/61'
 
 config interface 'olsr'
 	option ifname 'eth0.20'

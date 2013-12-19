@@ -30,16 +30,6 @@ config InterfaceDefaults
 	option HelloInterval '3.0'
 	option HnaInterval '10.0'
 
-config LoadPlugin
-	option UdpDestPort '224.0.0.251 5353'
-	option P2pdTtl '10'
-	option library 'olsrd_p2pd.so.0.1.0'
-	option ignore '0'
-	list NonOlsrIf '5no'
-	list NonOlsrIf '5nw'
-	list NonOlsrIf '5sw'
-	list NonOlsrIf '5so'
-
 config Interface
 	option Mode 'ether'
 	option ignore '0'
@@ -129,12 +119,17 @@ config LoadPlugin
 	option latlon_file '/var/run/latlon.js'
 	option lat '52.493827541896456'
 	option hosts_file '/tmp/hosts/olsr'
-
-config Hna6
-	option prefix '48'
-	option netaddr 'FD19:7D33:47F7:0:0:0:0:0'
+	list hosts '2001:470:5038:A8B8:0:0:0:1 pre1.rhxb-rt1'
 
 config LoadPlugin
 	option library 'olsrd_dyn_gw_plain.so.0.4'
 	option ignore '1'
+
+config Hna6
+	option prefix '61'
+	option netaddr '2001:470:5038:A8B8:0:0:0:0'
+
+config Hna6
+	option prefix '48'
+	option netaddr 'FD19:7D33:47F7:0:0:0:0:0'
 
