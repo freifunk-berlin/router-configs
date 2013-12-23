@@ -30,7 +30,7 @@ ssh "root@$ip" opkg list_installed > "$dst/packages"
 sed -i.backup '/key/d' "$dst/fs/etc/config/wireless"
 ## remove other private files
 # list of files
-files="$dst/fs/etc/shadow $dst/fs/etc/openvpn/*.conf $dst/fs/etc/openvpn/*.key $dst/fs/etc/dropbear/dropbear_*"
+files="$dst/fs/etc/passwd $dst/fs/etc/shadow $dst/fs/etc/openvpn/*.conf $dst/fs/etc/openvpn/*.key $dst/fs/etc/dropbear/dropbear_* $dst/fs/etc/uhttpd.*"
 echo "$files"
 for f in $files; do
 	if [ -f $f ]; then
