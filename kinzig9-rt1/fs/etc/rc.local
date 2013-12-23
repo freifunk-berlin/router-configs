@@ -1,4 +1,11 @@
 # Put your custom commands here that should be executed once
 # the system init finished. By default this file does nothing.
 
+# fix firmware permission problems - jpn 20131221
+chmod 644 /etc/config/olsrd
+
+# workarround dnsmask problems - jpn 20131221
+sleep 60
+/etc/init.d/dnsmasq restart
+
 exit 0
