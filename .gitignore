@@ -4,3 +4,4 @@ dropbear_dss_host_key
 *.backup
 *.openvpn.ffvpn.cert
 *.openvpn.ffvpn.key
+*~
