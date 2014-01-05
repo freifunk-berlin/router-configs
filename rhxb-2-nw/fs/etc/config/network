@@ -13,6 +13,7 @@ config interface 'lan'
 	option ipaddr '104.201.5.7'
 	option netmask '255.255.255.224'
 	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	list ip6prefix '2001:470:5038:87E8:0:0:0:0/61'
 
 config globals 'globals'
 	option ula_prefix 'fd0a:3e3f:39f8::/48'
