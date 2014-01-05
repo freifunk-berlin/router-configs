@@ -23,4 +23,14 @@ config dhcp 'lan'
 config dhcp 'mesh'
 	option ignore '0'
 	option interface 'mesh'
+	option leasetime '5m'
+	option start '20'
+	option limit '235'
 	list dhcp_option '119,olsr'
+
+# use static leases when wdr3500er is not buggy anymore
+# at the moment it's not possible to set a mac addr for a bridge
+#config host
+#        option ip       '104.193.23.4'
+#        option mac      'FD:AA:F7:85:1A:B1'
+#        option name     'refugee-mesh-4'

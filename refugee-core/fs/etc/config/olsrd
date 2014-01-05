@@ -54,16 +54,21 @@ config LoadPlugin
 	option latlon_file '/var/run/latlon.js'
 	option lat '52.49661'
 	option hosts_file '/tmp/hosts/olsr'
+	list hosts '2001:470:5038:AED8:0:0:0:1 pre1.refugee-core'
 
 config Hna4
 	option netmask '255.255.255.0'
 	option netaddr '104.193.23.0'
 
-config Hna6
-	option prefix '48'
-	option netaddr 'FD9A:D305:9FE:0:0:0:0:0'
-
 config LoadPlugin
 	option library 'olsrd_dyn_gw_plain.so.0.4'
 	option ignore '1'
+
+config Hna6
+	option prefix '61'
+	option netaddr '2001:470:5038:AED8:0:0:0:0'
+
+config Hna6
+	option prefix '48'
+	option netaddr 'FD9A:D305:9FE:0:0:0:0:0'
 

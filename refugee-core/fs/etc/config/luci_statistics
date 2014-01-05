@@ -34,4 +34,9 @@ config 'statistics' 'collectd_olsrd'
 
 config 'statistics' 'collectd_iwinfo'
 	option 'enable' '0'
-
+	
+config 'statistics' 'collectd_network'
+	option 'enable' '1'
+	
+config 'collectd_network_server'
+	option 'host' 'monitor.berlin.freifunk.net'

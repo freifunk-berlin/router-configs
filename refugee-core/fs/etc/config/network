@@ -12,13 +12,9 @@ config interface 'olsr'
 	option proto 'static'
 	option ifname 'eth1'
 	option ipaddr '104.204.0.59'
-	option netmask '255.255.255.248'
+	option netmask '255.0.0.0'
 	option ip6assign '64'
 	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
-
-config interface 'olsr6'
-	option ifname '@olsr'
-	option proto 'dhcpv6'
 
 config switch
 	option name 'switch0'
@@ -46,14 +42,8 @@ config interface 'lan'
 	option ip6assign '60'
 	option ipaddr '192.168.42.1'
 	option netmask '255.255.255.0'
+	list ip6prefix '2001:470:5038:AED8:0:0:0:0/61'
 
-
-# incase you want to speek batman on lan interfaces enable this
-#config interface 'lan'
-#	option ifname 'eth0'
-#	option proto 'batadv'
-#	option mesh 'bat0'
-	
 config interface 'mesh'
 	option ifname 'bat0'
 	option type 'bridge'
@@ -61,5 +51,4 @@ config interface 'mesh'
 	option ipaddr '104.193.23.1'
 	option netmask '255.255.255.0'
 	option ip6assign '64'
-
 
