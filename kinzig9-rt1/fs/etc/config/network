@@ -16,7 +16,7 @@ config interface 'lan'
 	option netmask '255.255.255.0'
 	option ip6assign '60'
 	option macaddr 'f8:1a:67:5a:a7:e1'
-	list ip6prefix '2001:470:5231:BD30:0:0:0:0/61'
+	list ip6prefix '2001:470:5038:9A18:0:0:0:0/61'
 
 config interface 'wan'
 	option ifname 'eth0.2'
