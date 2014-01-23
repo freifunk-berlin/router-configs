@@ -1,0 +1,81 @@
+
+config LoadPlugin
+	option library 'olsrd_arprefresh.so.0.1'
+
+config LoadPlugin
+	option library 'olsrd_txtinfo.so.0.1'
+	option accept '0.0.0.0'
+
+config LoadPlugin
+	option library 'olsrd_jsoninfo.so.0.0'
+	option ignore '0'
+	option accept '0.0.0.0'
+
+config LoadPlugin
+	option lon '13.436087513427430'
+	option services_file '/var/etc/services.olsr'
+	option suffix '.olsr'
+	option latlon_file '/var/run/latlon.js'
+	option lat '52.484333570684820'
+	option hosts_file '/tmp/hosts/olsr'
+	option UdpDestPort '224.0.0.251 5353'
+	option P2pdTtl '10'
+	option library 'olsrd_p2pd.so.0.1.0'
+	option ignore '0'
+	list NonOlsrIf 'wireless0dhcp'
+
+config olsrd
+	option IpVersion '6and4'
+	option AllowNoInt 'yes'
+	option NatThreshold '0.75'
+	option LinkQualityAlgorithm 'etx_ff'
+	option FIBMetric 'flat'
+	option TcRedundancy '2'
+	option Pollrate '0.025'
+
+config InterfaceDefaults
+	option MidValidityTime '500.0'
+	option TcInterval '2.0'
+	option HnaValidityTime '125.0'
+	option HelloValidityTime '125.0'
+	option TcValidityTime '500.0'
+	option Ip4Broadcast '255.255.255.255'
+	option MidInterval '25.0'
+	option HelloInterval '3.0'
+	option HnaInterval '10.0'
+
+config Interface
+	option ignore '0'
+	option interface 'wireless0'
+
+config Hna4
+	option netmask '255.255.255.192'
+	option netaddr '104.206.1.192'
+
+config Interface
+	option Mode 'ether'
+	option ignore '0'
+	option interface 'lan'
+
+config LoadPlugin
+	option interval '30'
+	option file '/var/run/olsrd.watchdog'
+	option library 'olsrd_watchdog.so.0.1'
+
+config LoadPlugin
+	option lon '13.436087513427430'
+	option services_file '/var/etc/services.olsr'
+	option library 'olsrd_nameservice.so.0.3'
+	option suffix '.olsr'
+	option latlon_file '/var/run/latlon.js'
+	option lat '52.484333570684820'
+	option hosts_file '/tmp/hosts/olsr'
+
+config Hna6
+	option prefix '48'
+	option netaddr 'FD93:1642:4734:0:0:0:0:0'
+
+config LoadPlugin
+	option library 'olsrd_dyn_gw_plain.so.0.4'
+	option ignore '1'
+
