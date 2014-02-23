@@ -1,0 +1,33 @@
+
+config interface 'loopback'
+	option ifname 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config interface 'lan'
+	option ifname 'eth0'
+	option type 'bridge'
+	option proto 'static'
+	option ip6assign '64'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option ipaddr '104.131.4.26'
+	option netmask '255.255.255.224'
+
+config interface 'wan'
+	option ifname 'eth1'
+	option proto 'dhcp'
+
+config globals 'globals'
+	option ula_prefix 'fd70:afd0:87b1::/48'
+
+config interface 'henet'
+	option proto '6in4'
+
+config interface 'wireless0'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option ip6assign '64'
+	option netmask '255.0.0.0'
+	option ipaddr '104.131.4.66'
+	option proto 'static'
+

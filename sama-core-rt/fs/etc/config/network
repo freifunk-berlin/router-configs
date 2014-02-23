@@ -1,0 +1,205 @@
+
+config interface 'loopback'
+	option ifname 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config globals 'globals'
+	option ula_prefix 'fdba:9172:e56c::/48'
+
+config interface 'mgm'
+	option ifname 'eth0.2'
+	option macaddr 'f8:1a:67:5a:a9:20'
+	option proto 'static'
+	option ipaddr '192.168.1.1'
+	option netmask '255.255.255.0'
+
+config switch
+	option name 'switch0'
+	option reset '1'
+	option enable_vlan '1'
+
+#config switch_vlan
+#	option device 'switch0'
+#	option vlan '1'
+#	option ports '0t 2 3 4 5'
+
+config switch_vlan
+	option device 'switch0'
+	option vlan '2'
+	option ports '0t 1'
+
+config interface 'ffvpn'
+	option ifname 'ffvpn'
+	option proto 'none'
+
+config rule 'henet_relay'
+	option priority '100'
+	option dest '216.66.86.114/32'
+	option goto '32766'
+
+config rule '6to4_relay'
+	option priority '100'
+	option dest '192.88.99.1/32'
+	option goto '32766'
+
+config rule 'pbx_net'
+	option priority '100'
+	option dest '46.182.250.0/25'
+	option goto '32766'
+
+config rule 'pbx_net_1'
+	option priority '100'
+	option dest '178.238.128.0/20'
+	option goto '32766'
+
+config rule 'freevoipdeal'
+	option priority '100'
+	option dest '77.72.174.0/24'
+	option goto '32766'
+
+config rule 'sipgate'
+	option priority '100'
+	option dest '217.10.64.0/20'
+	option goto '32766'
+
+config interface 'wireless0'
+	option ip6assign '64'
+	option proto 'static'
+	list dns '2002:d596:2a92:1:71:53::'
+	list dns '2002:5968:c28e::53'
+
+config interface 'wireless0dhcp'
+	option ip6assign '64'
+	option proto 'static'
+
+config interface 'wireless1'
+	option ip6assign '64'
+	option proto 'static'
+	list dns '2002:d596:2a92:1:71:53::'
+	list dns '2002:5968:c28e::53'
+
+config interface 'wireless1dhcp'
+	option ip6assign '64'
+	option proto 'static'
+
+config interface 'k9'
+	option ipaddr '104.131.4.4'
+	option netmask '255.255.255.255'
+	option ip6assign '64'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option proto 'static'
+	option ifname 'eth0.50'
+	option macaddr '5A:04:9F:EF:10:50'
+
+config interface 'zwingli'
+	option ipaddr '104.131.4.6'
+	option netmask '255.255.255.255'
+	option ip6assign '64'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option proto 'static'
+	option ifname 'eth0.70'
+	option macaddr '5A:04:9F:EF:10:70'
+
+config interface 'segen'
+	option ipaddr '104.131.4.8'
+	option netmask '255.255.255.255'
+	option ip6assign '64'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option proto 'static'
+	option ifname 'eth0.60'
+	option macaddr '5A:04:9F:EF:10:60'
+
+config interface 'afra'
+	option ipaddr '104.131.4.10'
+	option netmask '255.255.255.255'
+	option ip6assign '64'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option proto 'static'
+	option ifname 'eth0.80'
+	option macaddr '5A:04:9F:EF:10:80'
+
+config interface 'henet'
+	option proto '6in4'
+
+config interface 'mesh'
+	option ipaddr '104.131.4.1'
+	option netmask '255.255.255.255'
+	option ip6assign '64'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option proto 'static'
+	option ifname 'eth0.1'
+	option macaddr '5A:04:9F:EF:10:10'
+
+config interface 'meshdhcp'
+	option ipaddr '104.131.5.1'
+	option netmask '255.255.255.0'
+	option proto 'static'
+	option ifname '@mesh'
+
+config switch_vlan
+	option device 'switch0'
+	option vlan '50'
+	option ports '0t 2t 3t 4t 5t'
+
+config switch_vlan
+	option device 'switch0'
+	option vlan '1'
+	option ports '0t 2t 3t 4t 5t'
+
+config switch_vlan
+	option device 'switch0'
+	option vlan '60'
+	option ports '0t 2t 3t 4t 5t'
+
+config switch_vlan
+	option device 'switch0'
+	option vlan '70'
+	option ports '0t 2t 3t 4t 5t'
+
+config switch_vlan
+	option device 'switch0'
+	option vlan '80'
+	option ports '0t 2t 3t 4t 5t'
+
+config route
+	option interface 'k9'
+	option target '104.131.4.3'
+	option netmask '255.255.255.255'
+
+config route
+	option interface 'segen'
+	option target '104.131.4.7'
+	option netmask '255.255.255.255'
+
+config route
+	option interface 'zwingli'
+	option target '104.131.4.5'
+	option netmask '255.255.255.255'
+
+config route
+	option interface 'afra'
+	option target '104.131.4.9'
+	option netmask '255.255.255.255'
+
+config route
+	option interface 'mesh'
+	option target '104.131.4.20'
+	option netmask '255.255.255.255'
+
+config route
+	option interface 'mesh'
+	option target '104.131.4.21'
+	option netmask '255.255.255.255'
+
+config route
+	option interface 'mesh'
+	option target '104.131.4.22'
+	option netmask '255.255.255.255'
+
+config route
+	option interface 'mesh'
+	option target '104.131.4.23'
+	option netmask '255.255.255.255'
+
