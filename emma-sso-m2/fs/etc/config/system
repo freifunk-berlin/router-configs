@@ -5,9 +5,9 @@ config system
 	option location 'Emmauskirche Lausitzer Platz'
 	option cronloglevel '10'
 	option hostname 'emma-sso-m2'
-	option latlon '52.449793000000006 13.430832999999997'
-	option latitude '52.449793000000006'
-	option longitude '13.430832999999997'
+	option latlon '52.499750000000000 13.431010000000000'
+	option latitude '52.499750000000000'
+	option longitude '13.431010000000000'
 
 config timeserver 'ntp'
 	list server '0.openwrt.pool.ntp.org'

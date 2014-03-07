@@ -11,8 +11,9 @@ config interface 'lan'
 	option ip6assign '64'
 	option ipaddr '104.0.2.3'
 	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
-	option netmask '255.255.255.240'
 	option ifname 'eth0.100'
+	list ip6prefix '2001:470:5038:7270:0:0:0:0/61'
+	option netmask '255.255.255.240'
 
 config interface 'wan'
 	option ifname 'eth1'
@@ -23,13 +24,6 @@ config interface 'wan'
 
 config globals 'globals'
 	option ula_prefix 'fdcd:5fc2:3103::/48'
-
-config interface 'wireless0'
-	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
-	option ip6assign '64'
-	option netmask '255.0.0.0'
-	option ipaddr '104.0.2.203'
-	option proto 'static'
 
 config route
 	option interface 'lan'
@@ -46,4 +40,11 @@ config interface 'wireless0bat'
 	option proto 'batadv'
 	option mtu '1528'
 	option mesh 'bat0'
+
+config interface 'wireless0'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option ip6assign '64'
+	option netmask '255.0.0.0'
+	option ipaddr '104.0.2.203'
+	option proto 'static'
 

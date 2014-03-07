@@ -10,6 +10,7 @@ freifunk-watchdog - 8
 hotplug2 - 1.0-beta-4
 ip - 3.3.0-2
 iw - 3.6-1
+iwinfo - 44
 jshn - 2013-08-01-04f194aa8a04926fe7f2e42bbf9ba6c62d49339e
 kernel - 3.3.8-1-25191d38effb1f07e820f322ac2a1607
 kmod-ath - 3.3.8+2013-06-27-1
@@ -41,6 +42,7 @@ libiwinfo-lua - 44
 libjson-c - 0.11-2
 liblua - 5.1.4-8
 libnl-tiny - 0.1-3
+libpcap - 1.1.1-2
 libpthread - 0.9.33.2-1
 librpc - 0.9.32-rc2-0a2179bbc0844928f2a0ec01dba93d9b5d6d41a7
 libubox - 2013-08-01-04f194aa8a04926fe7f2e42bbf9ba6c62d49339e
@@ -83,6 +85,7 @@ olsrd-mod-p2pd - 0.6.6-2
 olsrd-mod-watchdog - 0.6.6-2
 opkg - 618-3
 swconfig - 10
+tcpdump-mini - 4.2.1-3
 uboot-envtools - 2012.04.01-1
 ubus - 2013-08-08-b20a8a01c7faea5bcc9d34d10dcf7736589021b8
 ubusd - 2013-08-08-b20a8a01c7faea5bcc9d34d10dcf7736589021b8
