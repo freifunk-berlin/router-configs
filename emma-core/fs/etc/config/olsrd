@@ -108,3 +108,7 @@ config LoadPlugin
 	option library 'olsrd_dyn_gw_plain.so.0.4'
 	option ignore '1'
 
+config Hna4
+	option netaddr '104.0.2.0'
+	option netmask '255.255.255.0'
+
