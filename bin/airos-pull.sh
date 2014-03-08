@@ -31,5 +31,6 @@ case ${mac} in "")
 ;;esac
 
 ssh "root@$ip" "cat /tmp/running.cfg"|sort|sed -e 's,\(password\)=.*,\1=[removed],' > ${dst}/XM-${mac//:/}.cfg
+ssh "root@$ip" "cd /etc && tar -cz \$(find persistent -type f)"| tar -xz -C "$dst"
 
 #EOF
