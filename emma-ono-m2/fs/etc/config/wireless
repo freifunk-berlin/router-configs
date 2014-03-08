@@ -32,11 +32,11 @@ config wifi-iface
 	option sw_merge '1'
 
 config wifi-iface
-	option network 'wireless0bat'
 	option encryption 'none'
 	option device 'radio0'
 	option mode 'ap'
 	option mcast_rate '5500'
 	option isolate '1'
 	option ssid 'berlin.freifunk.net'
+	option network 'wireless0ap'
 

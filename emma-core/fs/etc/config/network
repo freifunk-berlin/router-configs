@@ -171,11 +171,13 @@ config switch_vlan
 	option vlan '108'
 	option ports '0t 2t'
 
-config interface 'ap'
+config interface 'bat'
 	option type 'bridge'
-	option proto 'none'
 	option auto '1'
 	option ifname 'eth0.111 eth0.112 eth0.113 eth0.114 eth0.115 eth0.116 eth0.117 eth0.118 bat0'
+	option proto 'static'
+	option ipaddr '104.0.2.200'
+	option netmask '255.255.255.0'
 
 config switch_vlan
 	option device 'switch0'

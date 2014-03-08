@@ -1,7 +1,15 @@
 # Put your custom commands here that should be executed once
 # the system init finished. By default this file does nothing.
 
-batctl if add $(uci -p /var/state get network.lan.ifname)
-batctl if add $(uci -p /var/state get network.wireless0.ifname)
+# Auf allen OLSR-Schnittstellen auch Batman-Adv fahren
+for i in $(uci show -p /var/state network|sed -n 's,^network\.\([^\.]\+\)\.ifname=,\1=,p');do
+	for j in $(uci show olsrd|sed -n 's,olsrd\.@Interface\[[[:digit:]]\+\]\.interface=,,p');do
+		case ${i%=*} in ${j})
+			batctl if add ${i#*=}
+		;;esac
+	done
+done
+
+ifup ap0
 
 exit 0

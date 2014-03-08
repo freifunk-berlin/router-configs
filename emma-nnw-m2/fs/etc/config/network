@@ -27,19 +27,6 @@ config globals 'globals'
 
 config route
 	option interface 'lan'
-
-config interface 'bat0'
-	option ifname 'bat0'
-	option proto 'none'
-	option mtu '1528'
-
-config interface 'wireless0bat'
-	option proto 'batadv'
-	option mtu '1528'
-	option mesh 'bat0'
-
-config route
-	option interface 'lan'
 	option target '192.168.0.0'
 	option netmask '255.255.255.0'
 	option gateway '104.0.2.9'
@@ -50,4 +37,17 @@ config interface 'wireless0'
 	option netmask '255.0.0.0'
 	option ipaddr '104.0.2.202'
 	option proto 'static'
+	option mtu '1528'
+
+config interface 'wireless0ap'
+	option proto 'none'
+
+config interface 'mesh0'
+	option proto 'none'
+	option ifname 'bat0'
+
+config interface 'bat'
+	option type 'bridge'
+	option proto 'none'
+	option ifname 'wlan0 bat0'
 
