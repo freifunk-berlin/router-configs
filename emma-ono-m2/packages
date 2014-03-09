@@ -17,7 +17,7 @@ kernel - 3.3.8-1-25191d38effb1f07e820f322ac2a1607
 kmod-ath - 3.3.8+2013-06-27-1
 kmod-ath9k - 3.3.8+2013-06-27-1
 kmod-ath9k-common - 3.3.8+2013-06-27-1
-kmod-batman-adv - 3.3.8+2013.3.0-6
+kmod-batman-adv - 3.3.8+2014.0.0-1
 kmod-cfg80211 - 3.3.8+2013-06-27-1
 kmod-crypto-aes - 3.3.8-1
 kmod-crypto-arc4 - 3.3.8-1

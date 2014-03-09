@@ -1,14 +1,23 @@
 # Put your custom commands here that should be executed once
 # the system init finished. By default this file does nothing.
 
-# Auf allen OLSR-Schnittstellen auch Batman-Adv fahren
-for i in $(uci show -p /var/state network|sed -n 's,^network\.\([^\.]\+\)\.ifname=,\1=,p');do
-	for j in $(uci show olsrd|sed -n 's,olsrd\.@Interface\[[[:digit:]]\+\]\.interface=,,p');do
-		case ${i%=*} in ${j})
-			batctl if add ${i#*=}
-		;;esac
-	done
+# Wait for LAN
+time=10
+while [ ${time} -gt 0 ] && ! up=$(uci -p /var/state get network.lan.up) 2>&-;do
+	time=$(( time - 1 ))
+	sleep 1
 done
+
+case ${up} in 1)
+	# Auf allen OLSR-Schnittstellen auch Batman-Adv fahren
+	for i in $(uci -p /var/state show network|sed -n 's,^network\.\([^\.]\+\)\.ifname=,\1=,p');do
+		for j in $(uci show olsrd|sed -n 's,olsrd\.@Interface\[[[:digit:]]\+\]\.interface=,,p');do
+			case ${i%=*} in ${j})
+				batctl if add ${i#*=}
+			;;esac
+		done
+	done
+;;esac
 
 # Temp fuer kaputtes Ethernet NNO,WNW,OSO
 ip r add 104.0.2.16/29  dev eth0.105
