@@ -1,6 +1,7 @@
 6relayd - 2013-07-26.1-2ed520c500b0fbb484cfad5687eb39a0da43dcf7
 alfred - 2014.0.0-0
 auto-ipv6-node - 0.0.4-1
+autossh - 1.4b-6
 base-files - 146-r38430
 bash - 4.2-3
 busybox - 1.19.4-7
@@ -58,6 +59,7 @@ kmod-usb-core - 3.10.15-1
 kmod-usb2-fsl - 3.10.15-1
 libblobmsg-json - 2013-08-01-04f194aa8a04926fe7f2e42bbf9ba6c62d49339e
 libc - 0.9.33.2-1
+libffi - 3.0.11-1
 libgcc - 4.6-linaro-1
 libip4tc - 1.4.20-1
 libiwinfo - 46
@@ -119,8 +121,12 @@ olsrd-mod-nameservice - 0.6.6-2
 olsrd-mod-p2pd - 0.6.6-2
 olsrd-mod-txtinfo - 0.6.6-3
 olsrd-mod-watchdog - 0.6.6-2
+openssh-client - 6.4p1-5
+openssh-keygen - 6.4p1-5
 opkg - 618-6
 procd - 2013-10-01-eba428f6672068d819d6296db3f635e6ac5a8be7-1
+python - 2.7.3-2
+python-mini - 2.7.3-2
 rrdtool1 - 1.0.50-2
 ssl-cert - 0.0.1-2
 swconfig - 10

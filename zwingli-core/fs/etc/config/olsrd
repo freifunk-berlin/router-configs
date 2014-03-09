@@ -54,22 +54,22 @@ config Hna4
 	option netaddr '6.23.16.0'
 
 config Interface
-	option Mode 'ether'
+	option Mode 'mesh'
 	option ignore '0'
 	option interface 'fhain'
 
 config Interface
-	option Mode 'ether'
+	option Mode 'mesh'
 	option ignore '0'
 	option interface 'fluxfm'
 
 config Interface
-	option Mode 'ether'
+	option Mode 'mesh'
 	option ignore '0'
 	option interface 'kreuzberg'
 
 config Interface
-	option Mode 'ether'
+	option Mode 'mesh'
 	option ignore '0'
 	option interface 'neukoelln'
 

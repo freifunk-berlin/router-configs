@@ -1,5 +1,10 @@
 config vnstat
-	list interface		br-lan
+	list interface		eth0.1
+        list interface          eth0.3
+        list interface          eth0.4
+        list interface          eth0.7
+        list interface          eth0.8
+        list interface          bat0
 #	list interface		eth0.1
 #	option remote		http://example.org/vnstat/
 #	option symlink		/www/vnstat

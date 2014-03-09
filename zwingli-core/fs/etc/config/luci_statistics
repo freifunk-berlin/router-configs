@@ -17,7 +17,7 @@ config statistics 'collectd_ping'
 	option enable '1'
 	option TTL '127'
 	option Interval '30'
-	option Hosts '104.130.3.97 104.135.0.1 104.131.99.1 104.8.6.1 6.23.19.2 104.131.4.24'
+	option Hosts '104.131.99.1 104.8.6.1 104.130.1.6 104.131.4.24'
 
 config statistics 'collectd_csv'
 	option enable '0'
@@ -55,7 +55,7 @@ config statistics 'collectd_interface'
 	option Interfaces 'br-lan eth0.1 eth0.3 eth0.4 eth0.7 eth0.8 bat0'
 
 config statistics 'collectd_iptables'
-	option enable '1'
+	option enable '0'
 
 config collectd_iptables_match
 	option table 'nat'
@@ -104,7 +104,7 @@ config statistics 'collectd_processes'
 	option Processes 'uhttpd dnsmasq dropbear'
 
 config statistics 'collectd_tcpconns'
-	option enable '1'
+	option enable '0'
 	option ListeningPorts '0'
 	option LocalPorts '22 80'
 
@@ -127,7 +127,7 @@ config statistics 'collectd_memory'
 	option enable '1'
 
 config statistics 'collectd_conntrack'
-	option enable '1'
+	option enable '0'
 
 config statistics 'collectd_olsrd'
 	option enable '1'

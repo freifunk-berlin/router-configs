@@ -1,10 +1,12 @@
 
 config LoadPlugin
 	option library 'olsrd_arprefresh.so.0.1'
+	option ignore '0'
 
 config LoadPlugin
 	option library 'olsrd_txtinfo.so.0.1'
 	option accept '0.0.0.0'
+	option ignore '0'
 
 config LoadPlugin
 	option library 'olsrd_jsoninfo.so.0.0'
@@ -22,6 +24,8 @@ config olsrd
 	option LinkQualityLevel '2'
 	option OlsrPort '698'
 	option Willingness '3'
+	option SmartGateway 'yes'
+	option SmartGatewayUplink 'none'
 
 config InterfaceDefaults
 	option MidValidityTime '500.0'
@@ -45,6 +49,7 @@ config LoadPlugin
 	option interval '30'
 	option file '/var/run/olsrd.watchdog'
 	option library 'olsrd_watchdog.so.0.1'
+	option ignore '0'
 
 config LoadPlugin
 	option services_file '/var/etc/services.olsr'
@@ -55,6 +60,7 @@ config LoadPlugin
 	option lon '13.454830790023667'
 	option lat '52.50355457229739'
 	list hosts 'FD6B:7CFC:9D6B::1 pre1.Zwingli-Ost-2GHz'
+	option ignore '0'
 
 config LoadPlugin
 	option library 'olsrd_dyn_gw_plain.so.0.4'

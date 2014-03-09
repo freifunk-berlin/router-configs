@@ -89,6 +89,7 @@ libjson-c - 0.11-2
 libltdl - 2.4-1
 liblua - 5.1.4-8
 libnl-tiny - 0.1-3
+libopenssl - 1.0.1e-1
 libpthread - 0.9.33.2-1
 librpc - 0.9.32-rc2-0a2179bbc0844928f2a0ec01dba93d9b5d6d41a7
 librrd1 - 1.0.50-2
@@ -107,7 +108,6 @@ luci-app-owm - 0.4.9
 luci-app-owm-ant - 0.4.9
 luci-app-owm-cmd - 0.4.9
 luci-app-owm-gui - 0.4.9
-luci-app-splash - svn-r9913-1
 luci-app-statistics - svn-r9913-1
 luci-i18n-german - svn-r9913-1
 luci-lib-core - svn-r9913-1
@@ -119,6 +119,7 @@ luci-lib-nixio - svn-r9913-1
 luci-lib-sys - svn-r9913-1
 luci-lib-web - svn-r9913-1
 luci-mod-admin-core - svn-r9913-1
+luci-mod-admin-full - svn-r9913-1
 luci-mod-admin-mini - svn-r9913-1
 luci-mod-freifunk - svn-r9913-1
 luci-proto-3g - svn-r9913-1
@@ -148,5 +149,6 @@ ubusd - 2013-08-08-b20a8a01c7faea5bcc9d34d10dcf7736589021b8
 uci - 2013-06-11.1-1
 uhttpd - 2012-10-30-e57bf6d8bfa465a50eea2c30269acdfe751a46fd
 uhttpd-mod-ubus - 2012-10-30-e57bf6d8bfa465a50eea2c30269acdfe751a46fd
+wget - 1.13.4-1
 wpad-mini - 20130405-1
 zlib - 1.2.7-1
