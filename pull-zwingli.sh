@@ -2,7 +2,7 @@
 
 ./bin/pull.sh zwingli-ost-5ghz 104.130.10.2
 ./bin/pull.sh zwingli-west-5ghz 104.130.10.4
-./bin/pull.sh zwingli-nord-5ghz 104.130.10.6
+#./bin/pull.sh zwingli-nord-5ghz 104.130.10.6
 ./bin/pull.sh zwingli-sued-5ghz 104.130.10.8
 
 ./bin/pull.sh zwingli-ost-2ghz 104.130.10.10
