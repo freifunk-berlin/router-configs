@@ -38,8 +38,8 @@ done
 
 # Temp fuer kaputtes Ethernet NNO,WNW,OSO
 
-echo ip r add 104.0.2.16/29  dev eth0.105
-echo ip r add 104.0.2.48/29  dev eth0.108
-echo ip r add 104.0.2.112/29 dev eth0.105
+ip r add 104.0.2.16/29  dev eth0.105
+ip r add 104.0.2.48/29  dev eth0.108
+ip r add 104.0.2.112/29 dev eth0.105
 
 exit 0
