@@ -27,6 +27,7 @@ kmod-crypto-crc32c - 3.10.28-1
 kmod-crypto-hash - 3.10.28-1
 kmod-input-core - 3.10.28-1
 kmod-input-gpio-keys - 3.10.28-1
+kmod-ipt-core - 3.10.28-1
 kmod-iptunnel4 - 3.10.28-1
 kmod-ipv6 - 3.10.28-1
 kmod-leds-gpio - 3.10.28-1
@@ -34,6 +35,8 @@ kmod-lib-crc16 - 3.10.28-1
 kmod-lib-crc32c - 3.10.28-1
 kmod-mac80211 - 3.10.28+2014-01-23.1-1
 kmod-nls-base - 3.10.28-1
+kmod-sched - 3.10.28-1
+kmod-sched-core - 3.10.28-1
 kmod-usb-core - 3.10.28-1
 kmod-usb2-fsl - 3.10.28-1
 libblobmsg-json - 2014-02-02-43d2d349cb86a79d3d86012b101c458d344b05a4
@@ -87,6 +90,7 @@ olsrd-mod-watchdog - 0.6.6-4
 opkg - 9c97d5ecd795709c8584e972bfdf3aee3a5b846d-6
 procd - 2014-01-29-e0921ed71bab0ad7d2344774a33c22809eb10190
 swconfig - 10
+tc - 3.11.0-1
 tcpdump-mini - 4.5.1-4
 ubox - 2014-01-29-71ea854364833c5dcb0800e092b45fed2c45910e
 ubus - 2014-01-29-4e82a1fabb87b5e3c948a792e16b0fac3702721b

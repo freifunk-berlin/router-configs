@@ -33,6 +33,8 @@ kmod-ledtrig-timer - 3.3.8-1
 kmod-lib-crc16 - 3.3.8-1
 kmod-lib-crc32c - 3.3.8-1
 kmod-mac80211 - 3.3.8+2013-06-27-1
+kmod-sched - 3.3.8-1
+kmod-sched-core - 3.3.8-1
 kmod-wdt-ath79 - 3.3.8-1
 libblobmsg-json - 2013-08-01-04f194aa8a04926fe7f2e42bbf9ba6c62d49339e
 libc - 0.9.33.2-1
@@ -85,6 +87,7 @@ olsrd-mod-p2pd - 0.6.6-2
 olsrd-mod-watchdog - 0.6.6-2
 opkg - 618-3
 swconfig - 10
+tc - 3.3.0-2
 tcpdump-mini - 4.2.1-3
 uboot-envtools - 2012.04.01-1
 ubus - 2013-08-08-b20a8a01c7faea5bcc9d34d10dcf7736589021b8
