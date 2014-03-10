@@ -174,48 +174,13 @@ config switch_vlan
 config interface 'bat'
 	option type 'bridge'
 	option auto '1'
-	option ifname 'eth0.111 eth0.112 eth0.113 eth0.114 eth0.115 eth0.116 eth0.117 eth0.118 bat0'
 	option proto 'static'
 	option ipaddr '104.0.2.200'
 	option netmask '255.255.255.0'
+	option ifname 'eth0.109 bat0'
 
 config switch_vlan
 	option device 'switch0'
-	option vlan '111'
-	option ports '0t 2t'
-
-config switch_vlan
-	option device 'switch0'
-	option vlan '112'
-	option ports '0t 3t'
-
-config switch_vlan
-	option device 'switch0'
-	option vlan '113'
-	option ports '0t 3t'
-
-config switch_vlan
-	option device 'switch0'
-	option vlan '114'
-	option ports '0t 4t'
-
-config switch_vlan
-	option device 'switch0'
-	option vlan '115'
-	option ports '0t 4t'
-
-config switch_vlan
-	option device 'switch0'
-	option vlan '116'
-	option ports '0t 5t'
-
-config switch_vlan
-	option device 'switch0'
-	option vlan '117'
-	option ports '0t 5t'
-
-config switch_vlan
-	option device 'switch0'
-	option vlan '118'
-	option ports '0t 2t'
+	option vlan '109'
+	option ports '0t 2t 3t 4t 5t'
 

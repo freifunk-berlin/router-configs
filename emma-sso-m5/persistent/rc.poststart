@@ -18,6 +18,7 @@ case $(iwpriv ${WLIF} get_wds 2>&-|sed 's,.*:,,') in 1*)
 
 APBR=br1
 SSID=berlin
+PING=104.0.2.200	# Test address for working ethernet bridge
 
 if egrep -q "\\b${APBR}:" /proc/net/dev;then
 	case $(sed -n 's,^ubnt_poll[[:space:]]\+[[:digit:]]\+[[:space:]]\+\([[:digit:]]\+\).*,\1,p' /proc/modules 2>&-) in 1)
@@ -25,15 +26,26 @@ if egrep -q "\\b${APBR}:" /proc/net/dev;then
 	;;*)
 		iwpriv ${WLIF} bintval 500 # Save Airtime on Beacons
 
-		for AP in ath1,${SSID}.freifunk.net ath2,${SSID}-5ghz.freifunk.net;do
-			wlanconfig ${AP%,*} create wlandev wifi0 wlanmode ap
-			iwpriv ${AP%,*} ap_bridge $(iwpriv ${WLIF} get_ap_bridge|sed -n 's,.*:,,p')
-			iwpriv ${AP%,*} bintval 500
-			iwconfig ${AP%,*} essid ${AP#*,}
-			ip link set dev ${AP%,*} up
-			brctl addif ${APBR} ${AP%,*}
-		done
+		if arping -I br1 -c 2 -f ${PING} >&-;then
+			err=false
+			for AP in ath1,${SSID}.freifunk.net ath2,${SSID}-5ghz.freifunk.net;do
+				if wlanconfig ${AP%,*} create wlandev wifi0 wlanmode ap;then
+					iwpriv ${AP%,*} ap_bridge $(iwpriv ${WLIF} get_ap_bridge|sed -n 's,.*:,,p')
+					iwpriv ${AP%,*} bintval 500
+					iwconfig ${AP%,*} essid ${AP#*,}
+					ip link set dev ${AP%,*} up
+					brctl addif ${APBR} ${AP%,*}
+				else
+					err=true
+				fi
+			done
+			case ${err} in true)
+				sh -c "sleep 600;reboot" > /dev/null 2>&1 &
+			;;esac
+		else
+			echo "Ethernet bridge not working, skipped adding VAPs" >&2
+		fi
 	;;esac
 else
-	echo "No additional bridge device ${APBR} for adding VAPs" 2>&-
+	echo "No additional bridge device ${APBR} for adding VAPs" >&2
 fi
