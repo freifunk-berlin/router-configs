@@ -38,6 +38,10 @@ config LoadPlugin
 	option ignore '1'
 
 config Interface
+	option ignore '0'
+	option interface 'wireless1'
+
+config Interface
 	option Mode 'ether'
 	option ignore '0'
 	option interface 'lan'
@@ -93,8 +97,16 @@ config LoadPlugin
 	option suffix '.olsr'
 	option latlon_file '/var/run/latlon.js'
 	option hosts_file '/tmp/hosts/olsr'
-	list service 'http://pre1.emma-core.olsr:80|tcp|pre1.emma-core.olsr on 2001:470:5038:3C20:0:0:0:1'
-	list hosts '2001:470:5038:82B8:0:0:0:1 pre1.emma-core'
+	list service 'http://pre1.emma-core.olsr:80|tcp|pre1.emma-core.olsr on 2001:470:5038:CC8:0:0:0:1'
+	list hosts '2001:470:5038:CC8:0:0:0:1 pre1.emma-core'
+
+config Hna6
+	option prefix '48'
+	option netaddr 'FDA3:1908:F150:0:0:0:0:0'
+
+config Hna6
+	option prefix '61'
+	option netaddr '2001:470:5038:CC8:0:0:0:0'
 
 config LoadPlugin
 	option library 'olsrd_dyn_gw_plain.so.0.4'
@@ -103,12 +115,4 @@ config LoadPlugin
 config Hna4
 	option netaddr '104.0.2.0'
 	option netmask '255.255.255.0'
-
-config Hna6
-	option prefix '61'
-	option netaddr '2001:470:5038:82B8:0:0:0:0'
-
-config Hna6
-	option prefix '48'
-	option netaddr 'FDF8:3034:C090:0:0:0:0:0'
 
