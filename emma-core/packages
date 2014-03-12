@@ -27,7 +27,6 @@ kmod-crypto-crc32c - 3.10.28-1
 kmod-crypto-hash - 3.10.28-1
 kmod-input-core - 3.10.28-1
 kmod-input-gpio-keys - 3.10.28-1
-kmod-ipt-core - 3.10.28-1
 kmod-iptunnel4 - 3.10.28-1
 kmod-ipv6 - 3.10.28-1
 kmod-leds-gpio - 3.10.28-1
@@ -35,7 +34,6 @@ kmod-lib-crc16 - 3.10.28-1
 kmod-lib-crc32c - 3.10.28-1
 kmod-mac80211 - 3.10.28+2014-01-23.1-1
 kmod-nls-base - 3.10.28-1
-kmod-sched - 3.10.28-1
 kmod-sched-core - 3.10.28-1
 kmod-usb-core - 3.10.28-1
 kmod-usb2-fsl - 3.10.28-1

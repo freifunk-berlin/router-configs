@@ -10,6 +10,7 @@ done
 
 for lif in $(uci show network|sed -n 's,^network\.\([^\.=]\+\)=interface,\1,p');do
 	case ${lif} in loopback)continue;;esac
+	case $(uci get network.${lif}.proto) in dhcp|6to4|6in4)continue;;esac
 	for oif in $(uci show olsrd|sed -n 's,olsrd\.@Interface\[[[:digit:]]\+\]\.interface=,,p');do
 		case ${lif} in ${oif})
 			time=10;while [ ${time} -gt 0 ];do
@@ -17,6 +18,7 @@ for lif in $(uci show network|sed -n 's,^network\.\([^\.=]\+\)=interface,\1,p');
 				time=$(( time - 1 ))
 				sleep 1
 			done
+			sleep 1	# Sometime ifname is unset even if if is up
 			pif=$(uci -p /var/state get network.${lif}.ifname)
 			batctl if add ${pif}
 			case $(which tc) in "");;*)
@@ -37,7 +39,6 @@ for lif in $(uci show network|sed -n 's,^network\.\([^\.=]\+\)=interface,\1,p');
 done
 
 # Aktiviere Batman-ADV-zu-Access-Point Bruecke
-
 ifup ap0
 
 exit 0
