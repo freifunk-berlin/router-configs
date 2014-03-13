@@ -7,7 +7,6 @@
 ./bin/airos-pull.sh emma-ssw-m5 104.0.2.82
 ./bin/airos-pull.sh emma-sso-m5 104.0.2.98
 ./bin/airos-pull.sh emma-oso-m5 104.0.2.114
-./bin/airos-pull.sh emma-oso-m5 104.0.2.114
 ./bin/airos-pull.sh emma-ono-m5 104.0.2.130
 
 ./bin/pull.sh emma-nno-m2 104.0.2.201
