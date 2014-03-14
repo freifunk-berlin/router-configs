@@ -56,3 +56,6 @@ config 6relayd
 config olsrd
 	option init 'olsrd'
 
+config luci_statistics
+	option init 'luci_statistics'
+

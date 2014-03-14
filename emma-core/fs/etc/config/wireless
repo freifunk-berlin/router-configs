@@ -15,6 +15,8 @@ config wifi-device 'radio0'
 	option noscan '1'
 	option distance '1000'
 	option htmode 'HT40+'
+	option txpower '0'
+	option beacon_int '250'
 
 config wifi-iface
 	option device 'radio0'
@@ -42,6 +44,8 @@ config wifi-device 'radio1'
 	option htmode 'HT40-'
 	option diversity '1'
 	option basic_rate '6000 9000 12000 18000 24000 36000 48000 54000'
+	option txpower '0'
+	option beacon_int '250'
 
 config wifi-iface
 	option network 'wireless0dhcp'
@@ -60,5 +64,5 @@ config wifi-iface
 	option ssid 'ch13.freifunk.net'
 	option mode 'adhoc'
 	option sw_merge '1'
-	option mcast_rate '12000'
+	option mcast_rate '24000'
 
