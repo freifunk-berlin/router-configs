@@ -3,3 +3,4 @@
 */5 * * * *	killall -HUP dnsmasq
 */5 * * * *	/usr/sbin/ff_olsr_watchdog
 * * * * *	/usr/sbin/ffwatchd running || /etc/init.d/freifunk-watchdog restart
+*/5 * * * * ( for file in /etc/alfred/* ; do [ -x $file ] && $file ; done )

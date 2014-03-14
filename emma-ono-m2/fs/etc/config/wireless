@@ -18,6 +18,7 @@ config wifi-device 'radio0'
 	option htmode 'HT20'
 	option txpower '18'
 	option beacon_int '500'
+	option basic_rate '6000 9000 12000 18000 24000 36000 48000 54000'
 
 config wifi-iface
 	option network 'wireless0'
@@ -27,16 +28,17 @@ config wifi-iface
 	option bgscan '0'
 	option probereq '1'
 	option ssid 'ch13.freifunk.net'
-	option mcast_rate '5500'
 	option mode 'adhoc'
 	option sw_merge '1'
+	option mcast_rate '12000'
 
 config wifi-iface
 	option encryption 'none'
 	option device 'radio0'
 	option mode 'ap'
-	option mcast_rate '5500'
 	option isolate '1'
 	option ssid 'berlin.freifunk.net'
 	option network 'wireless0ap'
+	option mcast_re '12000'
+	option mcast_rate '12000'
 
