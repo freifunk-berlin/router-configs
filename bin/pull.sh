@@ -26,6 +26,8 @@ fi
 ssh "root@$ip" "sysupgrade -b -" | tar -xz -C "$dst/fs"
 ssh "root@$ip" opkg list_installed > "$dst/packages"
 
+test -d "$dst"/fs/etc/config && ./bin/uci-sort.pl "$dst"/fs/etc/config/*
+
 # remove wireless keys if present
 sed -i.backup '/key/d' "$dst/fs/etc/config/wireless"
 ## remove other private files
