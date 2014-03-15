@@ -15,22 +15,23 @@ config wifi-device 'radio0'
 	option channel '13'
 	option txpower '18'
 	option beacon_int '500'
+	option basic_rate '6000 9000 12000 18000 24000 36000 48000 54000'
 
 config wifi-iface
 	option device 'radio0'
 	option encryption 'none'
 	option mode 'adhoc'
 	option network 'wireless0'
-	option ssid 'ch13.freifunk.net'
-	option bssid 'D2:CA:FF:EE:BA:BE'
+	option ssid 'ch5.freifunk.net'
+	option bssid '52:CA:FF:EE:BA:BE'
 	option mcast_rate '6000'
 
 config wifi-iface
-	option network 'wireless0dhcp'
 	option encryption 'none'
 	option device 'radio0'
 	option mode 'ap'
 	option ssid 'berlin.freifunk.net'
 	option isolate '1'
-	option mcast_rate '6000'
+	option network 'mesh'
+	option mcast_rate '36000'
 
