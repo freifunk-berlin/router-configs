@@ -16,18 +16,18 @@ config wifi-device 'radio0'
 	option mcast_rate '6000'
 
 config wifi-iface
+	option bssid '12:00:CA:FF:EE:EE'
 	option device 'radio0'
 	option encryption 'none'
 	option mode 'adhoc'
 	option network 'wireless0'
 	option ssid 'ch100.freifunk.net'
-	option bssid '12:00:CA:FF:EE:EE'
 
 config wifi-iface
-	option network 'wireless0dhcp'
-	option encryption 'none'
 	option device 'radio0'
-	option mode 'ap'
-	option ssid 'berlin.freifunk.net'
+	option encryption 'none'
 	option isolate '1'
+	option mode 'ap'
+	option network 'wireless0dhcp'
+	option ssid 'berlin.freifunk.net'
 

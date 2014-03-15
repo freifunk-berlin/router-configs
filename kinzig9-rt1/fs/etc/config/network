@@ -1,9 +1,9 @@
 
 config interface 'loopback'
 	option ifname 'lo'
-	option proto 'static'
 	option ipaddr '127.0.0.1'
 	option netmask '255.0.0.0'
+	option proto 'static'
 
 config globals 'globals'
 	option ula_prefix 'fdb5:a06f:1b06::/48'
@@ -20,10 +20,10 @@ config interface 'lan'
 
 config interface 'wan'
 	option ifname 'eth0.2'
-	option proto 'static'
 	option ipaddr '104.131.9.241'
-	option netmask '255.255.255.240'
 	option macaddr 'f8:1a:67:5a:a7:e4'
+	option netmask '255.255.255.240'
+	option proto 'static'
 
 config interface 'wan6'
 	option ifname '@wan'
@@ -31,118 +31,118 @@ config interface 'wan6'
 
 config interface 'vlan10'
 	option ifname 'eth0.10'
-	option proto 'static'
 	option ipaddr '10.131.99.1'
 	option netmask '255.255.255.0'
+	option proto 'static'
 
 config interface 'vlan20'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
 	option ifname 'eth0.20'
 	option ip6assign '64'
-	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
-	option proto 'static'
 	option ipaddr '104.131.99.20'
 	option netmask '255.255.255.255'
+	option proto 'static'
 
 config interface 'vlan21'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
 	option ifname 'eth0.21'
 	option ip6assign '64'
-	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
-	option proto 'static'
 	option ipaddr '104.131.99.21'
 	option netmask '255.255.255.255'
+	option proto 'static'
 
 config interface 'vlan22'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
 	option ifname 'eth0.22'
 	option ip6assign '64'
-	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
-	option proto 'static'
 	option ipaddr '104.131.99.22'
 	option netmask '255.255.255.255'
+	option proto 'static'
 
 config interface 'vlan23'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
 	option ifname 'eth0.23'
 	option ip6assign '64'
-	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
-	option proto 'static'
 	option ipaddr '104.131.99.23'
 	option netmask '255.255.255.255'
+	option proto 'static'
 
 config interface 'vlan24'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
 	option ifname 'eth0.24'
 	option ip6assign '64'
-	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
-	option proto 'static'
 	option ipaddr '104.131.99.24'
 	option netmask '255.255.255.255'
+	option proto 'static'
 
 config interface 'vlan25'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
 	option ifname 'eth0.25'
 	option ip6assign '64'
-	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
-	option proto 'static'
 	option ipaddr '104.131.99.25'
 	option netmask '255.255.255.255'
+	option proto 'static'
 
 config interface 'vlan30'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
 	option ifname 'eth0.30'
 	option ip6assign '64'
-	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
-	option proto 'static'
 	option ipaddr '104.131.99.1'
 	option netmask '255.255.255.255'
+	option proto 'static'
 
 config switch
+	option enable_vlan '1'
 	option name 'switch0'
 	option reset '1'
-	option enable_vlan '1'
 
 config switch_vlan
 	option device 'switch0'
-	option vlan '1'
 	option ports '0t 2 3 4 5'
+	option vlan '1'
 
 config switch_vlan
 	option device 'switch0'
-	option vlan '2'
 	option ports '0t 1'
+	option vlan '2'
 
 config switch_vlan
 	option device 'switch0'
+	option ports '0t 5t'
 	option vlan '10'
-	option ports '0t 5t'
 
 config switch_vlan
 	option device 'switch0'
+	option ports '0t 5t'
 	option vlan '20'
-	option ports '0t 5t'
 
 config switch_vlan
 	option device 'switch0'
+	option ports '0t 5t'
 	option vlan '21'
-	option ports '0t 5t'
 
 config switch_vlan
 	option device 'switch0'
+	option ports '0t 5t'
 	option vlan '22'
-	option ports '0t 5t'
 
 config switch_vlan
 	option device 'switch0'
+	option ports '0t 5t'
 	option vlan '23'
-	option ports '0t 5t'
 
 config switch_vlan
 	option device 'switch0'
+	option ports '0t 5t'
 	option vlan '24'
-	option ports '0t 5t'
 
 config switch_vlan
 	option device 'switch0'
+	option ports '0t 5t'
 	option vlan '25'
-	option ports '0t 5t'
 
 config switch_vlan
 	option device 'switch0'
-	option vlan '30'
 	option ports '0t 5t'
+	option vlan '30'
 

@@ -28,5 +28,6 @@ config dhcp wlan0
 	list 'dhcp_option' 	'1,255.255.255.240'
 
 config dhcp lan
-	option interface	lan
 	option ignore	1
+	option interface	lan
+

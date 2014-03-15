@@ -1,23 +1,23 @@
 
 config interface 'loopback'
 	option ifname 'lo'
-	option proto 'static'
 	option ipaddr '127.0.0.1'
 	option netmask '255.0.0.0'
+	option proto 'static'
 
 config interface 'lan'
+	option dns '8.8.8.8'
 	option ifname 'eth0'
-	option type 'bridge'
-	option proto 'static'
 	option ip6assign '64'
 	option ipaddr '104.130.10.2'
 	option netmask '255.0.0.0'
-	option dns '8.8.8.8'
+	option proto 'static'
+	option type 'bridge'
 
 config interface 'wan'
-	option proto 'dhcp'
 	option _ifname 'eth1'
 	option ifname 'eth1'
+	option proto 'dhcp'
 
 config globals 'globals'
 	option ula_prefix 'fd87:44d7:5e82::/48'

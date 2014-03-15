@@ -1,13 +1,13 @@
 
 config system
-	option zonename 'Europe/Berlin'
-	option timezone 'CET-1CEST,M3.5.0,M10.5.0/3'
-	option location 'Rathaus Kreuzberg'
 	option cronloglevel '10'
 	option hostname 'rhxb-2-nw'
-	option latlon '52.493896292764449 13.385039829036349'
 	option latitude '52.493896292764449'
+	option latlon '52.493896292764449 13.385039829036349'
+	option location 'Rathaus Kreuzberg'
 	option longitude '13.385039829036349'
+	option timezone 'CET-1CEST,M3.5.0,M10.5.0/3'
+	option zonename 'Europe/Berlin'
 
 config timeserver 'ntp'
 	list server '0.openwrt.pool.ntp.org'

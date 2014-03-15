@@ -22,16 +22,17 @@ config dnsmasq
 
 config dhcp lan
 	option interface	lan
-	option start 	100
-	option limit	150
 	option leasetime	12h
+	option limit	150
+	option start 	100
 
 config dhcp wan
 	option interface	wan
-	option start 	100
-	option limit	150
 	option leasetime	12h
+	option limit	150
+	option start 	100
 
 config dhcp mesh
-	option interface 'mesh'
 	option ignore '1'	
+	option interface 'mesh'
+

@@ -7,20 +7,20 @@ config defaults
 #	option disable_ipv6	1
 
 config zone
+	option forward		ACCEPT
+	option input		ACCEPT
 	option name		wireless0
 	option network		'wireless0'
-	option input		ACCEPT
 	option output		ACCEPT
-	option forward		ACCEPT
 
 config zone
-	option name		lan
-	option network		'lan'
-	option input		REJECT
-	option output		ACCEPT
 	option forward		REJECT
+	option input		REJECT
 	option masq		1
 	option mtu_fix		1
+	option name		lan
+	option network		'lan'
+	option output		ACCEPT
 
 config forwarding
 	option src		wireless0
@@ -97,12 +97,12 @@ config rule
 
 # Block ULA-traffic from leaking out
 config rule
-	option name		Enforce-ULA-Border-Src
-	option src		*
 	option dest		wan
-	option proto		all
-	option src_ip		fc00::/7
 	option family		ipv6
+	option name		Enforce-ULA-Border-Src
+	option proto		all
+	option src		*
+	option src_ip		fc00::/7
 	option target		REJECT
 
 config rule

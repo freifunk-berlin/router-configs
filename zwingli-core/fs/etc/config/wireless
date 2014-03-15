@@ -16,10 +16,10 @@ config wifi-device 'radio0'
 
 config wifi-iface
 	option device 'radio0'
-	option network 'lan'
-	option mode 'ap'
-	option ssid 'zwingli-mgmt'
 	option encryption 'psk2'
+	option mode 'ap'
+	option network 'lan'
+	option ssid 'zwingli-mgmt'
 
 config wifi-device 'radio1'
 	option type 'mac80211'
@@ -38,8 +38,8 @@ config wifi-device 'radio1'
 
 config wifi-iface
 	option device 'radio1'
-	option network 'lan'
-	option mode 'ap'
-	option ssid 'zwingli-mgmt'
 	option encryption 'psk2'
+	option mode 'ap'
+	option network 'lan'
+	option ssid 'zwingli-mgmt'
 

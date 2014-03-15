@@ -1,10 +1,10 @@
 config 'community' 'profile'
-	option 'name' 'Freifunk Gadow'
 	option 'homepage' 'http://gadow.freifunk.net'
-	option 'ssid' 'gadow.freifunk.net'
-	option 'mesh_network' '104.0.0.0/8'
 	option 'latitude' '53.11'
 	option 'longitude' '12.61'
+	option 'mesh_network' '104.0.0.0/8'
+	option 'name' 'Freifunk Gadow'
+	option 'ssid' 'gadow.freifunk.net'
 	option 'vap' '1'
 
 config 'defaults' 'interface'
@@ -12,3 +12,4 @@ config 'defaults' 'interface'
 
 config 'defaults' 'bssidscheme'
 	option '1' '02:CA:FF:EE:BA:BE'
+

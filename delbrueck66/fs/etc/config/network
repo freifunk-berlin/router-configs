@@ -2,16 +2,17 @@
 
 config interface loopback
 	option ifname	lo
-	option proto	static
 	option ipaddr	127.0.0.1
 	option netmask	255.0.0.0
+	option proto	static
 
 config interface lan
 	option ifname	eth0
 	option proto	dhcp
-	
+
 config interface wireless0
 	option dns "8.8.8.8"
+	option ipaddr "104.248.0.17"
 	option netmask "255.0.0.0"
 	option proto "static"
-	option ipaddr "104.248.0.17"
+

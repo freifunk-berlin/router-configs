@@ -3,38 +3,38 @@ config LoadPlugin
 	option library 'olsrd_arprefresh.so.0.1'
 
 config LoadPlugin
-	option library 'olsrd_txtinfo.so.0.1'
 	option accept '0.0.0.0'
+	option library 'olsrd_txtinfo.so.0.1'
 
 config LoadPlugin
-	option library 'olsrd_jsoninfo.so.0.0'
 	option accept '0.0.0.0'
+	option library 'olsrd_jsoninfo.so.0.0'
 
 config olsrd
-	option IpVersion '6and4'
 	option AllowNoInt 'yes'
-	option NatThreshold '0.75'
-	option LinkQualityAlgorithm 'etx_ff'
 	option FIBMetric 'flat'
-	option TcRedundancy '2'
+	option IpVersion '6and4'
+	option LinkQualityAlgorithm 'etx_ff'
+	option NatThreshold '0.75'
 	option Pollrate '0.025'
+	option TcRedundancy '2'
 
 config InterfaceDefaults
-	option MidValidityTime '500.0'
-	option TcInterval '2.0'
-	option HnaValidityTime '125.0'
+	option HelloInterval '3.0'
 	option HelloValidityTime '125.0'
-	option TcValidityTime '500.0'
+	option HnaInterval '10.0'
+	option HnaValidityTime '125.0'
 	option Ip4Broadcast '255.255.255.255'
 	option MidInterval '25.0'
-	option HelloInterval '3.0'
-	option HnaInterval '10.0'
+	option MidValidityTime '500.0'
+	option TcInterval '2.0'
+	option TcValidityTime '500.0'
 
 config LoadPlugin
-	option UdpDestPort '224.0.0.251 5353'
 	option P2pdTtl '10'
-	option library 'olsrd_p2pd.so.0.1.0'
+	option UdpDestPort '224.0.0.251 5353'
 	option ignore '1'
+	option library 'olsrd_p2pd.so.0.1.0'
 
 config Interface
 	option Mode 'ether'
@@ -42,8 +42,8 @@ config Interface
 	option interface 'olsr'
 
 config LoadPlugin
-	option interval '30'
 	option file '/var/run/olsrd.watchdog'
+	option interval '30'
 	option library 'olsrd_watchdog.so.0.1'
 
 config LoadPlugin
@@ -57,18 +57,18 @@ config LoadPlugin
 	list hosts '2001:470:5038:AED8:0:0:0:1 pre1.refugee-core'
 
 config Hna4
-	option netmask '255.255.255.0'
 	option netaddr '104.193.23.0'
+	option netmask '255.255.255.0'
 
 config LoadPlugin
-	option library 'olsrd_dyn_gw_plain.so.0.4'
 	option ignore '1'
+	option library 'olsrd_dyn_gw_plain.so.0.4'
 
 config Hna6
-	option prefix '61'
 	option netaddr '2001:470:5038:AED8:0:0:0:0'
+	option prefix '61'
 
 config Hna6
-	option prefix '48'
 	option netaddr 'FD9A:D305:9FE:0:0:0:0:0'
+	option prefix '48'
 

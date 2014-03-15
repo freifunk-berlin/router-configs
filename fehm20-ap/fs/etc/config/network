@@ -1,45 +1,45 @@
 
 config interface 'loopback'
 	option ifname 'lo'
-	option proto 'static'
 	option ipaddr '127.0.0.1'
 	option netmask '255.0.0.0'
+	option proto 'static'
 
 config interface 'lan'
 	option ifname 'eth1'
-	option type 'bridge'
-	option proto 'static'
 	option ipaddr '192.168.1.1'
 	option netmask '255.255.255.0'
+	option proto 'static'
+	option type 'bridge'
 
 config interface 'wan'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
 	option ifname 'eth0'
 	option ip6addr 'FDCA:FFEE:BABE:0:270:2FF:FEF1:FAFB/64'
-	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
-	option proto 'static'
 	option ipaddr '104.88.0.25'
 	option netmask '255.255.255.252'
+	option proto 'static'
 
 config switch
+	option enable_vlan '1'
 	option name 'switch0'
 	option reset '1'
-	option enable_vlan '1'
 
 config switch_vlan
 	option device 'switch0'
-	option vlan '1'
 	option ports '0 1 2 3 4'
+	option vlan '1'
 
 config interface 'wireless0'
 	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
 	option ip6addr 'FDCA:FFEE:BABE:0:270:2FF:FEF1:FAFC/64'
-	option netmask '255.0.0.0'
 	option ipaddr '104.88.0.28'
+	option netmask '255.0.0.0'
 	option proto 'static'
 
 config interface 'wireless0dhcp'
-	option ipaddr '104.88.0.33'
 	option ip6addr 'FDCA:FFEE:9EC1:0:270:2FF:FEF1:FAFC/64'
+	option ipaddr '104.88.0.33'
 	option netmask '255.255.255.240'
 	option proto 'static'
 

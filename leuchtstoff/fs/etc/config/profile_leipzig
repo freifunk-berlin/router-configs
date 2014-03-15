@@ -1,10 +1,10 @@
 config 'community' 'profile'
-	option 'name' 'Freifunk Leipzig'
 	option 'homepage' 'http://leipzig.freifunk.net'
-	option 'ssid' 'leipzig.freifunk.net'
-	option 'mesh_network' '104.61.0.0/16'
 	option 'latitude' '51.33348'
 	option 'longitude' '12.40297'
+	option 'mesh_network' '104.61.0.0/16'
+	option 'name' 'Freifunk Leipzig'
+	option 'ssid' 'leipzig.freifunk.net'
 	option 'suffix' 'olsr.leipzig.freifunk.net'
 	option 'vap' '1'
 
@@ -15,9 +15,8 @@ config 'defaults' 'bssidscheme'
 	option '1' '02:CA:FF:EE:BA:BE'
 
 config 'defaults' 'olsrd'
+
     option 'LinkQualityAlgorithm' 'etx_ff'
-
-
 config widget 'customindex'
     option enabled '1'
     option width '50%'
@@ -25,24 +24,23 @@ config widget 'customindex'
     option template 'html'
 
 config widget 'rssbundesweit'
+
     option cache '3600'
-    option width '50%'
-    option title 'bundesweiter Freifunk Blog'
+    option enabled '1'
+    option max '10'
     option template 'rssfeed'
-    option enabled '1'
-    option max '10'
+    option title 'bundesweiter Freifunk Blog'
     option url 'http://blog.freifunk.net/rss.xml'
-
+    option width '50%'
 config widget 'rssffl'
+
+    option cache '3600'
     option enabled '1'
     option max '10'
-    option cache '3600'
-    option width '100%'
-    option title 'interner Freifunk Leipzig Blog'
     option template 'iframe'
+    option title 'interner Freifunk Leipzig Blog'
     option url 'http://104.61.0.101/wordpress/'
-
-
+    option width '100%'
 config widget 'clear1'
     option template 'clear'
     option enabled '1'

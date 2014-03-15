@@ -19,10 +19,10 @@ config LoadPlugin
 	option library 'olsrd_nameservice.so.0.3'
 
 config LoadPlugin
-	option library 'olsrd_txtinfo.so.0.1'
 	option accept '0.0.0.0'
+	option library 'olsrd_txtinfo.so.0.1'
 
 config LoadPlugin
-	option library 'olsrd_jsoninfo.so.0.0'
 	option accept '0.0.0.0'
+	option library 'olsrd_jsoninfo.so.0.0'
 

@@ -12,20 +12,19 @@ config wifi-device  radio0
 	list ht_capab	DSSS_CCK-40
 
 config wifi-iface
-	option ifname	'adhoc2'
-	option network 	'adhoc2'
-	option device   'radio0'
-	option mode     'adhoc'
-	option ssid     'mesh-batman'
 	option bssid 	'02:CA:FE:CA:CA:40'
+	option device   'radio0'
+	option ifname	'adhoc2'
+	option mode     'adhoc'
+	option network 	'adhoc2'
+	option ssid     'mesh-batman'
 
 config wifi-iface
-	option ifname 	'ap2'
 	option device   radio0
+	option ifname 	'ap2'
 	option mode     ap
-	option ssid     freifunk-refugee
 	option network 	'mesh'
-
+	option ssid     freifunk-refugee
 
 config wifi-device  radio1
 	option type     mac80211
@@ -42,16 +41,17 @@ config wifi-device  radio1
 #	option disabled 1
 
 config wifi-iface
-	option ifname	'adhoc5'
-	option network 	'adhoc5'
-	option device   'radio1'
-	option mode     'adhoc'
-	option ssid     'mesh-batman'
 	option bssid 	'02:CA:FE:CA:CA:40'
+	option device   'radio1'
+	option ifname	'adhoc5'
+	option mode     'adhoc'
+	option network 	'adhoc5'
+	option ssid     'mesh-batman'
 
 config wifi-iface
-	option ifname 	'ap5'
 	option device   radio1
+	option ifname 	'ap5'
 	option mode     ap
-	option ssid     freifunk-refugee
 	option network 	'mesh'
+	option ssid     freifunk-refugee
+

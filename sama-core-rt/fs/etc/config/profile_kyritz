@@ -1,13 +1,13 @@
 config 'community' 'profile'
-	option 'name' 'Freifunk Kyritz'
+	option 'adhoc_dhcp_when_vap' '0'
 	option 'homepage' 'http://kyritz.freifunk.net'
-	option 'ssid' 'mesh.freifunk.net'
-	option 'mesh_network' '104.59.0.0/16'
 	option 'latitude' '52.94'
 	option 'longitude' '12.4'
+	option 'mesh_network' '104.59.0.0/16'
+	option 'name' 'Freifunk Kyritz'
+	option 'ssid' 'mesh.freifunk.net'
 	option 'suffix' 'olsr.kyritz.freifunk.net'
 	option 'vap' '1'
-	option 'adhoc_dhcp_when_vap' '0'
 
 config 'defaults' 'interface'
 	option 'netmask' '255.0.0.0'
@@ -16,9 +16,8 @@ config 'defaults' 'bssidscheme'
 	option '1' '02:CA:FF:EE:BA:BE'
 
 config 'defaults' 'olsrd'
+
     option 'LinkQualityAlgorithm' 'etx_ff'
-
-
 config widget 'customindex'
     option enabled '1'
     option width '50%'
@@ -26,23 +25,24 @@ config widget 'customindex'
     option template 'html'
 
 config widget 'rssffl'
+
+    option cache '3600'
     option enabled '1'
     option max '10'
-    option cache '3600'
-    option width '100%'
-    option title 'Freifunk Blog'
     option template 'iframe'
+    option title 'Freifunk Blog'
     option url 'http://freifunk.net'
-
+    option width '100%'
 config widget 'rssbundesweit'
+
     option cache '3600'
-    option width '50%'
-    option title 'bundesweiter Freifunk Blog'
-    option template 'rssfeed'
     option enabled '1'
     option max '10'
+    option template 'rssfeed'
+    option title 'bundesweiter Freifunk Blog'
     option url 'http://blog.freifunk.net/rss.xml'
-
+    option width '50%'
 config widget 'clear1'
-    option template 'clear'
+
     option enabled '1'
+    option template 'clear'

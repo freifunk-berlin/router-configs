@@ -1,20 +1,20 @@
 config 'system' 'system'
-	option 'hostname' 'OpenWrt'
 	option 'conloglevel' '8'
 	option 'cronloglevel' '9'
+	option 'hostname' 'OpenWrt'
 	option 'latitude' ''
-	option 'longitude' ''
 	option 'location' ''
+	option 'longitude' ''
 
 config 'public' 'community'
 	option 'name' 'augsburg'
 
 config 'public' 'contact'
-	option 'nickname' ''
-	option 'name' ''
 	option 'mail' ''
-	option 'phone' ''
+	option 'name' ''
+	option 'nickname' ''
 	option 'note' ''
+	option 'phone' ''
 
 config 'core' 'luci_main'
 	option 'mediaurlbase' '/luci-static/bootstrap'
@@ -25,6 +25,6 @@ config 'defaults' 'ipv6'
 	option 'enabled' '0'
 
 config 'general' 'general'
-	option 'sharenet' '0'
 	option 'localrestrict' '0'
+	option 'sharenet' '0'
 
