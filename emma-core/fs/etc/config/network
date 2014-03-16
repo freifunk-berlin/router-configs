@@ -17,7 +17,7 @@ config interface 'lan'
 	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
 	option netmask '255.255.255.240'
 	option ifname 'eth0.100'
-	list ip6prefix '2001:470:5038:8C48:0:0:0:0/61'
+	list ip6prefix '2001:470:5038:CAD0:0:0:0:0/61'
 
 config interface 'wan'
 	option dns '8.8.8.8'
@@ -192,4 +192,5 @@ config switch_vlan
 config interface 'm5ap'
 	option ifname 'eth0.109'
 	option macaddr 'fa:1a:67:a6:0e:55'
+	option proto 'none'
 

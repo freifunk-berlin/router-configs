@@ -93,10 +93,11 @@ config statistics 'collectd_netlink'
 	option enable '0'
 
 config statistics 'collectd_network'
+	option Forward '0'
 	option enable '1'
 
 config statistics 'collectd_processes'
-	option Processes 'uhttpd dnsmasq dropbear'
+	option Processes 'olsrd alfred batadv-vis hostapd collectd netifd dnsmasq dropbear'
 	option enable '1'
 
 config statistics 'collectd_tcpconns'
@@ -126,6 +127,9 @@ config statistics 'collectd_conntrack'
 	option enable '0'
 
 config statistics 'collectd_olsrd'
+	option CollectLinks 'Summary'
+	option CollectRoutes 'Summary'
+	option CollectTopology 'Summary'
 	option Host '127.0.0.1'
 	option Port '2006'
 	option enable '1'
@@ -141,5 +145,5 @@ config statistics 'collectd_uptime'
 	option enable '1'
 
 config collectd_network_server
-	option host 'monitor.berlin.freifunk.net'
+	option host '77.87.48.12'
 

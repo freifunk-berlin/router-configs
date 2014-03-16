@@ -68,17 +68,17 @@ config LoadPlugin
 	option latlon_file '/var/run/latlon.js'
 	option lat '52.499840000000000'
 	option hosts_file '/tmp/hosts/olsr'
-	list hosts '2001:470:5038:6A30:0:0:0:1 pre1.emma-nno-m2'
-
-config Hna6
-	option netaddr 'FD8F:44C9:C972:0:0:0:0:0'
-	option prefix '48'
-
-config Hna6
-	option netaddr '2001:470:5038:6A30:0:0:0:0'
-	option prefix '61'
+	list hosts '2001:470:5038:2E08:0:0:0:1 pre1.emma-nno-m2'
 
 config LoadPlugin
 	option ignore '1'
 	option library 'olsrd_dyn_gw_plain.so.0.4'
+
+config Hna6
+	option netaddr '2001:470:5038:2E08:0:0:0:0'
+	option prefix '61'
+
+config Hna6
+	option netaddr 'FD8F:44C9:C972:0:0:0:0:0'
+	option prefix '48'
 
