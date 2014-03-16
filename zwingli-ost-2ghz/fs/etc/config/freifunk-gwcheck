@@ -6,5 +6,5 @@ config 'gwcheck' 'hosts'
 
 # logging values err,info,debug
 config 'gwcheck' 'script'
-	option logging 'err'
+	option logging 'info'
 

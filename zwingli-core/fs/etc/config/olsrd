@@ -113,3 +113,7 @@ config Hna6
 	option netaddr 'FD1C:EBAA:D4A1:0:0:0:0:0'
 	option prefix '48'
 
+config Hna6
+	option netaddr 'fd1c:ebaa:d4a1::'
+	option prefix '48'
+

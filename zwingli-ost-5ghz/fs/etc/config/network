@@ -1,4 +1,3 @@
-
 config interface 'loopback'
 	option ifname 'lo'
 	option ipaddr '127.0.0.1'
@@ -11,6 +10,18 @@ config interface 'lan'
 	option ip6assign '64'
 	option ipaddr '104.130.10.2'
 	option netmask '255.0.0.0'
+	option proto 'static'
+	option type 'bridge'
+
+config interface 'lanbat'
+	option ifname '@lan'
+	option mesh 'bat0'
+	option proto 'batadv'
+
+config interface 'mesh'
+	option ifname 'bat0'
+	option ipaddr '6.23.16.2'
+	option netmask '255.255.240.0'
 	option proto 'static'
 	option type 'bridge'
 
@@ -29,11 +40,10 @@ config interface 'wireless0'
 	list dns '2002:5968:c28e::53'
 	option ipaddr '104.130.10.1'
 	option netmask '255.0.0.0'
+	option mtu '1532'
 
-config interface 'wireless0dhcp'
-	option ip6assign '64'
-	option proto 'static'
-
-config interface 'henet'
-	option proto '6in4'
+config interface 'wireless0bat'
+	option ifname '@wireless0'
+	option mesh 'bat0'
+	option proto 'batadv'
 

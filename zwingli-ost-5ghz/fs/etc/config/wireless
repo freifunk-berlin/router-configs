@@ -29,6 +29,6 @@ config wifi-iface
 	option encryption 'none'
 	option isolate '1'
 	option mode 'ap'
-	option network 'wireless0dhcp'
+	option network 'mesh'
 	option ssid 'berlin.freifunk.net'
 

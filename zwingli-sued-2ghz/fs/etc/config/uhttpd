@@ -11,6 +11,7 @@ config uhttpd 'main'
 	option rfc1918_filter '0'
 	option script_timeout '60'
 	option tcp_keepalive '1'
+	option ubus_prefix '/ubus'
 
 config cert 'px5g'
 	option bits '1024'

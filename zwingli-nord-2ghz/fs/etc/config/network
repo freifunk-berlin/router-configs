@@ -33,3 +33,20 @@ config interface 'wireless0dhcp'
 	option ip6assign '64'
 	option proto 'static'
 
+config interface 'wireless0bat'
+	option proto 'batadv'     
+	option ifname '@wireless0'
+	option mesh 'bat0'       
+	
+config interface 'lanbat'                      
+	option ifname '@lan' 
+	option mesh 'bat0'   
+	option proto 'batadv'
+
+config interface 'mesh'                        
+	option ifname 'bat0'          
+	option ipaddr '6.23.16.14'     
+	option netmask '255.255.240.0'
+	option proto 'static'         
+	option type 'bridge'
+

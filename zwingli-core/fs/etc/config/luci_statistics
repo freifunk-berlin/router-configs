@@ -14,7 +14,7 @@ config statistics 'collectd'
 	option TypesDB '/usr/share/collectd/types.db'
 
 config statistics 'collectd_ping'
-	option Hosts '104.131.99.1 104.8.6.1 104.130.1.6 104.131.4.24'
+	option Hosts '104.131.99.1 104.8.6.1 104.131.4.24 6.23.19.2'
 	option Interval '30'
 	option TTL '127'
 	option enable '1'
@@ -100,7 +100,7 @@ config collectd_network_server
 	option host 'monitor.berlin.freifunk.net'
 
 config statistics 'collectd_processes'
-	option Processes 'uhttpd dnsmasq dropbear'
+	option Processes 'olsrd alfred batadv-vis collectd dnsmasq dropbear'
 	option enable '1'
 
 config statistics 'collectd_tcpconns'

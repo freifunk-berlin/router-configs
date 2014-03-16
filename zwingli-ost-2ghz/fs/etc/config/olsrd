@@ -1,11 +1,9 @@
 
 config LoadPlugin
-	option ignore '0'
 	option library 'olsrd_arprefresh.so.0.1'
 
 config LoadPlugin
 	option accept '0.0.0.0'
-	option ignore '0'
 	option library 'olsrd_txtinfo.so.0.1'
 
 config LoadPlugin
@@ -22,8 +20,6 @@ config olsrd
 	option NatThreshold '0.75'
 	option OlsrPort '698'
 	option Pollrate '0.025'
-	option SmartGateway 'yes'
-	option SmartGatewayUplink 'none'
 	option TcRedundancy '2'
 	option Willingness '3'
 
@@ -47,20 +43,17 @@ config LoadPlugin
 
 config LoadPlugin
 	option file '/var/run/olsrd.watchdog'
-	option ignore '0'
 	option interval '30'
 	option library 'olsrd_watchdog.so.0.1'
 
 config LoadPlugin
-	option services_file '/var/etc/services.olsr'
-	option library 'olsrd_nameservice.so.0.3'
-	option suffix '.olsr'
-	option latlon_file '/var/run/latlon.js'
 	option hosts_file '/tmp/hosts/olsr'
-	option lon '13.454830790023667'
 	option lat '52.50355457229739'
-	list hosts 'FD6B:7CFC:9D6B::1 pre1.Zwingli-Ost-2GHz'
-	option ignore '0'
+	option latlon_file '/var/run/latlon.js'
+	option library 'olsrd_nameservice.so.0.3'
+	option lon '13.454830790023667'
+	option services_file '/var/etc/services.olsr'
+	option suffix '.olsr'
 
 config LoadPlugin
 	option ignore '1'
@@ -77,6 +70,6 @@ config Interface
 	option interface 'lan'
 
 config Hna6
-	option netaddr 'FD6B:7CFC:9D6B:0:0:0:0:0'
+	option netaddr 'FDD6:C438:D3E6:0:0:0:0:0'
 	option prefix '48'
 

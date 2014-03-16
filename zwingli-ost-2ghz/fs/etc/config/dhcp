@@ -1,6 +1,5 @@
 
 config dnsmasq
-	option addnhosts '/tmp/hosts/olsr'
 	option authoritative '1'
 	option boguspriv '1'
 	option domain 'olsr'
@@ -15,14 +14,16 @@ config dnsmasq
 	option rebind_localhost '1'
 	option rebind_protection '1'
 	option resolvfile '/tmp/resolv.conf.auto'
-
-config dhcp 'wan'
-	option ignore '1'
-	option interface 'wan'
+	option server '104.130.10.26'
 
 config dhcp 'lan'
 	option ignore '1'
 	option interface 'lan'
-	list dhcp_option '119,lan'
-	list dhcp_option '119,olsr'
+	option leasetime '12h'
+	option limit '150'
+	option start '100'
+
+config dhcp 'wan'
+	option ignore '1'
+	option interface 'wan'
 

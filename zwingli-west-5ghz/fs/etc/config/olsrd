@@ -47,14 +47,13 @@ config LoadPlugin
 	option library 'olsrd_watchdog.so.0.1'
 
 config LoadPlugin
-	option services_file '/var/etc/services.olsr'
-	option library 'olsrd_nameservice.so.0.3'
-	option suffix '.olsr'
-	option latlon_file '/var/run/latlon.js'
 	option hosts_file '/tmp/hosts/olsr'
 	option lat '52.50355457229739'
+	option latlon_file '/var/run/latlon.js'
+	option library 'olsrd_nameservice.so.0.3'
 	option lon '13.454830790023667'
-	list hosts 'FD39:3A74:B5AC::1 pre1.Zwingli-West-5GHz'
+	option services_file '/var/etc/services.olsr'
+	option suffix '.olsr'
 
 config LoadPlugin
 	option ignore '1'
@@ -72,5 +71,9 @@ config Interface
 
 config Hna6
 	option netaddr 'FD39:3A74:B5AC:0:0:0:0:0'
+	option prefix '48'
+
+config Hna6
+	option netaddr 'fd39:3a74:b5ac::'
 	option prefix '48'
 

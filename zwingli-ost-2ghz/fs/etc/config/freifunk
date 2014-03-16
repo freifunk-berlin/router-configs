@@ -2,7 +2,7 @@
 config public 'contact'
 
 config public 'community'
-	option ssid 'olsr.freifunk.net'
+	option ssid 'ch13.freifunk.net'
 	option mapserver 'http://map.pberg.freifunk.net/'
 	list owm_api 'http://api.openwifimap.net'
 	list owm_api 'http://owmapi.pberg.freifunk.net'
