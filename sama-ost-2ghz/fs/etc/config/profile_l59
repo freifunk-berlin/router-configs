@@ -11,8 +11,8 @@ config 'community' 'profile'
 	option 'vap' '1'
 
 config 'defaults' 'interface'
-
     option 'netmask' '255.0.0.0'
+
 config 'defaults' 'bssidscheme'
 	option '1' '02:CA:FF:EE:BA:BE'
 

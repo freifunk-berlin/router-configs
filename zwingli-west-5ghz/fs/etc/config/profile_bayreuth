@@ -1,5 +1,4 @@
 config 'community' 'profile'
-
         option 'homepage' 'http://bayreuth.freifunk.net'
         option 'latitude' '49.945812'
         option 'longitude' '11.575045'
@@ -9,12 +8,13 @@ config 'community' 'profile'
         option 'splash_prefix' '28'
         option 'ssid' 'bayreuth.freifunk.net'
         option 'suffix' 'ffbt'
+
 config 'defaults' 'interface'
-
         option 'netmask' '255.255.192.0'
+
 config 'defaults' 'wifi_device'
-
         option 'channel' '4'
-config 'defaults' 'wifi_iface'
 
+config 'defaults' 'wifi_iface'
         option 'bssid' '42:CA:FF:EE:BA:BE'
+

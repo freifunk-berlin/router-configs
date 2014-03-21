@@ -20,8 +20,8 @@ config 'defaults' 'bssidscheme'
 	option '10'	'02:CA:FF:EE:BA:BE'
 
 config 'defaults' 'ssidscheme'
-
         option '10'     'olsr.freifunk.net'
+
 config 'defaults' 'interface'
 	option 'netmask' '255.0.0.0'
 

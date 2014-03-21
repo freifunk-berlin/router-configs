@@ -6,10 +6,10 @@ config system
 	option nodeid '95ebf7f672cd0644036029322f378c46'
 	option timezone 'CET-1CEST,M3.5.0,M10.5.0/3'
 	option zonename 'Europe/Berlin'
-
         option latitude '52.540750000000000'
         option latlon '52.540750000000000 13.349829999999999'                                                                                  
         option longitude '13.349829999999999'
+
 config timeserver 'ntp'
 	list server '0.openwrt.pool.ntp.org'
 	list server '1.openwrt.pool.ntp.org'

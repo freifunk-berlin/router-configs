@@ -57,18 +57,19 @@ config classgroup "Default"
 	option default      "Normal"
 
 config class "Priority"
-	option packetsize  400
-	option maxsize     400
 	option avgrate     10
+	option maxsize     400
+	option packetsize  400
 	option priority    20
+
 config class "Priority_down"
 	option avgrate     10
 	option packetsize  1000
 
 config class "Express"
-	option packetsize  1000
-	option maxsize     800
 	option avgrate     50
+	option maxsize     800
+	option packetsize  1000
 	option priority    10
 
 config class "Normal"

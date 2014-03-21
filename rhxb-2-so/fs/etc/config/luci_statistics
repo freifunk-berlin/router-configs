@@ -1,8 +1,8 @@
 config 'statistics' 'rrdtool'
-
         option 'default_timespan' '1hour'
         option 'image_path' '/tmp/rrdimg'
         option 'image_width' '600'
+
 config 'statistics' 'collectd'
 	option 'BaseDir' '/var/run/collectd'
 	option 'Include' '/etc/collectd/conf.d'

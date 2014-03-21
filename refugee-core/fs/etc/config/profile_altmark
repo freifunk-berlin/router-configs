@@ -16,16 +16,15 @@ config 'defaults' 'bssidscheme'
 	option '1' '02:CA:FF:EE:BA:BE'
 
 config 'defaults' 'olsrd'
-
     option 'LinkQualityAlgorithm' 'etx_ff'
+
 config widget 'customindex'
     option enabled '1'
-    option width '50%'
     option paddingright '5%'
     option template 'html'
+    option width '50%'
 
 config widget 'rssffl'
-
     option cache '3600'
     option enabled '1'
     option max '10'
@@ -33,8 +32,8 @@ config widget 'rssffl'
     option title 'Freifunk Blog'
     option url 'http://freifunk.net'
     option width '100%'
-config widget 'rssbundesweit'
 
+config widget 'rssbundesweit'
     option cache '3600'
     option enabled '1'
     option max '10'
@@ -42,7 +41,8 @@ config widget 'rssbundesweit'
     option title 'bundesweiter Freifunk Blog'
     option url 'http://blog.freifunk.net/rss.xml'
     option width '50%'
-config widget 'clear1'
 
+config widget 'clear1'
     option enabled '1'
     option template 'clear'
+

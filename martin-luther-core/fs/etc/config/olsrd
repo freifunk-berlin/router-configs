@@ -1,5 +1,4 @@
 config olsrd
-
   option AllowNoInt 'yes'
   option FIBMetric 'flat'
   option IpVersion '6and4'
@@ -7,8 +6,8 @@ config olsrd
   option NatThreshold '0.75'
   option Pollrate '0.025'
   option TcRedundancy '2' 
-config InterfaceDefaults
 
+config InterfaceDefaults
   option HelloInterval '3.0'
   option HelloValidityTime '125.0'
   option HnaInterval '10.0'
@@ -18,47 +17,47 @@ config InterfaceDefaults
   option MidValidityTime '500.0'
   option TcInterval '2.0'
   option TcValidityTime '500.0'
-config Interface
 
+config Interface
   option ignore '0'
   option interface 'no'
-config Interface
 
+config Interface
   option ignore '0'
   option interface 'so'
-config Interface
 
+config Interface
   option ignore '0'
   option interface 'sw'
-config Interface
 
+config Interface
   option Mode 'ether'
   option ignore '0'
   option interface 'olsr'
+
 config LoadPlugin                      
-
   option library 'olsrd_arprefresh.so.0.1'
-config LoadPlugin                             
 
+config LoadPlugin                             
   option accept '0.0.0.0'                 
   option library 'olsrd_txtinfo.so.0.1'       
-config LoadPlugin                      
 
+config LoadPlugin                      
   option accept '0.0.0.0'               
   option ignore '0'                     
   option library 'olsrd_jsoninfo.so.0.0'
+
 config LoadPlugin                       
   option library 'olsrd_httpinfo.so.0.1'
   option port '1978'                    
   list Net '0.0.0.0 0.0.0.0'            
                                         
 config LoadPlugin                       
-
   option file '/var/run/olsrd.watchdog'         
   option interval '30'      
   option library 'olsrd_watchdog.so.0.1'        
-config LoadPlugin                               
 
+config LoadPlugin                               
   option hosts_file '/tmp/hosts/olsr'            
   option lat '52.484333570684820'                    
   option latlon_file '/var/run/latlon.js'            
@@ -66,7 +65,8 @@ config LoadPlugin
   option lon '13.436087513427430'               
   option services_file '/var/etc/services.olsr' 
   option suffix '.olsr'                         
-config LoadPlugin                                
 
+config LoadPlugin                                
   option ignore '1'
   option library 'olsrd_dyn_gw_plain.so.0.4'     
+

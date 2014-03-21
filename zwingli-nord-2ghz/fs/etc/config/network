@@ -34,10 +34,10 @@ config interface 'wireless0dhcp'
 	option proto 'static'
 
 config interface 'wireless0bat'
-	option proto 'batadv'     
 	option ifname '@wireless0'
 	option mesh 'bat0'       
-	
+	option proto 'batadv'     
+
 config interface 'lanbat'                      
 	option ifname '@lan' 
 	option mesh 'bat0'   

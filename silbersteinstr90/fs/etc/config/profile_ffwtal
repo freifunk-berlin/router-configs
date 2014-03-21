@@ -13,11 +13,11 @@ config 'defaults' 'wifi_device'
 	option 'channel' '11'
 
 config 'defaults' 'wifi_iface'
-
         option 'bssid' '02:40:00:42:42:42'
-config 'defaults' 'interface'
 
+config 'defaults' 'interface'
         option 'netmask' '255.255.0.0'
+
 config 'defaults' 'olsr_interface'
 	option 'HelloInterval' '3.0'
 	option 'HelloValidityTime' '125.0'

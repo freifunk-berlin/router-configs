@@ -1,5 +1,4 @@
 config 'community' 'profile'
-
         option 'homepage' 'http://freifunk.reihen.de'
         option 'latitude' '49.21'
         option 'longitude' '8.91'
@@ -8,13 +7,14 @@ config 'community' 'profile'
         option 'splash_network' '172.23.26.0/29'
         option 'splash_prefix' '29'
         option 'ssid' 'freifunk.reihen.de'
-config 'defaults' 'interface'
 
+config 'defaults' 'interface'
         option 'netmask' '255.255.0.0'
+
 config 'defaults' 'wifi_device'
 	option 'bssid' '02:07:04:08:08:09'
 	option 'channel' '13'
 
 config 'defaults' 'bssidscheme'
-
         option '13'      '02:07:04:08:08:09'
+
