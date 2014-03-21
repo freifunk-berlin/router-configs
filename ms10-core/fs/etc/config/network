@@ -1,0 +1,121 @@
+
+config interface 'loopback'
+	option ifname 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config globals 'globals'
+	option ula_prefix 'fdc0:4ba0:a1ea::/48'
+
+config interface 'lan'
+	option ifname 'eth0.1'
+	option proto 'static'
+	option ipaddr '192.168.1.1'
+	option netmask '255.255.255.0'
+	option ip6assign '64'
+	list ip6prefix '2001:470:5038:7708:0:0:0:0/61'
+
+config interface 'mgmt'
+	option ifname 'eth0.40'
+	option proto 'static'
+	option ipaddr '10.111.5.3'
+	option netmask '255.255.255.0'
+	option ip6assign '64'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option macaddr 'f8:1a:67:a5:10:01'
+
+config interface 'olsr'
+	option ifname 'eth0.20'
+	option proto 'static'
+	option ipaddr '104.208.1.1'
+	option netmask '255.255.255.240'
+	option ip6assign '64'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option macaddr 'f8:1a:67:a5:10:02'
+
+config interface 'w5'
+	option ifname 'eth0.11'
+	option proto 'static'
+	option ipaddr '104.208.1.17'
+	option netmask '255.255.255.252'
+	option ip6assign '64'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option macaddr 'f8:1a:67:a5:10:03'
+
+config interface 'n5'
+	option ifname 'eth0.12'
+	option proto 'static'
+	option ipaddr '104.208.1.21'
+	option netmask '255.255.255.252'
+	option ip6assign '64'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option macaddr 'f8:1a:67:a5:10:04'
+
+config interface 's5'
+	option ifname 'eth0.13'
+	option proto 'static'
+	option ipaddr '104.208.1.25'
+	option netmask '255.255.255.252'
+	option ip6assign '64'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option macaddr 'f8:1a:67:a5:10:05'
+
+config interface 'o5'
+	option ifname 'eth0.14'
+	option proto 'static'
+	option ipaddr '104.208.1.29'
+	option netmask '255.255.255.252'
+	option ip6assign '64'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option macaddr 'f8:1a:67:a5:10:06'
+
+config interface 'rhxb'
+	option ifname 'eth0.15'
+	option proto 'static'
+	option ipaddr '104.201.4.50'
+	option netmask '255.255.255.248'
+	option ip6assign '64'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option macaddr 'f8:1a:67:a5:10:06'
+
+config switch
+	option name 'switch0'
+	option reset '1'
+	option enable_vlan '1'
+
+config switch_vlan
+	option device 'switch0'
+	option vlan '20'
+	option ports '0t 3'
+
+config switch_vlan
+	option device 'switch0'
+	option vlan '11'
+	option ports '0t 2t'
+
+config switch_vlan
+	option device 'switch0'
+	option vlan '12'
+	option ports '0t 2t'
+
+config switch_vlan
+	option device 'switch0'
+	option vlan '13'
+	option ports '0t 2t'
+
+config switch_vlan
+	option device 'switch0'
+	option vlan '14'
+	option ports '0t 2t'
+
+config switch_vlan
+	option device 'switch0'
+	option vlan '15'
+	option ports '0t 2t'
+
+config switch_vlan
+	option device 'switch0'
+	option vlan '40'
+	option ports '0t 1 2t 3t 4t 5t'
+
