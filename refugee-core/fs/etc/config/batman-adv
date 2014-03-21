@@ -1,10 +1,11 @@
+
 config 'mesh' 'bat0'
 	option 'aggregated_ogms'
 	option 'ap_isolation'
 	option 'bonding'
 	option 'fragmentation'
-	option 'gw_bandwidth'
-	option 'gw_mode'
+	option 'gw_bandwidth' '50mbit/50mbit'
+	option 'gw_mode' 'server'
 	option 'gw_sel_class'
 	option 'log_level'
 	option 'orig_interval'
