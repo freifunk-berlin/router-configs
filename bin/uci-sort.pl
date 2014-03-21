@@ -18,7 +18,8 @@ foreach my $file(@ARGV) {
 			}
 			if ($j > $#all || $all[$j] =~ m#^config\b#s) {
 				# Otherwise we have comments or dirt: dont sort
-				splice(@all, $i, $j - $i, (sort @k, "\n"));
+				splice(@all, $i, $j - $i, (sort @k), "\n");
+				$j = $i + $#k + 1;
 			}
 			$i = $j;
 		}
