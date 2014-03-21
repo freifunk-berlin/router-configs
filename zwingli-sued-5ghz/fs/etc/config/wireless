@@ -1,0 +1,33 @@
+
+config wifi-device 'radio0'
+	option type 'mac80211'
+	option hwmode '11na'
+	option macaddr 'dc:9f:db:64:12:ca'
+	list ht_capab 'SHORT-GI-40'
+	list ht_capab 'TX-STBC'
+	list ht_capab 'RX-STBC1'
+	list ht_capab 'DSSS_CCK-40'
+	option disabled '0'
+	option country 'DE'
+	option noscan '1'
+	option distance '1000'
+	option htmode 'HT40+'
+	option channel '100'
+	option mcast_rate '6000'
+
+config wifi-iface
+	option bssid '12:00:CA:FF:EE:EE'
+	option device 'radio0'
+	option encryption 'none'
+	option mode 'adhoc'
+	option network 'wireless0'
+	option ssid 'ch100.freifunk.net'
+
+config wifi-iface
+	option device 'radio0'
+	option encryption 'none'
+	option isolate '1'
+	option mode 'ap'
+	option network 'mesh'
+	option ssid 'berlin.freifunk.net'
+

@@ -2,12 +2,12 @@
 # set hostname according to mesh id
 config system
 	option hostname 'refugee-mesh-X'
-	option zonename 'Europe/Berlin'
-	option timezone 'CET-1CEST,M3.5.0,M10.5.0/3'
-	option location 'Ohlauer Str.'
-	option latlon '52.49661 13.43006'
 	option latitude '52.49661'
+	option latlon '52.49661 13.43006'
+	option location 'Ohlauer Str.'
 	option longitude '13.43006'
+	option timezone 'CET-1CEST,M3.5.0,M10.5.0/3'
+	option zonename 'Europe/Berlin'
 
 config timeserver 'ntp'
 	list server '0.openwrt.pool.ntp.org'
@@ -17,11 +17,11 @@ config timeserver 'ntp'
 	option enable_server '0'
 
 config led 'led_usb'
+	option dev '1-1'
+	option interval '50'
 	option name 'USB'
 	option sysfs 'tp-link:green:usb'
 	option trigger 'usbdev'
-	option dev '1-1'
-	option interval '50'
 
 config led 'led_wlan2g'
 	option name 'WLAN2G'

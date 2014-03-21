@@ -15,21 +15,22 @@ then
     exit
 fi
 
-if [[ $(ls ~/Downloads/XM-*.cfg 2>&- | wc -l) -gt 1 ]]
+ip=$2
+if [[ -z "$ip" ]]
 then
-    echo "More than one XM*.cfg in your Download directory. Clean up first."
+    echo "No host specified."
+    usage
     exit
 fi
 
-cfg=$(echo ~/Downloads/XM-*.cfg)
-if [[ ! -f ${cfg} ]]
-then
-    echo "No XM-*.cfg in your Download directory. Use Ubnt-Backup."
-    exit
-fi
+mac=$(ssh "root@$ip" "ip link show dev wifi0"|sed -n 's,.*link/ether \([^ ]\+\) .*,\1,p'|tr a-f A-F)
 
-echo "Writing ${dst}/${cfg##*/}"
-cat ${cfg}|sort|sed -e 's,\(password\)=.*,\1=[removed],' > ${dst}/${cfg##*/}
-rm -v ${cfg}
+case ${mac} in "")
+	echo "Cannot determine MAC address" >&2
+	exit 1
+;;esac
+
+ssh "root@$ip" "cat /tmp/running.cfg"|sort|sed -e 's,\(password\)=.*,\1=[removed],' > ${dst}/XM-${mac//:/}.cfg
+ssh "root@$ip" "cd /etc && tar -cz \$(find persistent -type f)"| tar -xz -C "$dst"
 
 #EOF

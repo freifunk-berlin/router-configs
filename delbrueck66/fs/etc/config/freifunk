@@ -1,4 +1,5 @@
 config freifunk contact
+	option mail 'borgers@mi.fu-berlin.de'
 	option nickname 'booo'
 	option note 'foo'
-	option mail 'borgers@mi.fu-berlin.de'
+

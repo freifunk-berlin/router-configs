@@ -3,22 +3,22 @@ config LoadPlugin
 	option library 'olsrd_arprefresh.so.0.1'
 
 config LoadPlugin
-	option library 'olsrd_txtinfo.so.0.1'
 	option accept '0.0.0.0'
+	option library 'olsrd_txtinfo.so.0.1'
 
 config LoadPlugin
-	option library 'olsrd_jsoninfo.so.0.0'
-	option ignore '0'
 	option accept '0.0.0.0'
+	option ignore '0'
+	option library 'olsrd_jsoninfo.so.0.0'
 
 config olsrd
-	option IpVersion '6and4'
 	option AllowNoInt 'yes'
-	option NatThreshold '0.75'
-	option LinkQualityAlgorithm 'etx_ff'
 	option FIBMetric 'flat'
-	option TcRedundancy '2'
+	option IpVersion '6and4'
+	option LinkQualityAlgorithm 'etx_ff'
+	option NatThreshold '0.75'
 	option Pollrate '0.025'
+	option TcRedundancy '2'
 
 config InterfaceDefaults
 	option MidValidityTime '500.0'
@@ -38,9 +38,9 @@ config InterfaceDefaults
 #	option ignore '1'
 
 config Interface
+	option LinkQualityMult 'default 0.1'
 	option ignore '0'
 	option interface 'wireless0'
-	option LinkQualityMult 'default 0.1'
 
 config Interface
 	option Mode 'ether'
@@ -58,24 +58,24 @@ config Interface
 	option interface 'nanobridge1'
 
 config LoadPlugin
-	option interval '30'
 	option file '/var/run/olsrd.watchdog'
+	option interval '30'
 	option library 'olsrd_watchdog.so.0.1'
 
 config LoadPlugin
+	option hosts_file '/tmp/hosts/olsr'
+	option lat '52.482033673261273'
+	option latlon_file '/var/run/latlon.js'
+	option library 'olsrd_nameservice.so.0.3'
 	option lon '13.431924725037348'
 	option services_file '/var/etc/services.olsr'
-	option library 'olsrd_nameservice.so.0.3'
 	option suffix '.olsr'
-	option latlon_file '/var/run/latlon.js'
-	option lat '52.482033673261273'
-	option hosts_file '/tmp/hosts/olsr'
 
 config Hna6
-	option prefix '48'
 	option netaddr 'FDC7:89B2:7D3E:0:0:0:0:0'
+	option prefix '48'
 
 config LoadPlugin
-	option library 'olsrd_dyn_gw_plain.so.0.4'
 	option ignore '1'
+	option library 'olsrd_dyn_gw_plain.so.0.4'
 

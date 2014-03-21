@@ -17,8 +17,8 @@ config openvpn custom_config
 #################################################
 
 config openvpn k9_silke
-	option enabled 1
 	option config /etc/openvpn/silke.conf
+	option enabled 1
 
 config openvpn k9_xorxe
 	option enabled 1

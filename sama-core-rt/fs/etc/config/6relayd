@@ -1,0 +1,13 @@
+
+config server 'default'
+	option always_assume_default '1'
+	option compat_ula '1'
+	option rd 'server'
+	option dhcpv6 'server'
+	option management_level '1'
+	list network 'k9'
+	list network 'zwingli'
+	list network 'segen'
+	list network 'afra'
+	list network 'mesh'
+

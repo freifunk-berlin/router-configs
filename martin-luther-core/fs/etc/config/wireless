@@ -15,10 +15,10 @@ config wifi-device  radio0
 
 config wifi-iface
 	option device   radio0
-	option network  lan
-	option mode     ap
-	option ssid     OpenWrt
 	option encryption none
+	option mode     ap
+	option network  lan
+	option ssid     OpenWrt
 
 config wifi-device  radio1
 	option type     mac80211
@@ -37,8 +37,8 @@ config wifi-device  radio1
 
 config wifi-iface
 	option device   radio1
-	option network  lan
-	option mode     ap
-	option ssid     OpenWrt
 	option encryption none
+	option mode     ap
+	option network  lan
+	option ssid     OpenWrt
 

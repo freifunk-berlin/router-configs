@@ -18,5 +18,6 @@ config 'defaults' 'interface'
 	option 'netmask' '255.255.255.0'
 
 config 'defaults' 'luci_splash'
-	option 'limit_up' '20'
 	option 'limit_down' '50'
+	option 'limit_up' '20'
+

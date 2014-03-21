@@ -27,16 +27,17 @@ config wifi-device  radio1
 	list ht_capab	DSSS_CCK-40
 
 config wifi-iface
-	option ifname	'adhoc'
-	option network 	'adhoc'
-	option device   'radio0'
-	option mode     'adhoc'
-	option ssid     'mesh-batman'
 	option bssid 	'02:CA:FE:CA:CA:40'
+	option device   'radio0'
+	option ifname	'adhoc'
+	option mode     'adhoc'
+	option network 	'adhoc'
+	option ssid     'mesh-batman'
 
 config wifi-iface
-	option ifname 	'ap'
-	option network 	'mesh'
 	option device   'radio1'
+	option ifname 	'ap'
 	option mode     'ap'
+	option network 	'mesh'
 	option ssid     'freifunk-refugee'
+

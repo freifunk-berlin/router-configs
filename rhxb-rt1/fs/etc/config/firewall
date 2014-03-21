@@ -38,8 +38,8 @@ config zone
 	list masq_src '10.133.7.2/24'
 
 config forwarding
-	option src		lan
 	option dest		freifunk
+	option src		lan
 
 config forwarding
 	option src		freifunk

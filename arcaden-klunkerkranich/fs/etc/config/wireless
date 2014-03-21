@@ -26,15 +26,16 @@ config wifi-device 'radio1'
 	list ht_capab	DSSS_CCK-40
 
 config wifi-iface
+	option device 'radio0'
 	option encryption 'none'
 	option mode 'ap'
 	option network 'freifunk'
-	option device 'radio0'
 	option ssid 'freifunk-klunkerkranich'
 
 config wifi-iface
-	option network 'freifunk'
-	option encryption 'none'
 	option device 'radio1'
+	option encryption 'none'
 	option mode 'ap'
+	option network 'freifunk'
 	option ssid 'freifunk-klunkerkranich'
+

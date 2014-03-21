@@ -1,0 +1,111 @@
+
+config interface 'loopback'
+	option ifname 'lo'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+	option proto 'static'
+
+config globals 'globals'
+	option ula_prefix 'fd1c:ebaa:d4a1::/48'
+
+config interface 'mesh'
+	option ifname 'bat0'
+	option ipaddr '6.23.16.1'
+	option netmask '255.255.240.0'
+	option proto 'static'
+
+config interface 'lan'
+	option ifname 'eth0'
+	option ip6assign '64'
+	option ipaddr '192.168.10.1'
+	option macaddr '00:04:9F:EF:10:10'
+	option netmask '255.255.255.0'
+	option proto 'static'
+	option type 'bridge'
+
+config interface 'olsr'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option ifname 'eth0.1'
+	option ip6assign '64'
+	option ipaddr '104.130.10.26'
+	option macaddr '00:04:9F:EF:17:17'
+	option netmask '255.0.0.0'
+	option proto 'static'
+
+config interface 'olsrbat'
+	option ifname '@olsr'
+	option mesh 'bat0'
+	option proto 'batadv'
+
+config interface 'fhain'
+	option ifname 'eth0.3'
+	option ip6assign '64'
+	option ipaddr '104.130.10.19'
+	option macaddr '00:04:9F:EF:01:03'
+	option netmask '255.0.0.0'
+	option proto 'static'
+
+config interface 'fhainbat'
+	option ifname '@fhain'
+	option mesh 'bat0'
+	option proto 'batadv'
+
+config interface 'kreuzberg'
+	option ifname 'eth0.4'
+	option ip6assign '64'
+	option ipaddr '104.130.10.23'
+	option macaddr '00:04:9F:EF:01:04'
+	option netmask '255.0.0.0'
+	option proto 'static'
+
+config interface 'kreuzbergbat'
+	option ifname '@kreuzberg'
+	option mesh 'bat0'
+	option proto 'batadv'
+
+config interface 'fluxfm'
+	option ifname 'eth0.7'
+	option ip6assign '64'
+	option ipaddr '104.130.10.17'
+	option macaddr '00:04:9F:EF:01:07'
+	option netmask '255.0.0.0'
+	option proto 'static'
+
+config interface 'fluxfmbat'
+	option ifname '@fluxfm'
+	option mesh 'bat0'
+	option proto 'batadv'
+
+config interface 'neukoelln'
+	option ifname 'eth0.8'
+	option ip6assign '64'
+	option ipaddr '104.130.10.21'
+	option macaddr '00:04:9F:EF:01:08'
+	option netmask '255.0.0.0'
+	option proto 'static'
+
+config interface 'neukoellnbat'
+	option ifname '@neukoelln'
+	option mesh 'bat0'
+	option proto 'batadv'
+
+config route
+	option gateway '104.130.10.19'
+	option interface 'fhain'
+	option target '104.130.10.20'
+
+config route
+	option gateway '104.130.10.23'
+	option interface 'kreuzberg'
+	option target '104.130.10.24'
+
+config route
+	option gateway '104.130.10.17'
+	option interface 'fluxfm'
+	option target '104.130.10.18'
+
+config route
+	option gateway '104.130.10.21'
+	option interface 'neukoelln'
+	option target '104.130.10.22'
+

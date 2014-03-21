@@ -1,13 +1,13 @@
 
 config system
-	option zonename 'Europe/Berlin'
-	option timezone 'CET-1CEST,M3.5.0,M10.5.0/3'
-	option location 'Otto-von-Simson-Straße 23'
 	option cronloglevel '10'
 	option hostname 'AStA-FU'
-	option latlon '52.453310769560933 13.287857914428994'
 	option latitude '52.453310769560933'
+	option latlon '52.453310769560933 13.287857914428994'
+	option location 'Otto-von-Simson-Straße 23'
 	option longitude '13.287857914428994'
+	option timezone 'CET-1CEST,M3.5.0,M10.5.0/3'
+	option zonename 'Europe/Berlin'
 
 config timeserver 'ntp'
 	list server '0.openwrt.pool.ntp.org'

@@ -1,0 +1,79 @@
+
+config LoadPlugin
+	option library 'olsrd_arprefresh.so.0.1'
+
+config LoadPlugin
+	option accept '0.0.0.0'
+	option library 'olsrd_txtinfo.so.0.1'
+
+config LoadPlugin
+	option accept '0.0.0.0'
+	option ignore '0'
+	option library 'olsrd_jsoninfo.so.0.0'
+
+config olsrd
+	option AllowNoInt 'yes'
+	option FIBMetric 'flat'
+	option IpVersion '6and4'
+	option LinkQualityAlgorithm 'etx_ff'
+	option LinkQualityLevel '2'
+	option NatThreshold '0.75'
+	option OlsrPort '698'
+	option Pollrate '0.025'
+	option TcRedundancy '2'
+	option Willingness '3'
+
+config InterfaceDefaults
+	option HelloInterval '3.0'
+	option HelloValidityTime '125.0'
+	option HnaInterval '10.0'
+	option HnaValidityTime '125.0'
+	option Ip4Broadcast '255.255.255.255'
+	option MidInterval '25.0'
+	option MidValidityTime '500.0'
+	option Mode 'mesh'
+	option TcInterval '2.0'
+	option TcValidityTime '500.0'
+
+config LoadPlugin
+	option P2pdTtl '10'
+	option UdpDestPort '224.0.0.251 5353'
+	option ignore '1'
+	option library 'olsrd_p2pd.so.0.1.0'
+
+config LoadPlugin
+	option file '/var/run/olsrd.watchdog'
+	option interval '30'
+	option library 'olsrd_watchdog.so.0.1'
+
+config LoadPlugin
+	option hosts_file '/tmp/hosts/olsr'
+	option lat '52.50355457229739'
+	option latlon_file '/var/run/latlon.js'
+	option library 'olsrd_nameservice.so.0.3'
+	option lon '13.454830790023667'
+	option services_file '/var/etc/services.olsr'
+	option suffix '.olsr'
+
+config LoadPlugin
+	option ignore '1'
+	option library 'olsrd_dyn_gw_plain.so.0.4'
+
+config Interface
+	option Mode 'mesh'
+	option ignore '0'
+	option interface 'wireless0'
+
+config Interface
+	option Mode 'ether'
+	option ignore '0'
+	option interface 'lan'
+
+config Hna6
+	option netaddr 'FDEE:74F3:AB2E:0:0:0:0:0'
+	option prefix '48'
+
+config Hna6
+	option netaddr 'fdee:74f3:ab2e::'
+	option prefix '48'
+

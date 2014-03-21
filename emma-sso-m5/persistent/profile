@@ -1,0 +1,14 @@
+# Sven-Ola: add my favorite aliases to /etc/persistent/profile
+
+alias ...='cd ../..'
+alias ..='cd ..'
+alias cd..='cd ..'
+alias cls='clear'
+alias del='rm -i'
+alias dir='ls -l -d'
+alias e='exit'
+alias l='less'
+alias la='ls -la'
+alias ll='ls -l'
+alias md='mkdir -p'
+alias rd='rmdir'

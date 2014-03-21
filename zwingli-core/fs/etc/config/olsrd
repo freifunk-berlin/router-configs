@@ -1,0 +1,119 @@
+
+config LoadPlugin
+	option ignore '1'
+	option library 'olsrd_arprefresh.so.0.1'
+
+config LoadPlugin
+	option accept '0.0.0.0'
+	option ignore '0'
+	option library 'olsrd_txtinfo.so.0.1'
+
+config LoadPlugin
+	option accept '0.0.0.0'
+	option ignore '0'
+	option library 'olsrd_jsoninfo.so.0.0'
+
+config olsrd
+	option AllowNoInt 'yes'
+	option FIBMetric 'correct'
+	option IpVersion '6and4'
+	option LinkQualityAlgorithm 'etx_ff'
+	option LinkQualityLevel '2'
+	option NatThreshold '0.75'
+	option OlsrPort '698'
+	option Pollrate '0.025'
+	option TcRedundancy '2'
+	option Willingness '3'
+
+config InterfaceDefaults
+	option HelloInterval '3.0'
+	option HelloValidityTime '125.0'
+	option HnaInterval '10.0'
+	option HnaValidityTime '125.0'
+	option Ip4Broadcast '255.255.255.255'
+	option MidInterval '25.0'
+	option MidValidityTime '500.0'
+	option Mode 'mesh'
+	option TcInterval '2.0'
+	option TcValidityTime '500.0'
+
+config LoadPlugin
+	option UdpDestPort '224.0.0.251 5353'
+	option P2pdTtl '10'
+	option library 'olsrd_p2pd.so.0.1.0'
+	list NonOlsrIf 'olsr'
+	option ignore '1'
+
+config Interface
+	option Mode 'ether'
+	option ignore '0'
+	option interface 'olsr'
+
+config Hna4
+	option netaddr '6.23.16.0'
+	option netmask '255.255.240.0'
+
+config Interface
+	option Mode 'mesh'
+	option ignore '0'
+	option interface 'fhain'
+
+config Interface
+	option Mode 'mesh'
+	option ignore '0'
+	option interface 'fluxfm'
+
+config Interface
+	option Mode 'mesh'
+	option ignore '0'
+	option interface 'kreuzberg'
+
+config Interface
+	option Mode 'mesh'
+	option ignore '0'
+	option interface 'neukoelln'
+
+config LoadPlugin
+	option file '/var/run/olsrd.watchdog'
+	option ignore '0'
+	option interval '30'
+	option library 'olsrd_watchdog.so.0.1'
+
+config LoadPlugin
+	option hosts_file '/tmp/hosts/olsr'
+	option ignore '0'
+	option lat '52.50355457229739'
+	option latlon_file '/var/run/latlon.js'
+	option library 'olsrd_nameservice.so.0.3'
+	option lon '13.454830790023667'
+	option services_file '/var/etc/services.olsr'
+	option suffix '.olsr'
+
+config LoadPlugin
+	option ignore '0'
+	option library 'olsrd_dyn_gw_plain.so.0.4'
+
+config Hna4
+	option netaddr '104.130.10.18'
+	option netmask '255.255.255.255'
+
+config Hna4
+	option netaddr '104.130.10.20'
+	option netmask '255.255.255.255'
+
+config Hna4
+	option netaddr '104.130.10.22'
+	option netmask '255.255.255.255'
+
+config Hna4
+	option netaddr '104.130.10.24'
+	option netmask '255.255.255.255'
+
+config Hna6
+	option netaddr 'FD1C:EBAA:D4A1:0:0:0:0:0'
+	option prefix '48'
+
+config Hna6
+	option netaddr 'fd1c:ebaa:d4a1::'
+	option prefix '48'
+

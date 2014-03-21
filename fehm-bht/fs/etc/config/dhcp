@@ -18,6 +18,6 @@ config dnsmasq
 	list addnhosts '/var/etc/hosts.olsr.ipv6'
 
 config dhcp 'wan'
-	option interface 'wan'
 	option ignore '1'
+	option interface 'wan'
 
