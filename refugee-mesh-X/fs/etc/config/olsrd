@@ -1,7 +1,5 @@
-config olsrd
-	# uncomment the following line to use a custom config file instead:
-	#option config_file '/etc/olsrd.conf'
 
+config olsrd
 	option IpVersion '4'
 
 config LoadPlugin
@@ -25,4 +23,20 @@ config LoadPlugin
 config LoadPlugin
 	option library 'olsrd_jsoninfo.so.0.0'
 	option accept '0.0.0.0'
+
+config Hna6
+	option prefix '48'
+	option netaddr 'fd69:d842:9dc2::'
+
+config Hna6
+	option prefix '48'
+	option netaddr 'fd69:d842:9dc2::'
+
+config Hna6
+	option prefix '48'
+	option netaddr 'fd69:d842:9dc2::'
+
+config Hna6
+	option prefix '48'
+	option netaddr 'fd69:d842:9dc2::'
 

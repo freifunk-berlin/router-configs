@@ -1,58 +1,47 @@
-config wifi-device  radio0
-	option type     mac80211
-	option channel  13
-	option hwmode	11ng
-	option path	'platform/ar934x_wmac'
-	option htmode	HT20
-	list ht_capab	LDPC
-	list ht_capab	SHORT-GI-20
-	list ht_capab	SHORT-GI-40
-	list ht_capab	TX-STBC
-	list ht_capab	RX-STBC1
-	list ht_capab	DSSS_CCK-40
 
-config wifi-device  radio1
-	option type     mac80211
-	option channel  36
-	option hwmode	11na
-	option path	'pci0000:00/0000:00:00.0'
-	option htmode	HT20
-	list ht_capab	LDPC
-	list ht_capab	SHORT-GI-20
-	list ht_capab	SHORT-GI-40
-	list ht_capab	TX-STBC
-	list ht_capab	RX-STBC1
-	list ht_capab	DSSS_CCK-40
+config wifi-device 'radio0'
+	option type 'mac80211'
+	option channel '1'
+	option hwmode '11ng'
+	option path 'platform/ar934x_wmac'
+	option htmode 'HT40+'
+	option country 'DE'
+	list ht_capab 'LDPC'
+	list ht_capab 'SHORT-GI-20'
+	list ht_capab 'SHORT-GI-40'
+	list ht_capab 'TX-STBC'
+	list ht_capab 'RX-STBC1'
+	list ht_capab 'DSSS_CCK-40'
+	option disabled '0'
 
-config wifi-iface
-        option device	'radio0'
-        option ifname	'adhoc2'
-        option network	'adhoc2'
-        option mode	'adhoc'
-        option ssid	'mesh-batman'
-        option bssid	'02:CA:FE:CA:CA:40'
+config wifi-device 'radio1'
+	option type 'mac80211'
+	option channel '40'
+	option hwmode '11na'
+	option path 'pci0000:00/0000:00:00.0'
+	option htmode 'HT40-'
+	option country 'DE'
+	list ht_capab 'LDPC'
+	list ht_capab 'SHORT-GI-20'
+	list ht_capab 'SHORT-GI-40'
+	list ht_capab 'TX-STBC'
+	list ht_capab 'RX-STBC1'
+	list ht_capab 'DSSS_CCK-40'
+	option disabled '0'
 
 config wifi-iface
-	option device	'radio0'
-        option ifname	'ap2'
-	option network	'mesh'
+	option device 'radio1'
+	option ifname 'adhoc'
+	option network 'adhoc'
+	option mode 'adhoc'
+	option ssid 'mesh-batman'
+	option bssid '02:CA:FE:CA:CA:40'
+
+config wifi-iface
+	option device 'radio0'
+	option ifname 'ap'
+	option network 'mesh'
 	option encryption 'none'
-	option mode	'ap'
-	option ssid	'freifunk-refugee'
-
-config wifi-iface
-        option device	'radio1'
-        option ifname	'adhoc5'
-        option network	'adhoc5'
-        option mode	'adhoc'
-        option ssid	'mesh-batman'
-        option bssid	'02:CA:FE:CA:CA:40'
-
-config wifi-iface
-	option device	'radio1'
-        option ifname	'ap5'
-	option network	'mesh'
-	option encryption 'none'
-	option mode	'ap'
-	option ssid	'freifunk-refugee'
+	option mode 'ap'
+	option ssid 'freifunk-refugee'
 

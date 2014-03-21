@@ -12,3 +12,5 @@
 111 olsr
 112 olsr-default
 113 olsr-tunnel
+200 gw-check
+201 gw-check-olsr

@@ -20,18 +20,17 @@ config dnsmasq
 	#list notinterface	lo
 	#list bogusnxdomain     '64.94.110.11'
 
-config dhcp lan
-	option interface	lan
-	option start 	100
-	option limit	150
-	option leasetime	12h
-
 config dhcp wan
 	option interface	wan
 	option start 	100
 	option limit	150
 	option leasetime	12h
+        list dhcp_option '119,lan'                      
 
+config dhcp lan
+	option interface lan
+	option ignore 1
+	
 config dhcp mesh
-	option interface 'mesh'
-	option ignore '1'	
+	option interface mesh
+	option ignore 1

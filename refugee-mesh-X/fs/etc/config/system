@@ -1,4 +1,5 @@
 
+# set hostname according to mesh id
 config system
 	option hostname 'refugee-mesh-X'
 	option zonename 'Europe/Berlin'
