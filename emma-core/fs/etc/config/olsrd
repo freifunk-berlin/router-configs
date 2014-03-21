@@ -98,7 +98,7 @@ config LoadPlugin
 	option suffix '.olsr'
 	option latlon_file '/var/run/latlon.js'
 	option hosts_file '/tmp/hosts/olsr'
-	list hosts '2001:470:5038:CAD0:0:0:0:1 pre1.emma-core'
+	list hosts '2001:470:5038:9778:0:0:0:1 pre1.emma-core'
 
 config LoadPlugin
 	option ignore '1'
@@ -109,7 +109,7 @@ config Hna4
 	option netmask '255.255.255.0'
 
 config Hna6
-	option netaddr '2001:470:5038:CAD0:0:0:0:0'
+	option netaddr '2001:470:5038:9778:0:0:0:0'
 	option prefix '61'
 
 config Hna6

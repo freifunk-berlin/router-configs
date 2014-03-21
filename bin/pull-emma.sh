@@ -12,7 +12,7 @@
 ./bin/pull.sh emma-nno-m2 104.0.2.201
 ./bin/pull.sh emma-nnw-m2 104.0.2.202
 ./bin/pull.sh emma-wnw-m2 104.0.2.203
-#./bin/pull.sh emma-wsw-m2 104.0.2.204
+./bin/pull.sh emma-wsw-m2 104.0.2.204
 ./bin/pull.sh emma-ssw-m2 104.0.2.205
 ./bin/pull.sh emma-sso-m2 104.0.2.206
 ./bin/pull.sh emma-oso-m2 104.0.2.207
