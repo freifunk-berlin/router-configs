@@ -61,22 +61,17 @@ config LoadPlugin
 	option library 'olsrd_watchdog.so.0.1'
 
 config LoadPlugin
+	option hosts_file '/tmp/hosts/olsr'
+	option lat '52.499840000000000'
+	option latlon_file '/var/run/latlon.js'
+	option library 'olsrd_nameservice.so.0.3'
 	option lon '13.430960000000000'
 	option services_file '/var/etc/services.olsr'
-	option library 'olsrd_nameservice.so.0.3'
 	option suffix '.olsr'
-	option latlon_file '/var/run/latlon.js'
-	option lat '52.499840000000000'
-	option hosts_file '/tmp/hosts/olsr'
-	list hosts '2001:470:5038:88D8:0:0:0:1 pre1.emma-nnw-m2'
 
 config LoadPlugin
 	option ignore '1'
 	option library 'olsrd_dyn_gw_plain.so.0.4'
-
-config Hna6
-	option netaddr '2001:470:5038:88D8:0:0:0:0'
-	option prefix '61'
 
 config Hna6
 	option netaddr 'FD33:2861:7436:0:0:0:0:0'

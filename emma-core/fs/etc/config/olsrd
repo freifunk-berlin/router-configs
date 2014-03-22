@@ -93,12 +93,11 @@ config LoadPlugin
 	option library 'olsrd_watchdog.so.0.1'
 
 config LoadPlugin
-	option services_file '/var/etc/services.olsr'
-	option library 'olsrd_nameservice.so.0.3'
-	option suffix '.olsr'
-	option latlon_file '/var/run/latlon.js'
 	option hosts_file '/tmp/hosts/olsr'
-	list hosts '2001:470:5038:9778:0:0:0:1 pre1.emma-core'
+	option latlon_file '/var/run/latlon.js'
+	option library 'olsrd_nameservice.so.0.3'
+	option services_file '/var/etc/services.olsr'
+	option suffix '.olsr'
 
 config LoadPlugin
 	option ignore '1'
@@ -107,10 +106,6 @@ config LoadPlugin
 config Hna4
 	option netaddr '104.0.2.0'
 	option netmask '255.255.255.0'
-
-config Hna6
-	option netaddr '2001:470:5038:9778:0:0:0:0'
-	option prefix '61'
 
 config Hna6
 	option netaddr 'FDA3:1908:F150:0:0:0:0:0'
