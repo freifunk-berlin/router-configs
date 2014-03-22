@@ -2,4 +2,5 @@
 config mesh 'bat0'
 	option ap_isolation '1'
 	option bridge_loop_avoidance '1'
+	option gw_mode 'client'
 

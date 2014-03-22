@@ -2,10 +2,10 @@
 config system
 	option cronloglevel '10'
 	option hostname 'emma-wsw-m2'
-	option latitude '52.449823000000000'
-	option latlon '52.449823000000000 13.430732999999997'
+	option latitude '52.499780000000006'
+	option latlon '52.499780000000006 13.430910000000000'
 	option location 'Emmauskirche Lausitzer Platz'
-	option longitude '13.430732999999997'
+	option longitude '13.430910000000000'
 	option timezone 'CET-1CEST,M3.5.0,M10.5.0/3'
 	option zonename 'Europe/Berlin'
 

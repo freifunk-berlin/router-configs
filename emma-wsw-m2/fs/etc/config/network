@@ -6,13 +6,14 @@ config interface 'loopback'
 	option proto 'static'
 
 config interface 'lan'
-	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
-	option ifname 'eth0.100'
+	option type 'bridge'
+	option proto 'static'
 	option ip6assign '64'
 	option ipaddr '104.0.2.4'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option ifname 'eth0.100'
+	list ip6prefix '2001:470:5038:90:0:0:0:0/61'
 	option netmask '255.255.255.240'
-	option proto 'static'
-	option type 'bridge'
 
 config interface 'wan'
 	option ifname 'eth1'
@@ -23,13 +24,6 @@ config interface 'wan'
 
 config globals 'globals'
 	option ula_prefix 'fd8f:23bb:53ca::/48'
-
-config interface 'wireless0'
-	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
-	option ip6assign '64'
-	option ipaddr '104.0.2.204'
-	option netmask '255.0.0.0'
-	option proto 'static'
 
 config route
 	option gateway '104.0.2.9'
@@ -46,4 +40,30 @@ config interface 'wireless0bat'
 	option mesh 'bat0'
 	option mtu '1528'
 	option proto 'batadv'
+
+config interface 'wireless0'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option ip6assign '64'
+	option ipaddr '104.0.2.204'
+	option mtu '1528'
+	option netmask '255.0.0.0'
+	option proto 'static'
+
+config route
+	option gateway '104.0.2.9'
+	option interface 'lan'
+	option netmask '255.255.255.0'
+	option target '192.168.0.0'
+
+config interface 'wireless0ap'
+	option proto 'none'
+
+config interface 'mesh0'
+	option ifname 'bat0'
+	option proto 'none'
+
+config interface 'bat'
+	option ifname 'wlan0 bat0'
+	option proto 'none'
+	option type 'bridge'
 
