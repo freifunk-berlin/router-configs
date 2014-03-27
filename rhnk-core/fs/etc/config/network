@@ -162,3 +162,63 @@ config switch_vlan
 	option ports '0t 1t'
 	option vlan '10'
 
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 1t'
+	option vlan '11'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 1t'
+	option vlan '12'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 1t'
+	option vlan '13'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 1t'
+	option vlan '14'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 1t'
+	option vlan '15'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 1t'
+	option vlan '16'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 1t'
+	option vlan '17'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 1t'
+	option vlan '20'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 1t'
+	option vlan '21'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 1t'
+	option vlan '22'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 1t'
+	option vlan '23'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 1t'
+	option vlan '24'
+
