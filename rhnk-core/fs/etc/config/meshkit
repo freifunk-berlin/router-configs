@@ -1,0 +1,5 @@
+config 'meshkit' 'update'
+	option 'profile' 'TLWDR4900'
+	option 'target' 'Barrier-Breaker-mpc85xx_generic'
+	option 'url' 'http://firmware.berlin.freifunk.net/api/json/buildimage'
+
