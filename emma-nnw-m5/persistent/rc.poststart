@@ -1,5 +1,16 @@
 #!/bin/sh
 
+if [ -f /etc/persistent/lighttpd.conf ];then
+	# E.g. for accessing web mgmt via "ssh -L 8000:localhost:8000" w/o PW
+	echo 'include "/etc/persistent/lighttpd.conf"' >> /etc/lighttpd.conf
+	killall lighttpd
+fi
+
+if [ -f /etc/persistent/authorized_keys.gz ];then
+	# Extend AirOS web mgmt UI, which only offers 10 slots for keys
+	zcat /etc/persistent/authorized_keys.gz >> /etc/dropbear/authorized_keys
+fi
+
 # A WLAN interface as AP repeater with more than one neighbour repeats
 # anything received from unkown MACs. This may cause broadcast storms,
 # e.g. if three AP repeaters are interconnected. ARPNAT prevents this.

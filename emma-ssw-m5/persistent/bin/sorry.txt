@@ -1,0 +1,1 @@
+Speed test with cgi-bin-dev-zero.bin only.

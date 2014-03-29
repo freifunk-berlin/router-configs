@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "Content-type: application/octet-stream"
+echo
+dd if=/dev/zero bs=$(( 1024 * 1024 )) count=10
