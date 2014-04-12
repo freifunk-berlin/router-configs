@@ -8,17 +8,8 @@ config LoadPlugin
 
 config LoadPlugin
 	option accept '0.0.0.0'
-	option library 'olsrd_jsoninfo.so.0.0'
-
-config LoadPlugin
-	option interval '30'
-	option file '/var/run/olsrd.watchdog'
-	option UdpDestPort '224.0.0.251 5353'
-	option P2pdTtl '10'
-	option library 'olsrd_p2pd.so.0.1.0'
 	option ignore '0'
-	list NonOlsrIf 'wireless0dhcp'
-	list NonOlsrIf 'wireless1dhcp'
+	option library 'olsrd_jsoninfo.so.0.0'
 
 config olsrd
 	option AllowNoInt 'yes'
@@ -27,6 +18,7 @@ config olsrd
 	option LinkQualityAlgorithm 'etx_ff'
 	option NatThreshold '0.75'
 	option Pollrate '0.025'
+	option SmartGateway 'yes'
 	option TcRedundancy '2'
 
 config InterfaceDefaults
@@ -40,14 +32,24 @@ config InterfaceDefaults
 	option TcInterval '2.0'
 	option TcValidityTime '500.0'
 
-config Hna4
-	option netaddr '104.204.0.64'
-	option netmask '255.255.255.192'
+config Interface
+	option ignore '0'
+	option interface 'wireless0'
 
 config Interface
 	option Mode 'ether'
 	option ignore '0'
-	option interface 'wan'
+	option interface 'lan'
+
+config Interface
+	option Mode 'ether'
+	option ignore '0'
+	option interface 'nanobridge0'
+
+config Interface
+	option Mode 'ether'
+	option ignore '0'
+	option interface 'nanostation0'
 
 config LoadPlugin
 	option file '/var/run/olsrd.watchdog'
@@ -55,24 +57,28 @@ config LoadPlugin
 	option library 'olsrd_watchdog.so.0.1'
 
 config LoadPlugin
-	option lon '13.431924725037348'
+	option lon '13.433048570613945'
 	option services_file '/var/etc/services.olsr'
 	option library 'olsrd_nameservice.so.0.3'
 	option suffix '.olsr'
 	option latlon_file '/var/run/latlon.js'
-	option lat '52.482033673261273'
+	option lat '52.481961799529463'
 	option hosts_file '/tmp/hosts/olsr'
-	list hosts '2001:470:5038:4570:0:0:0:1 pre1.arcaden-klunkerkranich'
+	list hosts '2001:470:5038:F088:0:0:0:1 pre1.arcaden-bib'
 
 config LoadPlugin
 	option ignore '1'
 	option library 'olsrd_dyn_gw_plain.so.0.4'
 
+config Hna4
+	option netaddr '104.204.0.128'
+	option netmask '255.255.255.192'
+
 config Hna6
-	option netaddr '2001:470:5038:4570:0:0:0:0'
+	option netaddr '2001:470:5038:F088:0:0:0:0'
 	option prefix '61'
 
 config Hna6
-	option netaddr 'FDBC:ED4B:BB77:0:0:0:0:0'
+	option netaddr 'FD88:EECB:653B:0:0:0:0:0'
 	option prefix '48'
 

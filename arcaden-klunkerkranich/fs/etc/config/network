@@ -10,12 +10,13 @@ config globals 'globals'
 
 config interface 'lan'
 	option ifname 'eth0.1'
-	option ip6assign '60'
-	option ipaddr '192.168.42.1'
-	option macaddr 'f8:1a:67:5a:a7:bd'
-	option netmask '255.255.255.0'
-	option proto 'static'
 	option type 'bridge'
+	option proto 'static'
+	option netmask '255.255.255.0'
+	option macaddr 'f8:1a:67:5a:a7:bd'
+	option ipaddr '192.168.42.1'
+	option ip6assign '64'
+	list ip6prefix '2001:470:5038:4570:0:0:0:0/61'
 
 config interface 'wan'
 	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
@@ -47,6 +48,7 @@ config switch_vlan
 
 config interface 'ffvpn'
 	option ifname 'ffvpn'
+	option ip6assign '64'
 	option proto 'none'
 
 config rule 'henet_relay'
@@ -95,9 +97,11 @@ config rule 'sipgate'
 	option priority '100'
 
 config interface 'henet'
+	option ip6assign '64'
 	option proto '6in4'
 
 config interface 'freifunk'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
 	option ip6assign '64'
 	option ipaddr '104.204.0.65'
 	option netmask '255.255.255.192'

@@ -30,7 +30,7 @@ config wifi-iface
 	option encryption 'none'
 	option mode 'ap'
 	option network 'freifunk'
-	option ssid 'freifunk-klunkerkranich'
+	option ssid 'freifunk-klunkerkranich-5ghz'
 
 config wifi-iface
 	option device 'radio1'
