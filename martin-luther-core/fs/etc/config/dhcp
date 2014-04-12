@@ -6,8 +6,8 @@ config dnsmasq
 	option rebind_protection 1  # disable if upstream must serve RFC1918 addresses
 	option rebind_localhost 1  # enable for RBL checking and similar services
 	#list rebind_domain example.lan  # whitelist RFC1918 responses for domains
-	option local	'/lan/'
-	option domain	'lan'
+	option local	'/olsr/'
+	option domain	'olsr'
 	option expandhosts	1
 	option nonegcache	0
 	option authoritative	1
@@ -25,4 +25,16 @@ config dhcp lan
 	option leasetime	12h
 	option limit	150
 	option start 	100
+
+config domain
+	option ip '104.206.1.34'
+	option name 'martin-luther-no-5ghz'
+
+config domain
+	option ip '104.206.1.38'
+	option name 'martin-luther-so-5ghz'
+
+config domain
+	option ip '104.206.1.42'
+	option name 'martin-luther-sw-5ghz'
 

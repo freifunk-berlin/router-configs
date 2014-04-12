@@ -1,0 +1,63 @@
+
+config statistics 'rrdtool'
+	option default_timespan '1hour'
+	option image_path '/tmp/rrdimg'
+	option image_width '600'
+
+config statistics 'collectd'
+	option BaseDir '/var/run/collectd'
+	option Include '/etc/collectd/conf.d'
+	option Interval '30'
+	option PIDFile '/var/run/collectd.pid'
+	option PluginDir '/usr/lib/collectd'
+	option ReadThreads '2'
+	option TypesDB '/usr/share/collectd/types.db'
+
+config statistics 'collectd_ping'
+	option Hosts '127.0.0.1'
+	option Interval '30'
+	option TTL '127'
+	option enable '0'
+
+config statistics 'collectd_interface'
+	option IgnoreSelected '0'
+	option Interfaces 'br-lan wlan0 wlan0-1'
+	option enable '1'
+
+config statistics 'collectd_load'
+	option enable '1'
+
+config statistics 'collectd_netlink'
+	option IgnoreSelected '0'
+	option QDiscs 'br-lan br-ff'
+	option VerboseInterfaces 'br-lan wlan0 wlan0-1'
+	option enable '0'
+
+config statistics 'collectd_network'
+	option Forward '0'
+	option enable '1'
+
+config statistics 'collectd_cpu'
+	option enable '1'
+
+config statistics 'collectd_rrdtool'
+	option DataDir '/tmp/rrd'
+	option RRARows '100'
+	option RRASingle '1'
+	option RRATimespans '1hour 1day 1week 1month 1year'
+	option enable '1'
+
+config statistics 'collectd_olsrd'
+	option Host '127.0.0.1'
+	option Port '2006'
+	option enable '1'
+
+config statistics 'collectd_iwinfo'
+	option enable '1'
+
+config statistics 'collectd_uptime'
+	option enable '1'
+
+config collectd_network_server
+	option host '77.87.48.12'
+
