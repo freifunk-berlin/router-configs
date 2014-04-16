@@ -1,0 +1,7 @@
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+
+iptables -A POSTROUTING -t nat -s 104.0.0.0/8 -o eth0.1301 -j MASQUERADE
+ip -6 r a default via 2001:bf7:b102:1::1
+
+exit 0

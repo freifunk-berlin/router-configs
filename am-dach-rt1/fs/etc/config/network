@@ -1,0 +1,137 @@
+
+config interface 'loopback'
+	option ifname 'lo'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+	option proto 'static'
+
+config globals 'globals'
+	option ula_prefix 'fd2e:9d1d:62b3::/48'
+
+config interface 'mgm'
+	option dns '2001:bf7:b102:1::1 77.87.48.1'
+	option gateway '77.87.48.49'
+	option ifname 'eth0.1301'
+	option ip6addr '2001:bf7:b102:1::50/64'
+	option ip6gw '2001:bf7:b102:1::1'
+	option ipaddr '77.87.48.50'
+	option netmask '255.255.255.240'
+	option proto 'static'
+
+config interface 'lan'
+	option ifname 'eth0.1'
+	option ipaddr '192.168.1.1'
+	option macaddr 'f8:1a:67:a5:fd:a8'
+	option netmask '255.255.255.0'
+	option proto 'static'
+
+config interface 'wan'
+	option ifname 'eth0.2'
+	option macaddr 'f8:1a:67:a5:fd:ab'
+	option proto 'dhcp'
+
+config interface 'vlan10'
+	option ifname 'eth0.1303'
+
+config interface 'vlan20'
+	option ifname 'eth0.1304'
+	option ip6addr '2001:bf7:750:2a20::1/64'
+	option ipaddr '104.0.105.8'
+	option netmask '255.255.255.255'
+	option proto 'static'
+
+config interface 'vlan30'
+	option ifname 'eth0.1305'
+	option ip6addr '2001:bf7:750:2a30::1/64'
+	option ipaddr '104.0.105.9'
+	option netmask '255.255.255.255'
+	option proto 'static'
+
+config interface 'vlan40'
+	option ifname 'eth0.1306'
+	option ip6addr '2001:bf7:750:2a40::1/64'
+	option ipaddr '104.0.105.10'
+	option netmask '255.255.255.255'
+	option proto 'static'
+
+config interface 'vlan70'
+	option ifname 'eth0.1307'
+	option ip6addr '2001:bf7:750:2a70::1/64'
+	option ipaddr '104.0.105.11'
+	option netmask '255.255.255.255'
+	option proto 'static'
+
+config interface 'vlan80'
+	option ifname 'eth0.1308'
+	option ip6addr '2001:bf7:750:2a80::1/64'
+	option ipaddr '104.0.105.15'
+	option netmask '255.255.255.255'
+	option proto 'static'
+
+config interface 'wan6'
+	option ifname '@wan'
+	option proto 'dhcpv6'
+
+config switch
+	option enable_vlan '1'
+	option name 'switch0'
+	option reset '1'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 2 3'
+	option vid '1'
+	option vlan '1'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 1'
+	option vid '2'
+	option vlan '2'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 4t 5t'
+	option vid '1303'
+	option vlan '10'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 4t 5t'
+	option vid '1304'
+	option vlan '20'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 4t 5t'
+	option vid '1305'
+	option vlan '30'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 4t 5t'
+	option vid '1306'
+	option vlan '40'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 4t 5t'
+	option vid '1307'
+	option vlan '70'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 4t 5t'
+	option vid '1308'
+	option vlan '80'
+
+config interface 'tunl0'
+	option ifname 'tunl0'
+	option proto 'none'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 4t 5t'
+	option vid '1301'
+	option vlan '13'
+

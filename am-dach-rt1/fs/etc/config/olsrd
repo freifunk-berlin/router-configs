@@ -1,0 +1,108 @@
+
+config LoadPlugin
+	option library 'olsrd_arprefresh.so.0.1'
+
+config LoadPlugin
+	option accept '127.0.0.1'
+	option library 'olsrd_txtinfo.so.0.1'
+
+config LoadPlugin
+	option accept '127.0.0.1'
+	option library 'olsrd_jsoninfo.so.0.0'
+
+config olsrd
+	option AllowNoInt 'yes'
+	option FIBMetric 'flat'
+	option IpVersion '6and4'
+	option LinkQualityAlgorithm 'etx_ff'
+	option LinkQualityLevel '2'
+	option NatThreshold '0.75'
+	option OlsrPort '698'
+	option Pollrate '0.025'
+	option SmartGateway 'yes'
+	option SmartGatewayAllowNAT 'no'
+	option SmartGatewaySpeed '100000 100000'
+	option SmartGatewayUplink 'ipv4'
+	option TcRedundancy '2'
+	option Willingness '3'
+
+config InterfaceDefaults
+	option HelloInterval '3.0'
+	option HelloValidityTime '125.0'
+	option HnaInterval '10.0'
+	option HnaValidityTime '125.0'
+	option Ip4Broadcast '255.255.255.255'
+	option MidInterval '25.0'
+	option MidValidityTime '500.0'
+	option Mode 'ether'
+	option TcInterval '2.0'
+	option TcValidityTime '500.0'
+
+config LoadPlugin
+	option P2pdTtl '10'
+	option UdpDestPort '224.0.0.251 5353'
+	option ignore '1'
+	option library 'olsrd_p2pd.so.0.1.0'
+
+config Interface
+	option Ip4Broadcast '255.255.255.255'
+	option Mode 'ether'
+	option ignore '0'
+	option interface 'vlan20'
+
+config Interface
+	option Ip4Broadcast '255.255.255.255'
+	option Mode 'mesh'
+	option ignore '0'
+	option interface 'vlan30'
+
+config Interface
+	option Ip4Broadcast '255.255.255.255'
+	option Mode 'mesh'
+	option ignore '0'
+	option interface 'vlan40'
+
+config Interface
+	option Ip4Broadcast '255.255.255.255'
+	option Mode 'mesh'
+	option ignore '0'
+	option interface 'vlan70'
+
+config Interface
+	option Ip4Broadcast '255.255.255.255'
+	option Mode 'mesh'
+	option ignore '0'
+	option interface 'vlan80'
+
+config LoadPlugin
+	option file '/var/run/olsrd.watchdog'
+	option interval '30'
+	option library 'olsrd_watchdog.so.0.1'
+
+config LoadPlugin
+	option lon '13.342591071586201'
+	option services_file '/var/etc/services.olsr'
+	option library 'olsrd_nameservice.so.0.3'
+	option suffix '.olsr'
+	option latlon_file '/var/run/latlon.js'
+	option lat '52.523623954210305'
+	option hosts_file '/tmp/hosts/olsr'
+	option ignore '0'
+	list hosts '2001:470:5038:FF88:0:0:0:1 pre1.am-dach-rt1'
+
+config LoadPlugin
+	option library 'olsrd_dyn_gw_plain.so.0.4'
+
+config Interface
+	option Mode 'ether'
+	option ignore '1'
+	option interface 'mgm'
+
+config Hna6
+	option netaddr '2001:470:5038:FF88:0:0:0:0'
+	option prefix '61'
+
+config Hna6
+	option netaddr 'FD2E:9D1D:62B3:0:0:0:0:0'
+	option prefix '48'
+
