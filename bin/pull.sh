@@ -32,7 +32,7 @@ test -d "$dst"/fs/etc/config && ./bin/uci-sort.pl "$dst"/fs/etc/config/*
 sed -i.backup '/key/d' "$dst/fs/etc/config/wireless"
 ## remove other private files
 # list of files
-files="$dst/fs/etc/passwd $dst/fs/etc/shadow $dst/fs/etc/openvpn/*.conf $dst/fs/etc/openvpn/*.key $dst/fs/etc/dropbear/dropbear_* $dst/fs/etc/uhttpd.*"
+files="$dst/fs/etc/passwd $dst/fs/etc/shadow $dst/fs/etc/openvpn/*.conf $dst/fs/etc/openvpn/*.key $dst/fs/etc/dropbear/dropbear_* $dst/fs/etc/uhttpd.* $dst/fs/lib/uci/upload/cbid.openvpn.*"
 echo "$files"
 for f in $files; do
 	if [ -f $f ]; then
