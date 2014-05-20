@@ -37,7 +37,7 @@ config 'statistics' 'collectd_disk'
 
 config 'statistics' 'collectd_dns'
 	option 'IgnoreSources' '127.0.0.1'
-	option 'Interfaces' 'ffdhcp ff br-lan'
+	option 'Interfaces' 'fflan br-batmesh wan'
 	option 'enable' '0'
 
 config 'statistics' 'collectd_email'
