@@ -24,6 +24,7 @@ config alias
 	option interface 'wan'
 	option ip6addr '2001:470:6d:7bd::2/64'
 	option ip6gw '2001:470:6d:7bd::1'
+	option ip6prefix '2001:470:5231::/48'
 	option proto 'static'
 
 config interface 'fflan'
@@ -41,6 +42,7 @@ config interface 'wan6'
 
 config interface 'batmesh'
 	option ifname 'bat0'
+	option ip6assign '64'
 	option ipaddr '104.201.0.129'
 	option netmask '255.255.255.192'
 	option proto 'static'

@@ -9,4 +9,5 @@ config server 'default'
 	list network 'wireless1'
 	list network 'fflan'
 	list network 'lan'
+	list network 'batmesh'
 
