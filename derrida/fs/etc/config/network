@@ -1,0 +1,222 @@
+
+config interface 'loopback'
+	option ifname 'lo'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+	option proto 'static'
+
+config globals 'globals'
+	option ula_prefix 'fd15:e7f4:4358::/48'
+
+config interface 'lan'
+	option ifname 'eth0.1'
+	option ip6assign '64'
+	option ipaddr '192.168.65.1'
+	option netmask '255.255.255.0'
+	option proto 'static'
+	option type 'bridge'
+
+config interface 'wan'
+	option ifname 'eth0.2'
+	option proto 'dhcp'
+
+config interface 'fflan'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option ifname 'eth0.3'
+	option ip6assign '64'
+	option ipaddr '104.201.1.17'
+	option mtu '1532'
+	option netmask '255.255.255.240'
+	option proto 'static'
+
+config interface 'wan6'
+	option ifname '@wan'
+	option proto 'dhcpv6'
+
+config interface 'batmesh'
+	option ifname 'bat0'
+	option ipaddr '104.201.0.129'
+	option mtu '1532'
+	option netmask '255.255.255.192'
+	option proto 'static'
+	option type 'bridge'
+
+config interface 'wireless0bat'
+	option ifname '@wireless0'
+	option mesh 'bat0'
+	option mtu '1532'
+	option proto 'batadv'
+
+config interface 'wireless1bat'
+	option ifname '@wireless1'
+	option mesh 'bat0'
+	option mtu '1532'
+	option proto 'batadv'
+
+config interface 'fflanbat'
+	option ifname '@fflan'
+	option mesh 'bat0'
+	option mtu '1532'
+	option proto 'batadv'
+
+config switch
+	option enable_vlan '1'
+	option name 'switch0'
+	option reset '1'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 2 3'
+	option vlan '1'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 1'
+	option vlan '2'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 4 5'
+	option vlan '3'
+
+config interface 'ffvpn'
+	option ifname 'ffvpn'
+	option proto 'none'
+
+config rule 'henet_relay'
+	option dest '216.66.86.114/32'
+	option goto '32766'
+	option priority '100'
+
+config rule '6to4_relay'
+	option dest '192.88.99.1/32'
+	option goto '32766'
+	option priority '100'
+
+config rule 'ffvpn_server'
+	option dest '77.87.48.10/32'
+	option goto '32766'
+	option priority '100'
+
+config rule 'ffvpn_backup_server'
+	option dest '78.41.116.65/32'
+	option goto '32766'
+	option priority '100'
+
+config rule 'dus_net'
+	option dest '83.125.8.0/22'
+	option goto '32766'
+	option priority '100'
+
+config rule 'pbx_net'
+	option dest '46.182.250.0/25'
+	option goto '32766'
+	option priority '100'
+
+config rule 'pbx_net_1'
+	option dest '178.238.128.0/20'
+	option goto '32766'
+	option priority '100'
+
+config rule 'freevoipdeal'
+	option dest '77.72.174.0/24'
+	option goto '32766'
+	option priority '100'
+
+config rule 'sipgate'
+	option dest '217.10.64.0/20'
+	option goto '32766'
+	option priority '100'
+
+config interface 'tunl0'
+	option ifname 'tunl0'
+	option proto 'none'
+
+config interface 'wireless0'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option ip6assign '64'
+	option ipaddr '104.201.0.65'
+	option mtu '1532'
+	option netmask '255.0.0.0'
+	option proto 'static'
+
+config interface 'wireless1'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option ip6assign '64'
+	option ipaddr '104.201.0.231'
+	option mtu '1532'
+	option netmask '255.0.0.0'
+	option proto 'static'
+
+config rule 'olsr_allif_ipv4'
+	option lookup 'olsr'
+	option priority '1000'
+
+config rule 'localnets_allif_ipv4'
+	option lookup 'localnets'
+	option priority '2000'
+
+config rule 'olsr_default_allif_ipv4'
+	option lookup 'olsr-default'
+	option priority '100000'
+
+config rule 'olsr_default_tunl0_ipv4'
+	option in 'tunl0'
+	option lookup 'olsr-default'
+	option priority '20000'
+
+config rule 'olsr_default_unreachable_tunl0_ipv4'
+	option action 'unreachable'
+	option in 'tunl0'
+	option priority '20001'
+
+config rule 'olsr_default_wireless0_ipv4'
+	option in 'wireless0'
+	option lookup 'olsr-default'
+	option priority '20000'
+
+config rule 'olsr_default_unreachable_wireless0_ipv4'
+	option action 'unreachable'
+	option in 'wireless0'
+	option priority '20001'
+
+config rule 'olsr_default_wireless1_ipv4'
+	option in 'wireless1'
+	option lookup 'olsr-default'
+	option priority '20000'
+
+config rule 'olsr_default_unreachable_wireless1_ipv4'
+	option action 'unreachable'
+	option in 'wireless1'
+	option priority '20001'
+
+config rule 'olsr_default_fflan_ipv4'
+	option in 'fflan'
+	option lookup 'olsr-default'
+	option priority '20000'
+
+config rule 'olsr_default_unreachable_fflan_ipv4'
+	option action 'unreachable'
+	option in 'fflan'
+	option priority '20001'
+
+config rule 'olsr_default_ffvpn_ipv4'
+	option in 'ffvpn'
+	option lookup 'olsr-default'
+	option priority '20000'
+
+config rule 'olsr_default_unreachable_ffvpn_ipv4'
+	option action 'unreachable'
+	option in 'ffvpn'
+	option priority '20001'
+
+config rule 'olsr_default_batmesh_ipv4'
+	option in 'batmesh'
+	option lookup 'olsr-default'
+	option priority '20000'
+
+config rule 'olsr_default_unreachable_batmesh_ipv4'
+	option action 'unreachable'
+	option in 'batmesh'
+	option priority '20001'
+
