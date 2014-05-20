@@ -1,0 +1,19 @@
+
+config system
+	option conloglevel '8'
+	option cronloglevel '5'
+	option hostname 'elok-tresen'
+	option latitude '52.500995898738039'
+	option latlon '52.500995898738039 13.465798162132269'
+	option location 'E-LOK Tresen'
+	option longitude '13.465798162132269'
+	option timezone 'CET-1CEST,M3.5.0,M10.5.0/3'
+	option zonename 'Europe/Berlin'
+
+config timeserver 'ntp'
+	list server '6.23.19.1'
+	list server 'time.htw-berlin.de'
+	list server '1.openwrt.pool.ntp.org'
+	list server '2.openwrt.pool.ntp.org'
+	list server '3.openwrt.pool.ntp.org'
+

@@ -1,0 +1,6 @@
+
+config vnstat
+	list interface 'adhoc5'
+	list interface 'eth0'
+	list interface 'eth1'
+	list interface 'bat0'

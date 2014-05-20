@@ -1,0 +1,9 @@
+config 'alfred' 'alfred'
+	option interface 'br-lan'
+	option mode 'master'
+	option batmanif 'bat0'
+	option start_vis '1'
+	option run_facters '1'
+	option start_alfred_gpsd '1'
+# REMOVE THIS LINE TO ENABLE ALFRED
+	option disabled '1'

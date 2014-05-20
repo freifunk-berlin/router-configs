@@ -1,0 +1,8 @@
+config 'alfred' 'alfred'
+	option batmanif 'bat0'
+	option interface 'bat0'
+	option mode 'slave'
+	option run_facters '1'
+	option start_alfred_gpsd '1'
+	option start_vis '1'
+

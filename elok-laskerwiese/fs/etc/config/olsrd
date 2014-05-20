@@ -1,0 +1,85 @@
+
+config LoadPlugin
+	option ignore '0'
+	option library 'olsrd_arprefresh.so.0.1'
+
+config LoadPlugin
+	option ignore '1'
+	option library 'olsrd_dyn_gw.so.0.5'
+
+config LoadPlugin
+	option library 'olsrd_httpinfo.so.0.1'
+	option port '1978'
+	list Net '0.0.0.0 0.0.0.0'
+	option ignore '1'
+
+config LoadPlugin
+	option accept '0.0.0.0'
+	option ignore '1'
+	option library 'olsrd_txtinfo.so.0.1'
+
+config Interface
+	option Mode 'mesh'
+	option ignore '0'
+	option interface 'adhoc2'
+
+config olsrd
+	option AllowNoInt 'yes'
+	option FIBMetric 'correct'
+	option IpVersion '4'
+	option LinkQualityAlgorithm 'etx_ffeth'
+	option LinkQualityLevel '2'
+	option OlsrPort '698'
+	option Pollrate '0.025'
+	option TcRedundancy '2'
+	option Willingness '3'
+
+config LoadPlugin
+	option hosts_file '/tmp/hosts/olsr'
+	option ignore '0'
+	option latlon_file '/var/run/latlon.js'
+	option library 'olsrd_nameservice.so.0.3'
+	option services_file '/var/etc/services.olsr'
+	option suffix '.olsr'
+
+config InterfaceDefaults
+	option HelloInterval '3.0'
+	option HelloValidityTime '125.0'
+	option HnaInterval '10.0'
+	option HnaValidityTime '125.0'
+	option MidInterval '25.0'
+	option MidValidityTime '500.0'
+	option Mode 'mesh'
+	option TcInterval '2.0'
+	option TcValidityTime '500.0'
+
+config LoadPlugin
+	option accept '::'
+	option ignore '0'
+	option library 'olsrd_jsoninfo.so.0.0'
+
+config Interface
+	option Mode 'ether'
+	option ignore '1'
+	option interface 'lan'
+
+config LoadPlugin
+	option P2pdTtl '10'
+	option library 'olsrd_p2pd.so.0.1.0'
+	list NonOlsrIf 'lan'
+	list NonOlsrIf 'wireless0dhcp'
+	option UdpDestPort 'ff02::fb 5353'
+	option ignore '1'
+
+config LoadPlugin
+	option ignore '1'
+	option library 'olsrd_dyn_gw_plain.so.0.4'
+
+config LoadPlugin
+	option ignore '1'
+	option library 'olsrd_watchdog.so.0.1'
+
+config Hna6
+	option netaddr 'fd72:4e07:ac4c::'
+	option prefix '48'
+

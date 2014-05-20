@@ -1,0 +1,1 @@
+*/5 * * * * ( for file in /etc/alfred/* ; do [ -x $file ] && $file ; done )

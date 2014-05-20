@@ -1,0 +1,12 @@
+
+config server 'default'
+	option rd 'server'
+	option dhcpv6 'server'
+	option management_level '1'
+	option compat_ula '1'
+	option always_assume_default '1'
+#	list network 'adhoc2bat'
+#	list network 'mesh'
+#	list network 'adhoc2'
+#	list network 'lan'
+

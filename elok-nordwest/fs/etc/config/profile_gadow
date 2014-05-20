@@ -1,0 +1,16 @@
+config 'community' 'profile'
+	option 'homepage' 'http://gadow.freifunk.net'
+	option 'latitude' '53.11'
+	option 'longitude' '12.61'
+	option 'mesh_network' '104.0.0.0/8'
+	option 'name' 'Freifunk Gadow'
+	option 'splash_network' '10.61.0.0/16'
+	option 'splash_prefix' '27'
+	option 'ssid' 'gadow.freifunk.net'
+
+config 'defaults' 'interface'
+	option 'netmask' '255.0.0.0'
+
+config 'defaults' 'bssidscheme'
+	option '1' '02:CA:FF:EE:BA:BE'
+

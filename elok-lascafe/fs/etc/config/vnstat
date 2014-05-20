@@ -1,0 +1,9 @@
+config vnstat
+	list interface 'bat0'
+	list interface 'ap2'
+        list interface 'ap5'   
+        list interface 'adhoc5'   
+        list interface 'adhoc2'
+        list interface 'br-mesh'
+               
+

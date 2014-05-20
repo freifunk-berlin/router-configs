@@ -1,0 +1,84 @@
+
+config interface 'loopback'
+	option ifname 'lo'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+	option proto 'static'
+
+config globals 'globals'
+	option ula_prefix 'fdd7:d102:928f::/48'
+
+config interface 'lan'
+	option ifname 'eth0.1'
+	option ip6assign '64'
+	option macaddr 'f8:1a:67:a6:09:f6'
+	option proto 'static'
+	option type 'none'
+
+config interface 'dach'
+	option ifname 'eth0.5'
+	option ip6assign '64'
+	option macaddr 'f8:1a:67:a6:09:f5'
+	option mesh 'bat0'
+	option proto 'batadv'
+
+config interface 'wan'
+	option ifname 'eth0.2'
+	option ip6assign '64'
+	option macaddr 'f8:1a:67:a6:09:f0'
+	option mesh 'bat0'
+	option proto 'batadv'
+
+config switch
+	option enable_vlan '1'
+	option name 'switch0'
+	option reset '1'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 2 3 4'
+	option vid '1'
+	option vlan '1'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 5'
+	option vid '5'
+	option vlan '5'
+
+config interface 'adhoc2'
+	option ip6assign '64'
+	option mesh 'bat0'
+	option mtu '1532'
+	option proto 'batadv'
+
+config interface 'adhoc5'
+	option ip6assign '64'
+	option mesh 'bat0'
+	option mtu '1532'
+	option proto 'batadv'
+
+config interface 'mesh'
+	option dns '6.23.19.1 8.8.8.8 8.8.4.4'
+	option gateway '6.23.19.1'
+	option ifname 'bat0 eth0.1'
+	option ip6addr '2a01:198:40a:cafe::4/64'
+	option ip6assign '64'
+	option ip6gw 'fe80::216:3eff:feca:8602'
+	option ipaddr '6.23.19.4'
+	option netmask '255.255.240.0'
+	option proto 'static'
+	option type 'bridge'
+
+config route
+	option gateway '6.23.16.1'
+	option interface 'mesh'
+	option netmask '255.0.0.0'
+	option target '104.0.0.0'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 1'
+	option vid '2'
+	option vlan '2'
+

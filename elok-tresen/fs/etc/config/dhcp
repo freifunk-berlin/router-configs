@@ -1,0 +1,41 @@
+
+config dnsmasq
+	option authoritative '1'
+	option boguspriv '1'
+	option domain 'olsr'
+	option domainneeded '1'
+	option expandhosts '1'
+	option filterwin2k '0'
+	option leasefile '/tmp/dhcp.leases'
+	option local '/olsr/'
+	option localise_queries '1'
+	option nonegcache '0'
+	option readethers '1'
+	option rebind_localhost '1'
+	option rebind_protection '1'
+	option resolvfile '/tmp/resolv.conf.auto'
+
+config dhcp 'wan'
+	option ignore '1'
+	option interface 'wan'
+
+config dhcp 'lan'
+	option ignore '0'
+	option interface 'lan'
+	list dhcp_option '119,lan'
+	list dhcp_option '119,olsr'
+	option dhcpv6 'hybrid'
+	option ra 'hybrid'
+	option ndp 'hybrid'
+
+config odhcpd 'odhcpd'
+	option leasefile '/tmp/hosts/odhcpd'
+	option leasetrigger '/usr/sbin/odhcpd-update'
+	option maindhcp '0'
+
+config dhcp 'wan6'
+	option dhcpv6 'hybrid'
+	option master '1'
+	option ndp 'hybrid'
+	option ra 'hybrid'
+

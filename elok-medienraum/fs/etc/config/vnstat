@@ -1,0 +1,11 @@
+
+config vnstat
+	list interface 'br-mesh'
+	list interface 'eth0.2'
+	list interface 'eth0.5'
+	list interface 'eth0.1'
+	list interface 'ap2'
+	list interface 'ap5'
+	list interface 'adhoc5'
+	list interface 'adhoc2'
+

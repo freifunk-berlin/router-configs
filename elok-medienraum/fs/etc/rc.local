@@ -1,0 +1,4 @@
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+/sbin/ifconfig eth0 hw ether 3A:9A:5D:7E:C0:0E 
+exit 0
