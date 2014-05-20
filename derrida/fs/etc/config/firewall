@@ -86,6 +86,7 @@ config zone 'zone_freifunk'
 	option output 'ACCEPT'
 	list masq_src '255.255.255.255/32'
 	list masq_src '192.168.65.1/24'
+	list masq_src '10.6.66.7/24'
 	option network 'tunl0 wireless0 wireless1 fflan ffvpn batmesh'
 
 config forwarding
