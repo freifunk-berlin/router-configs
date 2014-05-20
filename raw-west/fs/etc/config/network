@@ -1,0 +1,57 @@
+
+config interface 'loopback'
+	option ifname 'lo'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+	option proto 'static'
+
+config globals 'globals'
+	option ula_prefix 'fdd6:c438:d3e6::/48'
+
+config interface 'lan'
+	option ifname 'eth1'
+	option type 'bridge'
+	option proto 'static'
+	option ipaddr '104.130.10.10'
+	option netmask '255.0.0.0'
+	option ip6assign '64'
+	list dns '104.130.10.26'
+
+config interface 'lanbat'
+	option ifname '@lan'
+	option mesh 'bat0'
+	option proto 'batadv'
+
+config interface 'wan'
+	option ifname 'eth0'
+	option proto 'dhcp'
+
+config interface 'wan6'
+	option ifname '@wan'
+	option proto 'dhcpv6'
+
+config interface 'wireless0'
+	option ip6assign '64'
+	option ipaddr '104.130.10.9'
+	option netmask '255.0.0.0'
+	option proto 'static'
+	list dns '2002:d596:2a92:1:71:53::'
+	list dns '2002:5968:c28e::53'
+	option mtu '1532'
+
+config interface 'mesh'
+	option ifname 'bat0'
+	option ipaddr '6.23.16.10'
+	option netmask '255.255.240.0'
+	option proto 'static'
+	option type 'bridge'
+
+config interface 'wireless0dhcp'
+	option ip6assign '64'
+	option proto 'static'
+
+config interface 'wireless0bat'
+	option ifname '@wireless0'
+	option mesh 'bat0'
+	option proto 'batadv'
+

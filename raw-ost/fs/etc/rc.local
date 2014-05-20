@@ -1,0 +1,9 @@
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+
+# PoE-Passthrough auf Secondary-Port aktivieren  
+echo 8 > /sys/class/gpio/export
+echo out > /sys/class/gpio/gpio8/direction
+echo 1 > /sys/class/gpio/gpio8/value
+
+exit 0

@@ -1,0 +1,5 @@
+
+config mesh 'bat0'
+
+config client 'gw_mode'
+

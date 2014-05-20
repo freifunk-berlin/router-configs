@@ -1,0 +1,26 @@
+
+config interface 'loopback'
+	option ifname 'lo'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+	option proto 'static'
+
+config globals 'globals'
+	option ula_prefix 'fd33:0654:f297::/48'
+
+config interface 'lan'
+	option ifname 'eth0 eth1'
+	option mesh 'bat0'
+	option proto 'batadv'
+	option type 'bridge'
+
+config interface 'mesh'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option gateway '104.130.8.13'
+	option ifname 'bat0'
+	option ip6assign '64'
+	option ipaddr '104.130.8.8'
+	option netmask '255.255.255.0'
+	option proto 'static'
+	option type 'bridge'
+
