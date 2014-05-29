@@ -56,6 +56,9 @@ config 6relayd
 config freifunk-policyrouting
 	list exec '/etc/init.d/freifunk-policyrouting restart'
 
+config freifunk-policyrouting
+	list exec '/etc/init.d/freifunk-policyrouting restart'
+
 config olsrd
 	option init 'olsrd'
 

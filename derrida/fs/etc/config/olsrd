@@ -76,10 +76,18 @@ config LoadPlugin
 	option library 'olsrd_dyn_gw_plain.so.0.4'
 
 config Hna6
-	option netaddr '2001:470:5038:FFF8:0:0:0:0'
-	option prefix '61'
+	option netaddr '::'
+	option prefix '0'
 
 config Hna6
-	option netaddr 'FD15:E7F4:4358:0:0:0:0:0'
+	option netaddr '2001:470:5231:0:0:0:0:0'
 	option prefix '48'
+
+config Hna6
+	option prefix '61'
+	option netaddr '2001:470:5038:FFF8:0:0:0:0'
+
+#config Hna6
+#	option prefix '48'
+#	option netaddr 'fd15:e7f4:4358::'
 

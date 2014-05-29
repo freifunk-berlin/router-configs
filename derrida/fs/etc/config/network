@@ -20,8 +20,8 @@ config interface 'wan'
 	option ifname 'eth0.2'
 	option proto 'dhcp'
 
-config alias
-	option interface 'wan'
+config interface 'henetwan'
+	option ifname 'eth0.2'
 	option ip6addr '2001:470:6d:7bd::2/64'
 	option ip6gw '2001:470:6d:7bd::1'
 	option ip6prefix '2001:470:5231::/48'
@@ -35,10 +35,6 @@ config interface 'fflan'
 	option mtu '1532'
 	option netmask '255.255.255.240'
 	option proto 'static'
-
-config interface 'wan6'
-	option ifname '@wan'
-	option proto 'dhcpv6'
 
 config interface 'batmesh'
 	option ifname 'bat0'

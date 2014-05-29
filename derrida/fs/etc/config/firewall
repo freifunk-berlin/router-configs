@@ -140,7 +140,6 @@ config rule
 
 config rule
 	option dest_port '67'
-	option leasetime '30m'
 	option proto 'udp'
 	option src 'freifunk'
 	option src_port '68'
@@ -168,10 +167,6 @@ config zone
 	option name 'wan'
 	option network 'wan'
 	option output 'ACCEPT'
-
-config forwarding
-	option dest 'wan'
-	option src 'freifunk'
 
 config forwarding
 	option dest 'freifunk'
