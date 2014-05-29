@@ -50,7 +50,7 @@ config 'statistics' 'collectd_exec'
 
 config 'statistics' 'collectd_interface'
 	option 'IgnoreSelected' '0'
-	option 'Interfaces' 'br-lan br-ff'
+	option 'Interfaces' 'br-lan br-batmesh eth0.2 eth0.3 wlan0-adhoc-5 wlan1-adhoc-5'
 	option 'enable' '1'
 
 config 'statistics' 'collectd_iptables'

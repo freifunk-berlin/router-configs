@@ -80,7 +80,7 @@ config Hna6
 	option prefix '0'
 
 config Hna6
-	option netaddr '2001:470:5231:0:0:0:0:0'
+	option netaddr '2001:470:5231::'
 	option prefix '48'
 
 config Hna6
