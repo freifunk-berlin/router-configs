@@ -13,7 +13,7 @@ config wifi-device 'radio0'
 	option distance '1000'
 	option htmode 'HT40+'
 	option channel '44'
-	option txpower '10'
+	option txpower '18'
 	option mcast_rate '6000'
 
 config wifi-iface

@@ -5,5 +5,6 @@ config alfred 'alfred'
 	option interface 'br-mesh'
 	option mode 'slave'
 	option run_facters '1'
-	option start_vis '0'
+	option start_alfred_gpsd '1'
+	option start_vis '1'
 

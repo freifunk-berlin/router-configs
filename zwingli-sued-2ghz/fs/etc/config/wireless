@@ -30,7 +30,7 @@ config wifi-iface
 	option device 'radio0'
 	option encryption 'none'
 	option isolate '1'
-	option mcast_rate '36000'
+	option mcast_rate '12000'
 	option mode 'ap'
 	option network 'mesh'
 	option ssid 'berlin.freifunk.net'

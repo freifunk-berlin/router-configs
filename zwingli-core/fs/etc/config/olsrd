@@ -54,11 +54,13 @@ config Hna4
 	option netmask '255.255.240.0'
 
 config Interface
-	option Mode 'mesh'
+	option LinkQualityMult '104.131.99.20 0.75'
+	option Mode 'ether'
 	option ignore '0'
 	option interface 'fhain'
 
 config Interface
+	option LinkQualityMult '104.129.3.48 0.5'
 	option Mode 'mesh'
 	option ignore '0'
 	option interface 'fluxfm'
@@ -80,17 +82,18 @@ config LoadPlugin
 	option library 'olsrd_watchdog.so.0.1'
 
 config LoadPlugin
-	option hosts_file '/tmp/hosts/olsr'
-	option ignore '0'
-	option lat '52.50355457229739'
-	option latlon_file '/var/run/latlon.js'
-	option library 'olsrd_nameservice.so.0.3'
-	option lon '13.454830790023667'
 	option services_file '/var/etc/services.olsr'
+	option library 'olsrd_nameservice.so.0.3'
 	option suffix '.olsr'
+	option latlon_file '/var/run/latlon.js'
+	option hosts_file '/tmp/hosts/olsr'
+	option lat '52.50355457229739'
+	option lon '13.454830790023667'
+	option ignore '0'
+#	list hosts '2001:BF7:F100:4818:0:0:0:1 pre1.Zwingli-Core'
 
 config LoadPlugin
-	option ignore '0'
+	option ignore '1'
 	option library 'olsrd_dyn_gw_plain.so.0.4'
 
 config Hna4
@@ -106,14 +109,18 @@ config Hna4
 	option netmask '255.255.255.255'
 
 config Hna4
-	option netaddr '104.130.10.24'
 	option netmask '255.255.255.255'
+	option netaddr '104.130.10.24'
+
+#config Hna6
+#	option prefix '61'
+#	option netaddr '2001:BF7:F100:4818:0:0:0:0'
 
 config Hna6
-	option netaddr 'FD1C:EBAA:D4A1:0:0:0:0:0'
-	option prefix '48'
+	option prefix '60'
+	option netaddr '2001:bf7:750:1400::'
 
-config Hna6
-	option netaddr 'fd1c:ebaa:d4a1::'
-	option prefix '48'
+#config Hna6
+#	option prefix '48'
+#	option netaddr 'FD1C:EBAA:D4A1:0:0:0:0:0'
 

@@ -11,8 +11,9 @@ config wifi-device 'radio0'
 	option country 'DE'
 	option channel '9'
 	option noscan '1'
-	option distance '1000'
+	option distance '5000'
 	option htmode 'HT20'
+	option diversity '1'
 	option basic_rate '6000 9000 12000 18000 24000 36000 48000 54000'
 
 config wifi-iface
@@ -27,7 +28,8 @@ config wifi-iface
 config wifi-iface
 	option device 'radio0'
 	option encryption 'none'
-	option mcast_rate '36000'
+	option isolate '1'
+	option mcast_rate '6000'
 	option mode 'ap'
 	option network 'mesh'
 	option ssid 'berlin.freifunk.net'

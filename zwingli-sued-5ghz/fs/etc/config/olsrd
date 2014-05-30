@@ -1,8 +1,5 @@
 
 config LoadPlugin
-	option library 'olsrd_arprefresh.so.0.1'
-
-config LoadPlugin
 	option accept '0.0.0.0'
 	option library 'olsrd_txtinfo.so.0.1'
 
@@ -25,7 +22,7 @@ config olsrd
 
 config InterfaceDefaults
 	option HelloInterval '3.0'
-	option HelloValidityTime '125.0'
+	option HelloValidityTime '225.0'
 	option HnaInterval '10.0'
 	option HnaValidityTime '125.0'
 	option Ip4Broadcast '255.255.255.255'
@@ -36,14 +33,8 @@ config InterfaceDefaults
 	option TcValidityTime '500.0'
 
 config LoadPlugin
-	option P2pdTtl '10'
-	option UdpDestPort '224.0.0.251 5353'
-	option ignore '1'
-	option library 'olsrd_p2pd.so.0.1.0'
-
-config LoadPlugin
 	option file '/var/run/olsrd.watchdog'
-	option interval '30'
+	option interval '90'
 	option library 'olsrd_watchdog.so.0.1'
 
 config LoadPlugin
@@ -55,11 +46,8 @@ config LoadPlugin
 	option services_file '/var/etc/services.olsr'
 	option suffix '.olsr'
 
-config LoadPlugin
-	option ignore '1'
-	option library 'olsrd_dyn_gw_plain.so.0.4'
-
 config Interface
+	option LinkQualityMult '104.130.3.133 0.1'
 	option Mode 'mesh'
 	option ignore '0'
 	option interface 'wireless0'
@@ -70,10 +58,10 @@ config Interface
 	option interface 'lan'
 
 config Hna6
-	option netaddr 'FDF3:E7E5:8449:0:0:0:0:0'
-	option prefix '48'
+	option netaddr '2001:0bf7:0750:1430:0000:0000:0000:0000'
+	option prefix '60'
 
 config Hna6
-	option netaddr 'fdf3:e7e5:8449::'
+	option netaddr 'FDF3:E7E5:8449:0:0:0:0:0'
 	option prefix '48'
 

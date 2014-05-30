@@ -21,12 +21,16 @@ config dhcp 'wan'
 	option ignore '1'
 	option interface 'wan'
 
+config dhcp 'olsr'
+	option ignore '1'
+	option interface 'olsr'
+
 config dhcp 'mesh'
 	option ignore '0'
 	option leasetime '10m'
 	option start '30'
 	option force '1'
-	option interface 'bat0'
+	option interface 'mesh'
 	list dhcp_option '119,olsr'
 
 config dhcp 'lan'

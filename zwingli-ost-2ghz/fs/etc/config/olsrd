@@ -60,14 +60,19 @@ config LoadPlugin
 	option library 'olsrd_dyn_gw_plain.so.0.4'
 
 config Interface
-	option Mode 'mesh'
 	option ignore '0'
+	option Mode 'mesh'
 	option interface 'wireless0'
+	list LinkQualityMult '104.130.130.130 0.25'
 
 config Interface
 	option Mode 'ether'
 	option ignore '0'
 	option interface 'lan'
+
+config Hna6
+	option netaddr '2001:0bf7:0750:1440:0000:0000:0000:0000'
+	option prefix '60'
 
 config Hna6
 	option netaddr 'FDD6:C438:D3E6:0:0:0:0:0'

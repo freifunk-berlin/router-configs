@@ -4,4 +4,5 @@
 */5 * * * *	/usr/sbin/ff_olsr_watchdog
 * * * * *	/usr/sbin/ffwatchd running || /etc/init.d/freifunk-watchdog restart
 * * * * *	/usr/sbin/ff_olsr_test_gw.sh
+*/30 * * * * /etc/init.d/luci_statistics restart
 */5 * * * * ( for file in /etc/alfred/* ; do [ -x $file ] && $file ; done )

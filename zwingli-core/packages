@@ -27,6 +27,9 @@ hostapd-common - 20131120-1
 htop - 1.0.2-1
 ip - 3.11.0-1
 iperf - 2.0.5-1
+iptables - 1.4.21-1
+iputils-tracepath - 20101006-1
+iputils-traceroute6 - 20101006-1
 iw - 3.14-1
 iwinfo - 47
 jshn - 2014-02-23-926121113b903bf7b6133f782c84d0ed6c1a1a58
@@ -49,7 +52,9 @@ kmod-ebtables-ipv4 - 3.10.32-1
 kmod-ebtables-ipv6 - 3.10.32-1
 kmod-input-core - 3.10.32-1
 kmod-input-gpio-keys - 3.10.32-1
+kmod-ipip - 3.10.13-1
 kmod-ipt-core - 3.10.32-1
+kmod-iptunnel - 3.10.13-1
 kmod-iptunnel4 - 3.10.32-1
 kmod-ipv6 - 3.10.32-1
 kmod-leds-gpio - 3.10.32-1
@@ -64,9 +69,11 @@ kmod-usb2-fsl - 3.10.32-1
 libblobmsg-json - 2014-02-23-926121113b903bf7b6133f782c84d0ed6c1a1a58
 libc - 0.9.33.2-1
 libcap - 2.22-1
+libelf1 - 0.155-1
 libgcc - 4.8-linaro-1
 libgps - 3.10-1
 libip4tc - 1.4.20-1
+libip6tc - 1.4.21-1
 libiwinfo - 47
 libiwinfo-lua - 47
 libjson-c - 0.11-2
@@ -75,6 +82,7 @@ libltdl - 2.4-1
 liblua - 5.1.5-1
 libncurses - 5.9-1
 libncursesw - 5.9-1
+libnetsnmp - 5.4.2.1-5
 libnl-tiny - 0.1-3
 libopenssl - 1.0.1f-1
 liboping - 1.6.2-1
@@ -89,6 +97,7 @@ libubus - 2014-02-23-334c38918063b5ece164624e20490021b2bff38a
 libubus-lua - 2014-02-23-334c38918063b5ece164624e20490021b2bff38a
 libuci - 2014-02-18.1-1
 libuci-lua - 2014-02-18.1-1
+libxtables - 1.4.21-1
 lua - 5.1.5-1
 luci-app-ffwizard-pberg - 0.0.2-13
 luci-app-olsr - svn-r9960-1
@@ -127,8 +136,9 @@ olsrd-mod-jsoninfo - 0.6.6-4
 olsrd-mod-nameservice - 0.6.6-4
 olsrd-mod-txtinfo - 0.6.6-4
 olsrd-mod-watchdog - 0.6.6-4
+openssh-client - 6.6p1-1
 openssh-keygen - 6.5p1-1
-openssh-server - 6.5p1-1
+openssh-server - 6.6p1-1
 opkg - 9c97d5ecd795709c8584e972bfdf3aee3a5b846d-6
 perl - 5.10.0-7
 perlbase-autoloader - 5.10.0-7
@@ -148,9 +158,11 @@ procd - 2014-02-17-3a225cfa1782763980c86e9811c683ade33012cc
 protobuf - 2.4.1-1
 rrdtool1 - 1.0.50-2
 screen - 4.0.3-3
+snmp-utils - 5.4.2.1-5
 swconfig - 10
 tcpdump-mini - 4.5.1-4
 terminfo - 5.9-1
+traceroute6 - 1.0.2-1
 ubox - 2014-01-29-71ea854364833c5dcb0800e092b45fed2c45910e
 ubus - 2014-02-23-334c38918063b5ece164624e20490021b2bff38a
 ubusd - 2014-02-23-334c38918063b5ece164624e20490021b2bff38a

@@ -70,10 +70,10 @@ config Interface
 	option interface 'lan'
 
 config Hna6
-	option netaddr 'FD8C:A54E:75CB:0:0:0:0:0'
-	option prefix '48'
+	option netaddr '2001:0bf7:0750:1450:0000:0000:0000:0000'
+	option prefix '60'
 
 config Hna6
-	option netaddr 'fd8c:a54e:75cb::'
+	option netaddr 'FD8C:A54E:75CB:0:0:0:0:0'
 	option prefix '48'
 

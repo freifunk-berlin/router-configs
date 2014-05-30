@@ -65,16 +65,15 @@ config Interface
 	option interface 'wireless0'
 
 config Interface
-	option IPv6Src '2001:bf7:830:6600::66/56'
 	option Mode 'ether'
 	option ignore '0'
 	option interface 'lan'
 
 config Hna6
-	option netaddr 'FD87:44D7:5E82:0:0:0:0:0'
-	option prefix '48'
+	option netaddr '2001:0bf7:0750:1410:0000:0000:0000:0000'
+	option prefix '60'
 
 config Hna6
-	option netaddr 'fd87:44d7:5e82::'
+	option netaddr 'FD87:44D7:5E82:0:0:0:0:0'
 	option prefix '48'
 
