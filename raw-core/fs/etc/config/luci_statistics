@@ -14,7 +14,7 @@ config statistics 'collectd'
 	option TypesDB '/usr/share/collectd/types.db'
 
 config statistics 'collectd_ping'
-	option Hosts '104.130.10.26'
+	option Hosts '104.130.10.26 8.8.8.8'
 	option Interval '30'
 	option TTL '127'
 	option enable '1'
