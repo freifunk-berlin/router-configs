@@ -1,8 +1,0 @@
-
-config heartbeat 'heartbeat'
-	option enabled '1'
-	list interface 'wireless0dhcp'
-
-config server 'server'
-	option url 'http://heartbeat.basicinside.de'
-

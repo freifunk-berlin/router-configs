@@ -1,5 +1,0 @@
-config compcache
-	option 'backup_dev'	''
-	option 'enabled'	'1'
-	option 'size_kbytes'	'2048'
-

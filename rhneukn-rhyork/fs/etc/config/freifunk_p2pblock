@@ -1,7 +1,0 @@
-config 'settings' 'p2pblock'
-	option 'blocktime' '60'
-	option 'ipp2p' 'edk dc kazaa gnu bit ares soul winmx apple'
-	option 'layer7' 'edonkey bittorrent fasttrack'
-	option 'portrange' '1024:65535'
-	option 'whitelist' ''
-
