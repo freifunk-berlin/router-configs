@@ -1,0 +1,35 @@
+
+config wifi-device 'radio0'
+	option type 'mac80211'
+	option hwmode '11na'
+	option macaddr 'dc:9f:db:8c:ab:7c'
+	list ht_capab 'SHORT-GI-40'
+	list ht_capab 'TX-STBC'
+	list ht_capab 'RX-STBC1'
+	list ht_capab 'DSSS_CCK-40'
+	option distance '6000'
+	option diversity '1'
+	option htmode 'HT20'
+	option txpower '22'
+	option chanbw '20'
+	option txantenna 'all'
+	option rxantenna 'all'
+	option country '00'
+	option channel '140'
+
+config wifi-iface
+	option device 'radio0'
+	option encryption 'none'
+	option ifname 'wlan0-ap-5'
+	option mode 'ap'
+	option network 'wireless1'
+	option ssid 'bbb-freifunk-SEGEN-STTBD'
+
+config wifi-iface
+	option device 'radio0'
+	option encryption 'none'
+	option ifname 'wlan0-sta-5'
+	option mode 'sta'
+	option network 'wireless0'
+	option ssid 'BHT-SEGEN'
+

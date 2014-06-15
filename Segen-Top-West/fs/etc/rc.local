@@ -1,0 +1,10 @@
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+
+
+
+(
+sleep 30 && /etc/init.d/network reload
+) &
+
+exit 0

@@ -1,0 +1,26 @@
+config 'community' 'profile'
+	option 'homepage' 'http://www.evernet-eg.de'
+	option 'latitude' '51.15692062509162'
+	option 'longitude' '10.716041922569275'
+	option 'mesh_network' '10.0.0.0/8'
+	option 'name' 'Freifunk Evernet eG'
+	option 'ssid' 'evernet.freifunk.net'
+	option 'suffix' 'evernet'
+
+config 'defaults' 'interface'
+	option 'netmask' '255.0.0.0'
+
+config 'defaults' 'bssidscheme'
+	option 'all'	'02:CA:FF:EE:BA:BE'
+
+config 'defaults' 'wifi_device'
+	option 'beacon_int' '5000'
+	option 'channel' '13'
+	option 'country' 'DE'
+	option 'distance' '1500'
+	option 'noscan' '0'
+	option 'txpower' '19'
+
+config 'defaults' 'wifi_iface'
+	option 'mcast_rate' '6000'
+

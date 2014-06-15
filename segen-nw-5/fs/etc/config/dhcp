@@ -1,0 +1,25 @@
+
+config dnsmasq
+	option authoritative '1'
+	option boguspriv '1'
+	option domain 'olsr'
+	option domainneeded '1'
+	option expandhosts '1'
+	option filterwin2k '0'
+	option leasefile '/tmp/dhcp.leases'
+	option local '/olsr/'
+	option localise_queries '1'
+	option nonegcache '0'
+	option readethers '1'
+	option rebind_localhost '1'
+	option rebind_protection '1'
+	option resolvfile '/tmp/resolv.conf.auto'
+
+config dhcp 'wireless0dhcp'
+	option ignore '0'
+	option leasetime '30m'
+	option start '2'
+	option force '1'
+	option interface 'wireless0dhcp'
+	list dhcp_option '119,olsr'
+

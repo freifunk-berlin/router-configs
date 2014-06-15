@@ -1,0 +1,33 @@
+
+config wifi-device 'radio0'
+	option type 'mac80211'
+	option hwmode '11na'
+	option macaddr 'dc:9f:db:94:0e:5f'
+	list ht_capab 'SHORT-GI-40'
+	list ht_capab 'TX-STBC'
+	list ht_capab 'RX-STBC1'
+	list ht_capab 'DSSS_CCK-40'
+	option disabled '0'
+	option noscan '1'
+	option country '00'
+	option diversity '1'
+	option channel '112'
+	option htmode 'HT40-'
+	option txpower '17'
+	option chanbw '20'
+	option txantenna 'all'
+	option rxantenna 'all'
+
+
+config wifi-iface
+	option bgscan '0'
+	option bssid '12:12:CA:FF:EE:EE'
+	option device 'radio0'
+	option encryption 'none'
+	option ifname 'wlan0-adhoc-5'
+	option mode 'adhoc'
+	option network 'wireless0'
+	option probereq '1'
+	option ssid 'ch112.freifunk.net'
+	option sw_merge '1'
+
