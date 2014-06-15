@@ -1,0 +1,233 @@
+
+config LoadPlugin
+	option library 'olsrd_arprefresh.so.0.1'
+
+config LoadPlugin
+	option accept '0.0.0.0'
+	option library 'olsrd_txtinfo.so.0.1'
+
+config LoadPlugin
+	option accept '0.0.0.0'
+	option library 'olsrd_jsoninfo.so.0.0'
+
+config olsrd
+	option AllowNoInt 'yes'
+	option FIBMetric 'flat'
+	option IpVersion '6and4'
+	option LinkQualityAlgorithm 'etx_ff'
+	option LinkQualityLevel '2'
+	option NatThreshold '0.75'
+	option OlsrPort '698'
+	option Pollrate '0.025'
+	option TcRedundancy '2'
+	option Willingness '3'
+
+config InterfaceDefaults
+	option HelloInterval '30.0'
+	option HelloValidityTime '60.0'
+	option HnaInterval '100.0'
+	option HnaValidityTime '1000.0'
+	option Ip4Broadcast '255.255.255.255'
+	option MidInterval '250.0'
+	option MidValidityTime '1000.0'
+	option Mode 'mesh'
+	option TcInterval '20.0'
+	option TcValidityTime '500.0'
+
+config LoadPlugin
+	option UdpDestPort '224.0.0.251 5353'
+	option P2pdTtl '10'
+	option library 'olsrd_p2pd.so.0.1.0'
+	option ignore '1'
+	list NonOlsrIf 'wireless0dhcp'
+	list NonOlsrIf 'wireless1dhcp'
+	list NonOlsrIf 'lan'
+	list NonOlsrIf 'vlan4'
+	list NonOlsrIf 'vlan5'
+	list NonOlsrIf 'vlan6'
+	list NonOlsrIf 'vlan7'
+	list NonOlsrIf 'vlan8'
+	list NonOlsrIf 'vlan9'
+	list NonOlsrIf 'vlan10'
+	list NonOlsrIf 'vlan11'
+	list NonOlsrIf 'vlan12'
+	list NonOlsrIf 'vlan13'
+	list NonOlsrIf 'vlan14'
+	list NonOlsrIf 'vlan15'
+	list NonOlsrIf 'vlan16'
+
+config Interface
+	option ignore '0'
+	option interface 'wireless0'
+
+config Hna4
+	option netaddr '104.8.7.16'
+	option netmask '255.255.255.240'
+
+config Interface
+	option ignore '0'
+	option interface 'wireless1'
+
+config Hna4
+	option netaddr '104.8.7.32'
+	option netmask '255.255.255.240'
+
+config Interface
+	option Mode 'ether'
+	option ignore '0'
+	option interface 'lan'
+
+config Hna4
+	option netaddr '104.8.7.0'
+	option netmask '255.255.255.240'
+
+config Interface
+	option LinkQualityMult '104.131.99.23 0.2'
+	option Mode 'ether'
+	option ignore '0'
+	option interface 'vlan4'
+
+config Hna4
+	option netaddr '104.8.7.48'
+	option netmask '255.255.255.252'
+
+config Interface
+	option Mode 'ether'
+	option ignore '0'
+	option interface 'vlan5'
+
+config Hna4
+	option netaddr '104.8.7.52'
+	option netmask '255.255.255.252'
+
+config Interface
+	option Mode 'ether'
+	option ignore '0'
+	option interface 'vlan6'
+
+config Hna4
+	option netaddr '104.8.7.56'
+	option netmask '255.255.255.252'
+
+config Interface
+	option Mode 'ether'
+	option ignore '0'
+	option interface 'vlan7'
+
+config Hna4
+	option netaddr '104.8.7.60'
+	option netmask '255.255.255.252'
+
+config Interface
+	option Mode 'ether'
+	option ignore '0'
+	option interface 'vlan8'
+
+config Hna4
+	option netaddr '104.8.7.64'
+	option netmask '255.255.255.252'
+
+config Interface
+	option Mode 'ether'
+	option ignore '0'
+	option interface 'vlan9'
+
+config Hna4
+	option netaddr '104.8.7.68'
+	option netmask '255.255.255.252'
+
+config Interface
+	option Mode 'ether'
+	option ignore '0'
+	option interface 'vlan10'
+
+config Hna4
+	option netaddr '104.8.7.72'
+	option netmask '255.255.255.252'
+
+config Interface
+	option Mode 'ether'
+	option ignore '0'
+	option interface 'vlan11'
+
+config Hna4
+	option netaddr '104.8.7.76'
+	option netmask '255.255.255.252'
+
+config Interface
+	option Mode 'ether'
+	option ignore '0'
+	option interface 'vlan12'
+
+config Hna4
+	option netaddr '104.8.7.80'
+	option netmask '255.255.255.252'
+
+config Interface
+	option Mode 'ether'
+	option ignore '0'
+	option interface 'vlan13'
+
+config Hna4
+	option netaddr '104.8.7.84'
+	option netmask '255.255.255.252'
+
+config Interface
+	option Mode 'ether'
+	option ignore '0'
+	option interface 'vlan14'
+
+config Hna4
+	option netaddr '104.8.7.88'
+	option netmask '255.255.255.252'
+
+config Interface
+	option Mode 'ether'
+	option ignore '0'
+	option interface 'vlan15'
+
+config Hna4
+	option netaddr '104.8.7.92'
+	option netmask '255.255.255.252'
+
+config Interface
+	option Mode 'ether'
+	option ignore '0'
+	option interface 'vlan16'
+
+config Hna4
+	option netaddr '104.8.7.96'
+	option netmask '255.255.255.252'
+
+config LoadPlugin
+	option file '/var/run/olsrd.watchdog'
+	option interval '30'
+	option library 'olsrd_watchdog.so.0.1'
+
+config LoadPlugin
+	option lon '13.411940000000'
+	option services_file '/var/etc/services.olsr'
+	option library 'olsrd_nameservice.so.0.3'
+	option suffix '.olsr'
+	option latlon_file '/var/run/latlon.js'
+	option lat '52.5361200000000'
+	option hosts_file '/tmp/hosts/olsr'
+	option ignore '0'
+	list service 'http://104.8.7.78:80|tcp|Freifunkcam Segenskirche'
+
+config LoadPlugin
+	option ignore '1'
+	option library 'olsrd_dyn_gw_plain.so.0.4'
+
+config LoadPlugin
+	option ignore '1'
+	option library 'olsrd_mdns.so.1.0.1'
+
+config Hna6                             
+       option prefix '59' 
+       option netaddr '2001:bf7:760:1000::'
+
+#config Hna6
+#	option prefix '48'
+#	option netaddr 'FDFE:F0B6:6AC6:0:0:0:0:0'
+
