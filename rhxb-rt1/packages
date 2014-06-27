@@ -58,6 +58,8 @@ libltdl - 2.4-1
 liblua - 5.1.5-1
 libncurses - 5.9-1
 libnl-tiny - 0.1-3
+libpcap - 1.3.0-1
+libpcre - 8.11-2
 libpthread - 0.9.33.2-1
 librrd1 - 1.0.50-2
 libubox - 2013-08-01-04f194aa8a04926fe7f2e42bbf9ba6c62d49339e
@@ -106,6 +108,7 @@ opkg - 618-5
 procd - 2013-10-01-eba428f6672068d819d6296db3f635e6ac5a8be7-1
 rrdtool1 - 1.0.50-2
 swconfig - 10
+tcpdump-mini - 4.2.1-3
 terminfo - 5.9-1
 ubox - 2013-09-29-887256e92838ef94eeea8d7ba06ff078c7e05296
 ubus - 2013-09-29-6ae17d0298a8f1c24f16a68c8d1884091fb5c39f
@@ -114,6 +117,7 @@ uci - 2013-09-29.1-1
 uclibcxx - 0.2.4-1
 uhttpd - 2013-09-13-8eb20e0aad7412468975b2c9ce7e374ea3084e42
 uhttpd-mod-ubus - 2013-09-13-8eb20e0aad7412468975b2c9ce7e374ea3084e42
+wget-nossl - 1.15-1
 wpad - 20130807-1
 wpad-mini - 20130807-1
 zlib - 1.2.8-1
