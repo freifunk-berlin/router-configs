@@ -77,3 +77,7 @@ config Hna6
 	option netaddr 'FDCA:B384:87E3:0:0:0:0:0'
 	option prefix '48'
 
+config Hna6
+	option netaddr '2001:0bf7:0830:ea50:0000:0000:0000:0000'
+	option prefix '60'
+

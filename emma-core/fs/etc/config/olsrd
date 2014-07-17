@@ -111,3 +111,7 @@ config Hna6
 	option netaddr 'FDA3:1908:F150:0:0:0:0:0'
 	option prefix '48'
 
+config Hna6
+	option netaddr '2001:bf7:830:ea00::'
+	option prefix '60'
+

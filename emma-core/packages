@@ -102,6 +102,7 @@ luci-sgi-cgi - svn-r9960-1
 luci-theme-base - svn-r9960-1
 luci-theme-bootstrap - svn-r9960-1
 mtd - 20
+mtr - 0.82-1
 netifd - 2014-03-07-8aabd47c6f4fefc8fbd70c34a738f7c26956d8cd
 olsrd - 0.6.6-4
 olsrd-mod-arprefresh - 0.6.6-4
