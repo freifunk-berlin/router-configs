@@ -38,7 +38,7 @@ config LoadPlugin
 	option library 'olsrd_p2pd.so.0.1.0'
 
 config Interface
-	option ignore '0'
+	option ignore '1'
 	option interface 'emmaus'
 
 config Interface
