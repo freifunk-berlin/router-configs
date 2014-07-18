@@ -1,0 +1,41 @@
+
+config dnsmasq
+	option authoritative '1'
+	option boguspriv '1'
+	option domain 'olsr'
+	option domainneeded '1'
+	option expandhosts '1'
+	option filterwin2k '0'
+	option leasefile '/tmp/dhcp.leases'
+	option local '/olsr/'
+	option localise_queries '1'
+	option nonegcache '0'
+	option readethers '1'
+	option rebind_localhost '1'
+	option rebind_protection '1'
+	option resolvfile '/tmp/resolv.conf.auto'
+
+config dhcp 'lan'
+	option ignore '0'
+	option interface 'lan'
+
+config dhcp 'emmaus'
+	option ignore '1'
+	option interface 'emmaus'
+
+config dhcp 'zwingli'
+	option ignore '1'
+	option interface 'zwingli'
+
+config dhcp 'batmesh'
+	option ignore '0'
+	option interface 'batmesh'
+
+config dhcp 'fflan'
+	option ignore '1'
+	option interface 'fflan'
+
+config dhcp 'fluxfm'
+	option ignore '1'
+	option interface 'fluxfm'
+

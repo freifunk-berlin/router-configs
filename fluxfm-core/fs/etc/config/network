@@ -1,0 +1,108 @@
+
+config interface 'loopback'
+	option ifname 'lo'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+	option proto 'static'
+
+config interface 'lan'
+	option ifname 'eth0.1'
+	option ip6assign '64'
+	option ip6prefix '2001:bf7:830:1300::/60'
+	option ipaddr '192.168.1.1'
+	option macaddr 'f8:1a:67:1f:0a:21'
+	option netmask '255.255.255.0'
+	option proto 'static'
+	option type 'bridge'
+
+config interface 'emmaus'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option ifname 'eth0.10'
+	option ip6assign '64'
+	option ipaddr '104.192.7.17'
+	option macaddr 'f8:1a:67:1f:0a:22'
+	option netmask '255.255.255.252'
+	option proto 'static'
+
+config interface 'zwingli'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option ifname 'eth0.11'
+	option ip6assign '64'
+	option ipaddr '104.192.7.21'
+	option macaddr 'f8:1a:67:1f:0a:23'
+	option netmask '255.255.255.252'
+	option proto 'static'
+
+config interface 'ethbat'
+	option ifname 'eth0.20'
+	option macaddr 'f8:1a:67:1f:0a:24'
+	option proto 'none'
+
+config interface 'batmesh'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option ifname 'bat0 ethbat'
+	option ip6assign '64'
+	option ipaddr '104.192.7.129'
+	option netmask '255.255.255.128'
+	option proto 'static'
+	option type 'bridge'
+
+config interface 'fflan'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option ifname 'eth0.104'
+	option ip6assign '64'
+	option ipaddr '104.192.7.1'
+	option macaddr 'f8:1a:67:1f:0a:25'
+	option netmask '255.255.255.240'
+	option proto 'static'
+
+config interface 'fflanbat'
+	option ifname '@fflan'
+	option mesh 'bat0'
+	option mtu '1532'
+	option proto 'batadv'
+
+config interface 'fluxfm'
+	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
+	option ifname 'eth0.106'
+	option ip6assign '64'
+	option ipaddr '104.192.7.33'
+	option macaddr 'f8:1a:67:1f:0a:26'
+	option netmask '255.255.255.240'
+	option proto 'static'
+
+config switch
+	option enable_vlan '1'
+	option name 'switch0'
+	option reset '1'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 1'
+	option vlan '1'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 2t'
+	option vlan '10'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 2t'
+	option vlan '11'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 3u'
+	option vlan '20'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 2t 4'
+	option vlan '104'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 5'
+	option vlan '106'
+
