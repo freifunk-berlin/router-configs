@@ -85,6 +85,10 @@ config Hna4
 	option netmask '255.255.255.240'
 
 config Hna4
+	option netaddr '104.192.7.48'
+	option netmask '255.255.255.240'
+
+config Hna4
 	option netaddr '104.192.7.128'
 	option netmask '255.255.255.128'
 

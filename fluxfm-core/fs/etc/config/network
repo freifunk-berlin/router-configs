@@ -9,9 +9,9 @@ config interface 'lan'
 	option ifname 'eth0.1'
 	option ip6assign '64'
 	option ip6prefix '2001:bf7:830:1300::/60'
-	option ipaddr '192.168.1.1'
+	option ipaddr '104.192.7.49'
 	option macaddr 'f8:1a:67:1f:0a:21'
-	option netmask '255.255.255.0'
+	option netmask '255.255.255.240'
 	option proto 'static'
 	option type 'bridge'
 
@@ -78,7 +78,7 @@ config switch
 
 config switch_vlan
 	option device 'switch0'
-	option ports '0t 1'
+	option ports '0t 1 2t'
 	option vlan '1'
 
 config switch_vlan
