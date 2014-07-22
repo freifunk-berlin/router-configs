@@ -20,6 +20,7 @@ fstools - 2014-04-17-fe222812cc12d37647fbb8667851eb005ea95331
 hostapd-common - 2014-04-24-1
 ip - 3.11.0-1
 iw - 3.14-1
+iwinfo - 47
 jshn - 2014-04-26-73a88451ddcc58ba1217dea22fee3eb5b20cf79b
 kernel - 3.10.36-1-2a47c6e302671e2aa4fcfe895003eaef
 kmod-ath - 3.10.36+2014-03-31-1
