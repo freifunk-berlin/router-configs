@@ -20,6 +20,7 @@ fstools - 2014-04-17-fe222812cc12d37647fbb8667851eb005ea95331
 hostapd-common - 2014-04-24-1
 ip - 3.11.0-1
 iw - 3.14-1
+iwinfo - 47
 jshn - 2014-04-26-73a88451ddcc58ba1217dea22fee3eb5b20cf79b
 kernel - 3.10.36-1-9850e32ba034b434c1c19113792379e0
 kmod-ath - 3.10.36+2014-03-31-1
@@ -110,6 +111,7 @@ ubusd - 2014-03-18-1d5ac421a5b3dca60562e876ba70d0c2fe46b3d2
 uci - 2014-04-11.1-1
 uhttpd - 2014-03-22-31b459cb1d0ba3280cbc3fc06ce6fab903c07da6
 uhttpd-mod-ubus - 2014-03-22-31b459cb1d0ba3280cbc3fc06ce6fab903c07da6
+vnstat - 1.11-4
 wpad - 2014-04-24-1
 wpad-mini - 2014-04-24-1
 zlib - 1.2.8-1
