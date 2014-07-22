@@ -1,0 +1,5 @@
+config 'meshkit' 'update'
+	option 'profile' 'UBNT'
+	option 'target' 'Attitude-Adjustment-ar71xx_generic'
+	option 'url' 'http://firmware.berlin.freifunk.net/api/json/buildimage'
+

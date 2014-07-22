@@ -1,0 +1,146 @@
+
+config statistics 'rrdtool'
+	option default_timespan '1hour'
+	option image_path '/tmp/rrdimg'
+	option image_width '600'
+
+config statistics 'collectd'
+	option BaseDir '/var/run/collectd'
+	option Include '/etc/collectd/conf.d'
+	option Interval '30'
+	option PIDFile '/var/run/collectd.pid'
+	option PluginDir '/usr/lib/collectd'
+	option ReadThreads '2'
+	option TypesDB '/usr/share/collectd/types.db'
+
+config statistics 'collectd_ping'
+	option Hosts '127.0.0.1'
+	option Interval '30'
+	option TTL '127'
+	option enable '0'
+
+config statistics 'collectd_csv'
+	option DataDir '/tmp'
+	option StoreRates '0'
+	option enable '0'
+
+config statistics 'collectd_df'
+	option Devices '/dev/mtdblock/4'
+	option FSTypes 'tmpfs'
+	option IgnoreSelected '0'
+	option MountPoints '/jffs'
+	option enable '0'
+
+config statistics 'collectd_disk'
+	option Disks 'hda1 hdb'
+	option IgnoreSelected '0'
+	option enable '0'
+
+config statistics 'collectd_dns'
+	option IgnoreSources '127.0.0.1'
+	option Interfaces 'ffdhcp ff br-lan'
+	option enable '0'
+
+config statistics 'collectd_email'
+	option SocketFile '/var/run/collectd/email.sock'
+	option SocketGroup 'nogroup'
+	option enable '0'
+
+config statistics 'collectd_exec'
+	option enable '0'
+
+config statistics 'collectd_interface'
+	option enable '1'
+#	option Interfaces 'br-lan br-ff'
+	option IgnoreSelected '0'
+
+config statistics 'collectd_iptables'
+	option enable '1'
+
+config collectd_iptables_match
+	option chain 'luci_fw_postrouting'
+	option name 'Verkehr LAN-Clients'
+	option outputif 'br-ff'
+	option source '192.168.1.0/24'
+	option table 'nat'
+	option target 'MASQUERADE'
+
+config collectd_iptables_match
+	option chain 'luci_fw_postrouting'
+	option name 'Verkehr WLAN-Clients'
+	option outputif 'br-ff'
+	option source '10.61.230.0/24'
+	option table 'nat'
+	option target 'MASQUERADE'
+
+config statistics 'collectd_irq'
+	option Irqs '2 3 4 7'
+	option enable '0'
+
+config statistics 'collectd_load'
+	option enable '1'
+
+config statistics 'collectd_logfile'
+	option File '/var/log/collectd.log'
+	option LogLevel 'notice'
+	option Timestamp '1'
+	option enable '0'
+
+config statistics 'collectd_netlink'
+	option IgnoreSelected '0'
+	option QDiscs 'br-lan br-ff'
+	option VerboseInterfaces 'br-lan br-ff'
+	option enable '0'
+
+config statistics 'collectd_network'
+	option Forward '0'
+	option enable '1'
+
+config statistics 'collectd_processes'
+	option Processes 'uhttpd dnsmasq dropbear'
+	option enable '1'
+
+config statistics 'collectd_tcpconns'
+	option ListeningPorts '0'
+	option LocalPorts '22 80'
+	option enable '1'
+
+config statistics 'collectd_unixsock'
+	option SocketFile '/var/run/collectd/query.sock'
+	option SocketGroup 'nogroup'
+	option enable '0'
+
+config statistics 'collectd_cpu'
+	option enable '1'
+
+config statistics 'collectd_rrdtool'
+	option DataDir '/tmp/rrd'
+	option RRARows '100'
+	option RRASingle '1'
+	option RRATimespans '1hour 1day 1week 1month 1year'
+	option enable '1'
+
+config statistics 'collectd_memory'
+	option enable '1'
+
+config statistics 'collectd_conntrack'
+	option enable '1'
+
+config statistics 'collectd_olsrd'
+	option Host '127.0.0.1'
+	option Port '2006'
+	option enable '1'
+
+config statistics 'collectd_iwinfo'
+	option enable '1'
+
+config statistics 'collectd_nut'
+	option UPS 'myupsname'
+	option enable '0'
+
+config statistics 'collectd_uptime'
+	option enable '1'
+
+config collectd_network_server
+	option host '77.87.48.12'
+
