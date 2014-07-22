@@ -18,7 +18,7 @@ config wifi-device 'radio0'
 	option htmode 'HT20'
 	option country 'DE'
 	option doth '0'
-	option distance '500'
+	option distance '1000'
 
 #config wifi-iface
 #	option network 'wireless0'

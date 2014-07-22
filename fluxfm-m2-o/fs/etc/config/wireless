@@ -11,7 +11,7 @@ config wifi-device 'radio0'
 	option txpower '15'
 	option disabled '0'
 	option country 'DE'
-	#option distance '500'
+	option distance '1000'
 	option channel '1'
 	option htmode 'HT20'
 

@@ -15,7 +15,7 @@ config wifi-device 'radio0'
 	option disabled '0'
 	option country 'DE'
 	option doth '0'
-	option distance '500'
+	option distance '1000'
 	option channel '6'
 	option htmode 'HT20'
 
