@@ -3,6 +3,7 @@ auto-ipv6-node - 0.0.6-3
 base-files - 152-r40660
 busybox - 1.19.4-7
 collectd - 4.10.8-3
+collectd-mod-cpu - 4.10.8-3
 collectd-mod-interface - 4.10.8-3
 collectd-mod-iwinfo - 4.10.8-3
 collectd-mod-load - 4.10.8-3

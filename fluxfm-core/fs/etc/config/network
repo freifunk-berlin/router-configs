@@ -40,7 +40,7 @@ config interface 'ethbat'
 
 config interface 'batmesh'
 	option dns '2002:d596:2a92:1:71:53:: 2002:5968:c28e::53 88.198.178.18 141.54.1.1 212.204.49.83 8.8.8.8 8.8.4.4'
-	option ifname 'bat0 ethbat'
+	option ifname 'bat0' # + ethbat
 	option ip6assign '64'
 	option ipaddr '104.192.7.129'
 	option netmask '255.255.255.128'
@@ -53,13 +53,13 @@ config interface 'fflan'
 	option ip6assign '64'
 	option ipaddr '104.192.7.1'
 	option macaddr 'f8:1a:67:1f:0a:25'
+	option mtu '1532'
 	option netmask '255.255.255.240'
 	option proto 'static'
 
 config interface 'fflanbat'
 	option ifname '@fflan'
 	option mesh 'bat0'
-	option mtu '1532'
 	option proto 'batadv'
 
 config interface 'fluxfm'
