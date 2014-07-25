@@ -63,11 +63,13 @@ config interface 'fflanbat'
 	option proto 'batadv'
 
 config interface 'fluxfm'
-	option defaultroute '0'
 	option ifname 'eth0.106'
 	option macaddr 'f8:1a:67:1f:0a:26'
-	option peerdns '0'
-	option proto 'dhcp' 
+	option proto 'static'
+	option ipaddr '192.168.22.2'
+	option netmask '255.255.255.0'
+	#option peerdns '0'
+	#option defaultroute '0'
 
 config switch
 	option enable_vlan '1'

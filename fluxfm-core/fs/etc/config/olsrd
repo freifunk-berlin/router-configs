@@ -63,6 +63,8 @@ config LoadPlugin
 	option hosts_file '/tmp/hosts/olsr'
 	list service 'http://pre1.fluxfm-core.olsr:80|tcp|pre1.fluxfm-core.olsr on 2001:BF7:830:1300:0:0:0:1'
 	list hosts '2001:BF7:830:1300:0:0:0:1 pre1.fluxfm-core'
+	list service 'http://fluxfm-core.olsr:8000/fluxfm-berlin.ogg|tcp|FluxFM Berlin / OGG'
+	list service 'http://fluxfm-core.olsr:8000/fluxfm-berlin.mp3|tcp|FluxFM Berlin / MP3'
 
 config Hna6
 	option netaddr '2001:BF7:830:1300:0:0:0:0'
