@@ -1,12 +1,9 @@
 
 config interface 'loopback'
 	option ifname 'lo'
-	option proto 'static'
 	option ipaddr '127.0.0.1'
 	option netmask '255.0.0.0'
-
-#config globals 'globals'
-#	option ula_prefix 'fd19:7d33:47f7::/48'
+	option proto 'static'
 
 config interface 'lan'
 	option ifname 'eth0.10'
@@ -202,24 +199,28 @@ config switch_vlan
 
 config interface '5nodhcp'
 	option ifname '@5no'
+	option ip6assign '64'
 	option ipaddr '104.201.6.1'
 	option netmask '255.255.255.224'
 	option proto 'static'
 
 config interface '5nwdhcp'
 	option ifname '@5nw'
+	option ip6assign '64'
 	option ipaddr '104.201.6.33'
 	option netmask '255.255.255.224'
 	option proto 'static'
 
 config interface '5swdhcp'
 	option ifname '@5sw'
+	option ip6assign '64'
 	option ipaddr '104.201.6.65'
 	option netmask '255.255.255.224'
 	option proto 'static'
 
 config interface '5sodhcp'
 	option ifname '@5so'
+	option ip6assign '64'
 	option ipaddr '104.201.6.97'
 	option netmask '255.255.255.224'
 	option proto 'static'
