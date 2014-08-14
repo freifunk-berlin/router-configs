@@ -30,7 +30,7 @@ test -d "$dst"/fs/etc/config && ./bin/uci-sort.pl "$dst"/fs/etc/config/*
 
 # remove wireless keys if present
 sed -i.backup '/key/d' "$dst/fs/etc/config/wireless"
-sed -i.backup '/password/d' "$dst/fs/etc/icecast.xml"
+test -f "$dst/fs/etc/icecast.xml" && sed -i.backup '/password/d' "$dst/fs/etc/icecast.xml"
 ## remove other private files
 # list of files
 files="$dst/fs/etc/passwd $dst/fs/etc/shadow $dst/fs/etc/openvpn/*.conf $dst/fs/etc/openvpn/*.key $dst/fs/etc/dropbear/dropbear_* $dst/fs/etc/uhttpd.* $dst/fs/lib/uci/upload/cbid.openvpn.*"
