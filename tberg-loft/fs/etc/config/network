@@ -1,0 +1,186 @@
+
+config interface 'loopback'
+	option ifname 'lo'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+	option proto 'static'
+
+config interface 'fflan'
+	option ifname 'eth0.2'
+	option ip6assign '64'
+	option ipaddr '10.31.3.12'
+	option mtu '1532'
+	option netmask '255.255.255.255'
+	option proto 'static'
+
+config interface 'fflanbat'
+	option ifname '@fflan'
+	option mesh 'bat0'
+	option mtu '1532'
+	option proto 'batadv'
+
+config interface 'batmesh'
+	option ifname 'bat0 eth0.3'
+	option type 'bridge'
+
+config switch
+	option enable_vlan '1'
+	option name 'switch0'
+	option reset '1'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 2'
+	option vlan '1'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 1'
+	option vlan '2'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 3 4 5'
+	option vlan '3'
+
+config interface 'tunl0'
+	option ifname 'tunl0'
+	option proto 'none'
+
+config rule 'olsr_allif_ipv4'
+	option lookup 'olsr'
+	option priority '1000'
+
+config rule 'localnets_allif_ipv4'
+	option lookup 'localnets'
+	option priority '2000'
+
+config rule 'olsr_tunnel_tunl0_ipv4'
+	option in 'tunl0'
+	option lookup 'olsr-tunnel'
+	option priority '19999'
+
+config rule 'olsr_default_tunl0_ipv4'
+	option in 'tunl0'
+	option lookup 'olsr-default'
+	option priority '20000'
+
+config rule 'olsr_default_unreachable_tunl0_ipv4'
+	option action 'unreachable'
+	option in 'tunl0'
+	option priority '20001'
+
+config interface 'ffvpn'
+	option ifname 'ffvpn'
+	option proto 'none'
+
+config interface 'wireless0'
+	option ip6assign '64'
+	option ipaddr '10.31.3.10'
+	option mtu '1532'
+	option netmask '255.255.255.255'
+	option proto 'static'
+
+config interface 'wireless0bat'
+	option ifname '@wireless0'
+	option mesh 'bat0'
+	option mtu '1532'
+	option proto 'batadv'
+
+config interface 'wireless1'
+	option ip6assign '64'
+	option ipaddr '10.31.3.11'
+	option netmask '255.255.255.255'
+	option proto 'static'
+
+config interface 'wireless1bat'
+	option ifname '@wireless1'
+	option mesh 'bat0'
+	option mtu '1532'
+	option proto 'batadv'
+
+config interface 'lan'
+	option dns '85.214.20.141 213.73.91.35 194.150.168.168'
+	option ifname 'eth0.1'
+	option ip6assign '64'
+	option ip6prefix '2001:bf7:800:10::/60'
+	option ipaddr '192.168.1.1'
+	option netmask '255.255.255.0'
+	option proto 'static'
+	option type 'bridge'
+
+config rule 'olsr_tunnel_wireless0_ipv4'
+	option in 'wireless0'
+	option lookup 'olsr-tunnel'
+	option priority '19999'
+
+config rule 'olsr_default_wireless0_ipv4'
+	option in 'wireless0'
+	option lookup 'olsr-default'
+	option priority '20000'
+
+config rule 'olsr_default_unreachable_wireless0_ipv4'
+	option action 'unreachable'
+	option in 'wireless0'
+	option priority '20001'
+
+config rule 'olsr_tunnel_wireless1_ipv4'
+	option in 'wireless1'
+	option lookup 'olsr-tunnel'
+	option priority '19999'
+
+config rule 'olsr_default_wireless1_ipv4'
+	option in 'wireless1'
+	option lookup 'olsr-default'
+	option priority '20000'
+
+config rule 'olsr_default_unreachable_wireless1_ipv4'
+	option action 'unreachable'
+	option in 'wireless1'
+	option priority '20001'
+
+config rule 'olsr_tunnel_dhcp_ipv4'
+	option in 'fflan'
+	option lookup 'olsr-tunnel'
+	option priority '19999'
+
+config rule 'olsr_default_dhcp_ipv4'
+	option in 'fflan'
+	option lookup 'olsr-default'
+	option priority '20000'
+
+config rule 'olsr_default_unreachable_dhcp_ipv4'
+	option action 'unreachable'
+	option in 'fflan'
+	option priority '20001'
+
+config rule 'olsr_tunnel_fflan_ipv4'
+	option in 'fflan'
+	option lookup 'olsr-tunnel'
+	option priority '19999'
+
+config rule 'olsr_default_fflan_ipv4'
+	option in 'fflan'
+	option lookup 'olsr-default'
+	option priority '20000'
+
+config rule 'olsr_default_unreachable_fflan_ipv4'
+	option action 'unreachable'
+	option in 'fflan'
+	option priority '20001'
+
+config rule 'olsr_tunnel_batmesh_ipv4'
+	option in 'batmesh'
+	option lookup 'olsr-tunnel'
+	option priority '19999'
+
+config rule 'olsr_default_batmesh_ipv4'
+	option in 'batmesh'
+	option lookup 'olsr-default'
+	option priority '20000'
+
+config rule 'olsr_default_unreachable_batmesh_ipv4'
+	option action 'unreachable'
+	option in 'batmesh'
+	option priority '20001'
+

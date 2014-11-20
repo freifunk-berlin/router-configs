@@ -1,0 +1,35 @@
+
+config public 'contact'
+	option location 'Teufelsberg'
+	option mail 'andre@gaul.io'
+	option name 'André Gaul'
+	option nickname 'andrenarchy'
+
+config public 'community'
+	option homepage 'http://berlin.freifunk.net'
+	option latitude '52.52075'
+	option longitude '13.40948'
+	option mesh_network '104.0.0.0/8'
+	option name 'berlin'
+	option splash_network '10.104.0.0/16'
+	option splash_prefix '27'
+	option ssid 'berlin.freifunk.net'
+	option ssid_scheme 'addchannelbefore'
+
+config defaults 'system'
+	option timezone 'CET-1CES'
+	option zonename 'Europe/Berlin'
+
+config defaults 'wifi_device'
+	option country 'DE'
+	option disabled '0'
+	option diversity '1'
+
+config defaults 'wifi_device_5'
+	option country 'DE'
+	option disabled '0'
+	option diversity '1'
+
+config defaults 'olsr_interface'
+	option Ip4Broadcast '255.255.255.255'
+
