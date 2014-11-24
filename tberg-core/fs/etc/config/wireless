@@ -1,6 +1,7 @@
 config wifi-device  radio0
 	option channel  13
 	option country  DE
+	option distance '500'
 	option diversity 1
 	option htmode	HT20
 	option hwmode	11ng
@@ -33,6 +34,7 @@ config wifi-device  radio1
 	option path	'pci0000:00/0000:00:13.0'
 	option htmode	HT20
 	option country  DE
+	option distance '6000'
 
 config wifi-iface
 	option device   radio1
