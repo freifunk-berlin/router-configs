@@ -50,7 +50,7 @@ config 'statistics' 'collectd_exec'
 
 config 'statistics' 'collectd_interface'
 	option 'IgnoreSelected' '0'
-	option 'Interfaces' 'br-lan br-ff'
+	option 'Interfaces' 'br-dhcp br-lan wlan0-1 wlan0-adhoc-2 wlan1'
 	option 'enable' '1'
 
 config 'statistics' 'collectd_iptables'
@@ -133,7 +133,7 @@ config 'statistics' 'collectd_conntrack'
 
 config 'statistics' 'collectd_olsrd'
 	option 'Host' '127.0.0.1'
-	option 'Port' '2006'
+	option 'Port' '2007'
 	option 'enable' '1'
 
 config 'statistics' 'collectd_iwinfo'

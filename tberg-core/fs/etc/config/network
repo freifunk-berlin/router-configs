@@ -44,7 +44,6 @@ config interface 'spandau'
 	option proto 'static'
 
 config interface 'fflan'
-	option force_link '1'
 	option ifname 'eth0'
 	option ip6assign '64'
 	option ipaddr '10.31.3.4'
