@@ -107,9 +107,9 @@ config Hna4
 	option netaddr '104.0.2.0'
 	option netmask '255.255.255.0'
 
-config Hna6
-	option netaddr 'FDA3:1908:F150:0:0:0:0:0'
-	option prefix '48'
+#config Hna6
+#	option prefix '48'
+#	option netaddr 'FDA3:1908:F150:0:0:0:0:0'
 
 config Hna6
 	option netaddr '2001:bf7:830:ea00::'

@@ -38,6 +38,12 @@ for lif in $(uci show network|sed -n 's,^network\.\([^\.=]\+\)=interface,\1,p');
 	done
 done
 
-# Temp fuer kaputtes Ethernet NNO,WNW,OSO
+# Temp weil das mit dem DHCP via Batman-ADV ned funzt. Achtung: viel BCast auf den APs.
+batctl if del br-lan
+ip addr flush dev br-bat
+ip addr flush dev br-lan
+ip addr add dev br-lan 104.0.2.9/24
+brctl delif br-bat eth0.109
+brctl addif br-lan eth0.109
 
 exit 0

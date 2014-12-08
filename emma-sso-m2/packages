@@ -15,6 +15,7 @@ collectd-mod-processes - 4.10.7-2
 collectd-mod-rrdtool - 4.10.7-2
 collectd-mod-uptime - 4.10.7-2
 community-profiles - 2
+dhcping - 1.2-1
 dnsmasq - 2.66-2
 dropbear - 2011.54-2
 freifunk-common - 1

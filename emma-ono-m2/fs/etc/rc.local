@@ -38,7 +38,9 @@ for lif in $(uci show network|sed -n 's,^network\.\([^\.=]\+\)=interface,\1,p');
 	done
 done
 
-# Aktiviere Batman-ADV-zu-Access-Point Bruecke
-ifup ap0
+# Temp weil das mit dem DHCP via Batman-ADV ned funzt. Achtung: viel BCast auf den APs.
+brctl delif br-bat wlan0
+brctl addif br-lan wlan0
+batctl if del br-lan
 
 exit 0

@@ -19,6 +19,34 @@ config dhcp 'wan'
 	option ignore '1'
 	option interface 'wan'
 
+config dhcp 'nno'
+	option ignore '1'
+	option interface 'nno'
+
+config dhcp 'nnw'
+	option ignore '1'
+	option interface 'nnw'
+
+config dhcp 'wnw'
+	option ignore '1'
+	option interface 'wnw'
+
+config dhcp 'wsw'
+	option ignore '1'
+	option interface 'wsw'
+
+config dhcp 'ssw'
+	option ignore '1'
+	option interface 'ssw'
+
+config dhcp 'sso'
+	option ignore '1'
+	option interface 'sso'
+
+config dhcp 'ono'
+	option ignore '1'
+	option interface 'ono'
+
 config dhcp 'bat'
 	option dhcp_option '119,olsr'
 	option force '1'
