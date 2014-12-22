@@ -60,6 +60,10 @@ config Interface
 	option ignore '0'
 	option interface 'dk0tu'
 
+config Interface
+	option ignore '0'
+	option interface 'beuth'
+
 config Hna6
 	option netaddr '2001:bf7:800::'
 	option prefix '60'

@@ -37,7 +37,7 @@ config interface 'potsdam'
 	option netmask '255.255.255.255'
 	option proto 'static'
 
-config interface 'spandau'
+config interface 'beuth'
 	option ip6assign '64'
 	option ipaddr '10.31.3.3'
 	option netmask '255.255.255.255'

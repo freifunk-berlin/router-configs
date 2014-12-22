@@ -76,6 +76,10 @@ config Interface
 	option ignore '0'
 	option interface 'dk0tu'
 
+config Interface
+	option ignore '0'
+	option interface 'beuth'
+
 config Hna4
 	option netaddr '10.36.3.192'
 	option netmask '255.255.255.192'
