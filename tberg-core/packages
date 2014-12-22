@@ -118,8 +118,11 @@ luci - git-14.326.66086-df61dda-1
 luci-app-firewall - git-14.326.66086-df61dda-1
 luci-app-olsr - git-14.326.66086-df61dda-1
 luci-app-olsr-services - git-14.326.66086-df61dda-1
+luci-app-owm - 0.4.9
+luci-app-owm-cmd - 0.4.9
 luci-app-statistics - git-14.326.66086-df61dda-1
 luci-base - git-14.326.66086-df61dda-1
+luci-lib-httpclient - git-14.328.38244-91532de-1
 luci-lib-json - git-14.326.66086-df61dda-1
 luci-lib-luaneightbl - git-14.326.66086-df61dda-1
 luci-lib-nixio - git-14.326.66086-df61dda-1

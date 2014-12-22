@@ -1,5 +1,9 @@
 config system
 	option hostname	tberg-core
+	option latitude '52.49718'
+	option latlon '52.49718 13.23967'
+	option location 'Teufelsberg'
+	option longitude '13.23967'
 	option timezone	'Europe/Berlin'
 	option timezone 'CET-1CEST,M3.5.0,M10.5.0/3'
 

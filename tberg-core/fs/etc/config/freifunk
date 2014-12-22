@@ -1,11 +1,10 @@
 package 'freifunk'
 
-config 'public' 'contact'
-	option 'mail' ''
-	option 'name' ''
-	option 'nickname' ''
-	option 'note' ''
-	option 'phone' ''
+config public 'contact'
+	option location 'Teufelsberg'
+	option mail 'andre@gaul.io'
+	option name 'André Gaul'
+	option nickname 'andrenarchy'
 
 config 'public' 'community'
 	option 'homepage' 'http://freifunk.net'
