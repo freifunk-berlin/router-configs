@@ -1,4 +1,5 @@
 */5 * * * *	killall -HUP dnsmasq
 */5 * * * *	/usr/sbin/ff_olsr_watchdog
 # reboot if country could not be set
-*/10 * * * *       (iw reg get | grep -q DFS-UNSET) && reboot
+*/5 * * * *       (iw reg get | grep -q DFS-UNSET) && reboot
+0 4 * * * /etc/init.d/olsrd6 restart
