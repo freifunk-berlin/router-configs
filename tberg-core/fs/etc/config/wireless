@@ -28,11 +28,12 @@ config wifi-iface
 
 config wifi-device 'radio1'
 	option country 'DE'
-	option distance '6000'
+	option distance '7000'
 	option diversity '1'
 	option htmode 'HT20'
 	option hwmode '11na'
 	option path 'pci0000:00/0000:00:13.0'
+	option txpower '12'
 	option type 'mac80211'
 
 config wifi-iface
@@ -68,7 +69,7 @@ config wifi-device 'radio3'
 	option path 'pci0000:00/0000:00:16.0'
 	option htmode 'HT20'
 	option country 'DE'
-	option disabled '0'
+	option disabled '1'
 
 config wifi-iface
 	option device 'radio3'

@@ -53,7 +53,7 @@ config Inteface
 
 config Interface
 	option Mode 'ether'
-	option ignore '0'
+	option ignore '1'
 	option interface 'fflan'
 
 config Interface
@@ -61,7 +61,7 @@ config Interface
 	option interface 'dk0tu'
 
 config Interface
-	option ignore '0'
+	option ignore '1'
 	option interface 'beuth'
 
 config Hna6
