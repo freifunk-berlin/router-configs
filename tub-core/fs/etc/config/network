@@ -20,6 +20,7 @@ config switch_vlan
 
 config interface 'wan'
 	option ifname 'eth0.2'
+	option macaddr '4c:5e:0c:ad:84:0f'
 	option peerdns '0'
 	option proto 'dhcp'
 
@@ -38,6 +39,7 @@ config interface 'moabit'
 	option ifname 'eth0.21'
 	option ip6assign '64'
 	option ipaddr '10.31.31.69/30'
+	option macaddr '4c:5e:0c:92:08:eb'
 	option proto 'static'
 
 config switch_vlan
@@ -50,6 +52,7 @@ config interface 'tberg'
 	option ifname 'eth0.22'
 	option ip6assign '64'
 	option ipaddr '10.31.31.73/30'
+	option macaddr '4c:5e:0c:22:72:fb'
 	option proto 'static'
 
 config switch_vlan
@@ -62,6 +65,7 @@ config interface 'zoo'
 	option ifname 'eth0.23'
 	option ip6assign '64'
 	option ipaddr '10.31.31.65/30'
+	option macaddr '4c:5e:0c:a8:b2:9e'
 	option proto 'static'
 
 config switch_vlan
@@ -77,6 +81,7 @@ config interface 'fflan'
 	option ip6assign '64'
 	option ip6prefix '2001:bf7:800:100::/60'
 	option ipaddr '10.31.31.1/32'
+	option macaddr '4c:5e:0c:c0:35:4c'
 	option mtu '1532'
 	option proto 'static'
 
