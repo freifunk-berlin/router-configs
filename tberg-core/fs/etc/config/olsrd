@@ -39,6 +39,7 @@ config olsrd
 	option NatThreshold '0.75'
 	option LinkQualityAlgorithm 'etx_ff'
 	option SmartGateway 'yes'
+	option SmartGatewayThreshold '50'
 	option Pollrate '0.025'
 	#option RtTable '111'
 	#option RtTableDefault '112'
