@@ -1,0 +1,12 @@
+
+config settings 'settings'
+	option customBW '1'
+	option dhcpmesh '10.36.31.0/24'
+	option enableStats '1'
+	option private_ap '0'
+	option runbefore 'true'
+	option sharenet '1'
+	option ssid 'berlin.freifunk.net'
+	option usersBandwidthDown '1000'
+	option usersBandwidthUp '1000'
+

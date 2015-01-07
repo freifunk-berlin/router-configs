@@ -1,0 +1,49 @@
+
+config system
+	option cronloglevel '10'
+	option hostname 'tub-core'
+	option latitude '52.512159705709493'
+	option latlon '52.512159705709493 13.326732516288754'
+	option location 'TU Berlin'
+	option longitude '13.326732516288754'
+	option timezone 'CET-1CEST,M3.5.0,M10.5.0/3'
+	option zonename 'Europe/Berlin'
+
+config timeserver 'ntp'
+	list server '0.openwrt.pool.ntp.org'
+	list server '1.openwrt.pool.ntp.org'
+	list server '2.openwrt.pool.ntp.org'
+	list server '3.openwrt.pool.ntp.org'
+	option enabled '1'
+	option enable_server '0'
+
+config led 'led_eth6'
+	option name 'ETH6'
+	option port_mask '0x20'
+	option sysfs 'rb:green:eth6'
+	option trigger 'switch1'
+
+config led 'led_eth7'
+	option name 'ETH7'
+	option port_mask '0x10'
+	option sysfs 'rb:green:eth7'
+	option trigger 'switch1'
+
+config led 'led_eth8'
+	option name 'ETH8'
+	option port_mask '0x08'
+	option sysfs 'rb:green:eth8'
+	option trigger 'switch1'
+
+config led 'led_eth9'
+	option name 'ETH9'
+	option port_mask '0x04'
+	option sysfs 'rb:green:eth9'
+	option trigger 'switch1'
+
+config led 'led_eth10'
+	option name 'ETH10'
+	option port_mask '0x02'
+	option sysfs 'rb:green:eth10'
+	option trigger 'switch1'
+

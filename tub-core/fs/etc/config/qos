@@ -1,0 +1,67 @@
+
+config classify
+	option comment 'ssh, dns'
+	option ports '22,53'
+	option target 'Priority'
+
+config classify
+	option comment 'ftp, smtp, http(s), imap'
+	option ports '20,21,25,80,110,443,993,995'
+	option proto 'tcp'
+	option target 'Normal'
+
+config classify
+	option comment 'AOL, iChat, ICQ'
+	option ports '5190'
+	option target 'Express'
+
+config default
+	option pktsize '-500'
+	option proto 'udp'
+	option target 'Express'
+
+config reclassify
+	option proto 'icmp'
+	option target 'Priority'
+
+config default
+	option portrange '1024-65535'
+	option target 'Bulk'
+
+config classgroup 'Default'
+	option classes 'Priority Express Normal Bulk'
+	option default 'Normal'
+
+config class 'Priority'
+	option avgrate '10'
+	option packetsize '400'
+	option priority '20'
+
+config class 'Priority_down'
+	option avgrate '10'
+	option packetsize '1000'
+
+config class 'Express'
+	option avgrate '50'
+	option packetsize '1000'
+	option priority '10'
+
+config class 'Normal'
+	option avgrate '10'
+	option packetdelay '100'
+	option packetsize '1500'
+	option priority '5'
+
+config class 'Normal_down'
+	option avgrate '20'
+
+config class 'Bulk'
+	option avgrate '1'
+	option packetdelay '200'
+
+config interface 'wan'
+	option classgroup 'Default'
+	option download '1000000'
+	option enabled '1'
+	option upload '1000000'
+

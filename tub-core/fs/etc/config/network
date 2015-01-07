@@ -1,0 +1,281 @@
+
+config interface 'loopback'
+	option ifname 'lo'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+	option proto 'static'
+
+config switch
+	option enable_vlan '1'
+	option mirror_monitor_port '0'
+	option mirror_source_port '0'
+	option name 'switch0'
+	option reset '1'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 1'
+	option vid '2'
+	option vlan '2'
+
+config interface 'wan'
+	option ifname 'eth0.2'
+	option peerdns '0'
+	option proto 'dhcp'
+
+config interface 'wan6'
+	option ifname '@wan'
+	option peerdns '0'
+	option proto 'dhcpv6'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 2t 3t'
+	option vlan '21'
+
+config interface 'moabit'
+	option dns '85.214.20.141 213.73.91.35 194.150.168.168'
+	option ifname 'eth0.21'
+	option ip6assign '64'
+	option ipaddr '10.31.31.69/30'
+	option proto 'static'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 2t 3t'
+	option vlan '22'
+
+config interface 'tberg'
+	option dns '85.214.20.141 213.73.91.35 194.150.168.168'
+	option ifname 'eth0.22'
+	option ip6assign '64'
+	option ipaddr '10.31.31.73/30'
+	option proto 'static'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 2t 3t'
+	option vlan '23'
+
+config interface 'zoo'
+	option dns '85.214.20.141 213.73.91.35 194.150.168.168'
+	option ifname 'eth0.23'
+	option ip6assign '64'
+	option ipaddr '10.31.31.65/30'
+	option proto 'static'
+
+config switch_vlan
+	option device 'switch0'
+	option ports '0t 2t 3t 4 5'
+	option vid '10'
+	option vlan '10'
+
+config interface 'fflan'
+	option dns '85.214.20.141 213.73.91.35 194.150.168.168'
+	option force_link '1'
+	option ifname 'eth0.10'
+	option ip6assign '64'
+	option ip6prefix '2001:bf7:800:100::/60'
+	option ipaddr '10.31.31.1/32'
+	option mtu '1532'
+	option proto 'static'
+
+config interface 'fflandhcp'        
+        option proto 'static'        
+	option force_link '1'
+        option mtu '1532'
+        option ipaddr '10.36.31.1/24'
+	option ip6assign '64'
+#       option ifname '@fflan'
+        option ifname 'bat0'
+	option type 'bridge'
+
+config interface 'fflanbat'         
+        option ifname '@fflan'       
+        option mesh 'bat0'
+        option mtu '1532'
+        option proto 'batadv'
+
+config interface 'fflanswitch'         
+       option ifname '@fflan'        
+       option ipaddr '10.31.31.9/29'
+       option mtu '1532'
+       option proto 'static'
+
+config switch
+	option enable_vlan '1'
+	option name 'switch1'
+	option reset '1'
+
+config switch_vlan
+	option device 'switch1'
+	option ports '0t 1 2 3 4 5'
+	option vid '1'
+	option vlan '1'
+
+config interface 'tunl0'
+	option ifname 'tunl0'
+	option proto 'none'
+
+config rule 'olsr_allif_ipv4'
+	option lookup 'olsr'
+	option priority '1000'
+
+config rule 'localnets_allif_ipv4'
+	option lookup 'localnets'
+	option priority '2000'
+
+config rule 'olsr_tunnel_tunl0_ipv4'
+	option in 'tunl0'
+	option lookup 'olsr-tunnel'
+	option priority '19999'
+
+config rule 'olsr_default_tunl0_ipv4'
+	option in 'tunl0'
+	option lookup 'olsr-default'
+	option priority '20000'
+
+config rule 'olsr_default_unreachable_tunl0_ipv4'
+	option action 'unreachable'
+	option in 'tunl0'
+	option priority '20001'
+
+config interface 'ffvpn'
+	option ifname 'ffvpn'
+	option proto 'none'
+
+config rule 'olsr_tunnel_dhcp_ipv4'
+	option in 'dhcp'
+	option lookup 'olsr-tunnel'
+	option priority '19999'
+
+config rule 'olsr_default_dhcp_ipv4'
+	option in 'dhcp'
+	option lookup 'olsr-default'
+	option priority '20000'
+
+config rule 'olsr_default_unreachable_dhcp_ipv4'
+	option action 'unreachable'
+	option in 'dhcp'
+	option priority '20001'
+
+config rule 'olsr_tunnel_ffvpn_ipv4'
+	option in 'ffvpn'
+	option lookup 'olsr-tunnel'
+	option priority '19999'
+
+config rule 'olsr_default_ffvpn_ipv4'
+	option in 'ffvpn'
+	option lookup 'olsr-default'
+	option priority '20000'
+
+config rule 'olsr_default_unreachable_ffvpn_ipv4'
+	option action 'unreachable'
+	option in 'ffvpn'
+	option priority '20001'
+
+config rule 'olsr_tunnel_zoo_ipv4'
+	option in 'zoo'
+	option lookup 'olsr-tunnel'
+	option priority '19999'
+
+config rule 'olsr_default_zoo_ipv4'
+	option in 'zoo'
+	option lookup 'olsr-default'
+	option priority '20000'
+
+config rule 'olsr_default_unreachable_zoo_ipv4'
+	option action 'unreachable'
+	option in 'zoo'
+	option priority '20001'
+
+config rule 'olsr_tunnel_moabit_ipv4'
+	option in 'moabit'
+	option lookup 'olsr-tunnel'
+	option priority '19999'
+
+config rule 'olsr_default_moabit_ipv4'
+	option in 'moabit'
+	option lookup 'olsr-default'
+	option priority '20000'
+
+config rule 'olsr_default_unreachable_moabit_ipv4'
+	option action 'unreachable'
+	option in 'moabit'
+	option priority '20001'
+
+config rule 'olsr_tunnel_tberg_ipv4'
+	option in 'tberg'
+	option lookup 'olsr-tunnel'
+	option priority '19999'
+
+config rule 'olsr_default_tberg_ipv4'
+	option in 'tberg'
+	option lookup 'olsr-default'
+	option priority '20000'
+
+config rule 'olsr_default_unreachable_tberg_ipv4'
+	option action 'unreachable'
+	option in 'tberg'
+	option priority '20001'
+
+config rule 'olsr_tunnel_fflan_ipv4'
+	option in 'fflan'
+	option lookup 'olsr-tunnel'
+	option priority '19999'
+
+config rule 'olsr_default_fflan_ipv4'
+	option in 'fflan'
+	option lookup 'olsr-default'
+	option priority '20000'
+
+config rule 'olsr_default_unreachable_fflan_ipv4'
+	option action 'unreachable'
+	option in 'fflan'
+	option priority '20001'
+
+config rule 'olsr_tunnel_fflandhcp_ipv4'
+	option in 'fflandhcp'
+	option lookup 'olsr-tunnel'
+	option priority '19999'
+
+config rule 'olsr_default_fflandhcp_ipv4'
+	option in 'fflandhcp'
+	option lookup 'olsr-default'
+	option priority '20000'
+
+config rule 'olsr_default_unreachable_fflandhcp_ipv4'
+	option action 'unreachable'
+	option in 'fflandhcp'
+	option priority '20001'
+
+config rule 'olsr_tunnel_fflanbat_ipv4'
+	option in 'fflanbat'
+	option lookup 'olsr-tunnel'
+	option priority '19999'
+
+config rule 'olsr_default_fflanbat_ipv4'
+	option in 'fflanbat'
+	option lookup 'olsr-default'
+	option priority '20000'
+
+config rule 'olsr_default_unreachable_fflanbat_ipv4'
+	option action 'unreachable'
+	option in 'fflanbat'
+	option priority '20001'
+
+config rule 'olsr_tunnel_ffswitch_ipv4'
+	option in 'ffswitch'
+	option lookup 'olsr-tunnel'
+	option priority '19999'
+
+config rule 'olsr_default_ffswitch_ipv4'
+	option in 'ffswitch'
+	option lookup 'olsr-default'
+	option priority '20000'
+
+config rule 'olsr_default_unreachable_ffswitch_ipv4'
+	option action 'unreachable'
+	option in 'ffswitch'
+	option priority '20001'
+

@@ -1,0 +1,125 @@
+
+config defaults
+	option drop_invalid '0'
+	option forward 'REJECT'
+	option input 'ACCEPT'
+	option output 'ACCEPT'
+	option syn_flood '1'
+
+config zone
+	option forward 'REJECT'
+	option input 'ACCEPT'
+	option local_restrict '1'
+	option masq '1'
+	option name 'wan'
+	option network 'wan'
+	option output 'ACCEPT'
+
+config rule
+	option dest_port '68'
+	option family 'ipv4'
+	option name 'Allow-DHCP-Renew'
+	option proto 'udp'
+	option src 'wan'
+	option target 'ACCEPT'
+
+config rule
+	option family 'ipv4'
+	option icmp_type 'echo-request'
+	option name 'Allow-Ping'
+	option proto 'icmp'
+	option src 'wan'
+	option target 'ACCEPT'
+
+config rule
+	option dest_ip 'fe80::/10'
+	option dest_port '546'
+	option family 'ipv6'
+	option name 'Allow-DHCPv6'
+	option proto 'udp'
+	option src 'wan'
+	option src_ip 'fe80::/10'
+	option src_port '547'
+	option target 'ACCEPT'
+
+config rule
+	option family 'ipv6'
+	option icmp_type 'echo-request echo-reply destination-unreachable packet-too-big time-exceeded bad-header unknown-header-type router-solicitation neighbour-solicitation router-advertisement neighbour-advertisement'
+	option limit '1000/sec'
+	option name 'Allow-ICMPv6-Input'
+	option proto 'icmp'
+	option src 'wan'
+	option target 'ACCEPT'
+
+config rule
+	option dest '*'
+	option family 'ipv6'
+	option icmp_type 'echo-request echo-reply destination-unreachable packet-too-big time-exceeded bad-header unknown-header-type'
+	option limit '1000/sec'
+	option name 'Allow-ICMPv6-Forward'
+	option proto 'icmp'
+	option src 'wan'
+	option target 'ACCEPT'
+
+config include
+	option path '/etc/firewall.user'
+
+config zone 'zone_freifunk'
+	option forward 'REJECT'
+	option input 'ACCEPT'
+	option name 'freifunk'
+	option network 'tunl0 dhcp ffvpn zoo moabit tberg fflan fflandhcp fflanbat ffswitch'
+	option output 'ACCEPT'
+
+config forwarding
+	option dest 'freifunk'
+	option src 'freifunk'
+
+config rule
+	option proto 'icmp'
+	option src 'freifunk'
+	option target 'ACCEPT'
+
+config rule
+	option dest_port '80'
+	option proto 'tcp'
+	option src 'freifunk'
+	option target 'ACCEPT'
+
+config rule
+	option dest_port '443'
+	option proto 'tcp'
+	option src 'freifunk'
+	option target 'ACCEPT'
+
+config rule
+	option dest_port '22'
+	option proto 'tcp'
+	option src 'freifunk'
+	option target 'ACCEPT'
+
+config advanced
+	option ip_conntrack_max '8192'
+	option tcp_ecn '0'
+	option tcp_westwood '1'
+
+config forwarding
+	option dest 'freifunk'
+	option src 'wan'
+
+config rule
+	option dest 'freifunk'
+	option dest_ip '77.87.48.10 1194 udp'
+	option family 'ipv4'
+	option name 'Reject-VPN-over-ff-1'
+	option proto 'udp'
+	option target 'REJECT'
+
+config rule
+	option dest 'freifunk'
+	option dest_ip '78.41.116.65 1194 udp'
+	option family 'ipv4'
+	option name 'Reject-VPN-over-ff-2'
+	option proto 'udp'
+	option target 'REJECT'
+
