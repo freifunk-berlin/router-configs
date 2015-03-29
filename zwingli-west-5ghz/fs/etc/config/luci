@@ -26,6 +26,3 @@ config internal 'ccache'
 config internal 'themes'
 	option Bootstrap '/luci-static/bootstrap'
 
-config internal 'general'
-	option resolve '1'
-

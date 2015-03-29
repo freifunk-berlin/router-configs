@@ -29,7 +29,6 @@ config wifi-iface
 config wifi-iface
 	option device 'radio0'
 	option encryption 'none'
-	option isolate '1'
 	option mcast_rate '36000'
 	option mode 'ap'
 	option network 'mesh'

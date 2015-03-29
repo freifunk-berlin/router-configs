@@ -1,0 +1,60 @@
+
+config interface 'loopback'
+	option ifname 'lo'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+	option proto 'static'
+
+config globals 'globals'
+	option ula_prefix 'fd3e:8677:420b::/48'
+
+config interface 'lan'
+	option force_link '1'
+	option ifname 'eth0'
+	option ip6assign '60'
+	option ipaddr '192.168.42.1'
+	option netmask '255.255.255.0'
+	option proto 'static'
+	option type 'bridge'
+
+config interface 'wan'
+	option ifname 'eth1'
+	option peerdns '0'
+	option proto 'dhcp'
+
+config interface 'wan6'
+	option ifname '@wan'
+	option peerdns '0'
+	option proto 'dhcpv6'
+
+config interface 'tunl0'
+	option ifname 'tunl0'
+	option proto 'none'
+
+config rule 'olsr_allif_ipv4'
+	option lookup 'olsr'
+	option priority '1000'
+
+config rule 'localnets_allif_ipv4'
+	option lookup 'localnets'
+	option priority '2000'
+
+config rule 'olsr_tunnel_tunl0_ipv4'
+	option in 'tunl0'
+	option lookup 'olsr-tunnel'
+	option priority '19999'
+
+config rule 'olsr_default_tunl0_ipv4'
+	option in 'tunl0'
+	option lookup 'olsr-default'
+	option priority '20000'
+
+config rule 'olsr_default_unreachable_tunl0_ipv4'
+	option action 'unreachable'
+	option in 'tunl0'
+	option priority '20001'
+
+config interface 'ffvpn'
+	option ifname 'ffvpn'
+	option proto 'none'
+

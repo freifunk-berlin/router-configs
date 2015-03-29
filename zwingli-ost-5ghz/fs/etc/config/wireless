@@ -1,4 +1,3 @@
-
 config wifi-device 'radio0'
 	option type 'mac80211'
 	option channel '36'
@@ -12,9 +11,7 @@ config wifi-device 'radio0'
 	option country 'DE'
 	option noscan '1'
 	option distance '1000'
-	option htmode 'HT40+'
-	option txpower '18'
-	option mcast_rate '6000'
+	option htmode 'HT20'
 
 config wifi-iface
 	option bssid '02:36:CA:FF:EE:EE'
@@ -27,7 +24,6 @@ config wifi-iface
 config wifi-iface
 	option device 'radio0'
 	option encryption 'none'
-	option isolate '1'
 	option mode 'ap'
 	option network 'mesh'
 	option ssid 'berlin.freifunk.net'

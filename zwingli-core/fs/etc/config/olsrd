@@ -1,27 +1,46 @@
 
 config LoadPlugin
-	option ignore '1'
+	option accept '0.0.0.0'
+	option library 'olsrd_txtinfo.so.0.1'
+	option port '2007'
+
+config LoadPlugin
 	option library 'olsrd_arprefresh.so.0.1'
 
 config LoadPlugin
-	option accept '0.0.0.0'
-	option ignore '0'
-	option library 'olsrd_txtinfo.so.0.1'
+	option hosts_file '/tmp/hosts/olsr'
+	option latlon_file '/var/run/latlon.js'
+	option library 'olsrd_nameservice.so.0.3'
+	option services_file '/var/etc/services.olsr'
+	option suffix '.olsr'
 
 config LoadPlugin
 	option accept '0.0.0.0'
 	option ignore '0'
 	option library 'olsrd_jsoninfo.so.0.0'
 
+config LoadPlugin
+	option file '/var/run/olsrd.watchdog'
+	option interval '30'
+	option library 'olsrd_watchdog.so.0.1'
+
+config LoadPlugin
+	option Ping '176.28.11.93'
+	option ignore '0'
+	option library 'olsrd_dyn_gw.so.0.5'
+
 config olsrd
 	option AllowNoInt 'yes'
-	option FIBMetric 'correct'
-	option IpVersion '6and4'
+	option FIBMetric 'flat'
+	option IpVersion '4'
 	option LinkQualityAlgorithm 'etx_ff'
 	option LinkQualityLevel '2'
 	option NatThreshold '0.75'
 	option OlsrPort '698'
 	option Pollrate '0.025'
+	option SmartGateway 'yes'
+	option SmartGatewayThreshold '75'
+	option SmartGatewayUplink 'none'
 	option TcRedundancy '2'
 	option Willingness '3'
 
@@ -37,25 +56,46 @@ config InterfaceDefaults
 	option TcInterval '2.0'
 	option TcValidityTime '500.0'
 
-config LoadPlugin
-	option UdpDestPort '224.0.0.251 5353'
-	option P2pdTtl '10'
-	option library 'olsrd_p2pd.so.0.1.0'
-	list NonOlsrIf 'olsr'
-	option ignore '1'
+config Hna4
+	option netaddr '10.31.10.18'
+	option netmask '255.255.255.255'
+
+config Hna4
+	option netaddr '10.31.10.22'
+	option netmask '255.255.255.255'
+
+config Hna4
+	option netaddr '10.31.10.26'
+	option netmask '255.255.255.255'
+
+config Hna4
+	option netaddr '10.31.10.30'
+	option netmask '255.255.255.255'
+
+config Hna4
+	option netaddr '10.31.10.42'
+	option netmask '255.255.255.255'
+
+config Hna4
+	option netaddr '10.31.10.46'
+	option netmask '255.255.255.255'
+
+config Hna4
+	option netaddr '10.31.10.50'
+	option netmask '255.255.255.255'
+
+config Hna4
+	option netaddr '10.36.10.0'
+	option netmask '255.255.255.0'
 
 config Interface
 	option Mode 'ether'
 	option ignore '0'
 	option interface 'olsr'
 
-config Hna4
-	option netaddr '6.23.16.0'
-	option netmask '255.255.240.0'
-
 config Interface
 	option LinkQualityMult '104.131.99.20 0.75'
-	option Mode 'ether'
+	option Mode 'mesh'
 	option ignore '0'
 	option interface 'fhain'
 
@@ -68,59 +108,15 @@ config Interface
 config Interface
 	option Mode 'mesh'
 	option ignore '0'
-	option interface 'kreuzberg'
+	option interface 'emma'
 
 config Interface
 	option Mode 'mesh'
 	option ignore '0'
 	option interface 'neukoelln'
 
-config LoadPlugin
-	option file '/var/run/olsrd.watchdog'
+config Interface
+	option Mode 'mesh'
 	option ignore '0'
-	option interval '30'
-	option library 'olsrd_watchdog.so.0.1'
-
-config LoadPlugin
-	option services_file '/var/etc/services.olsr'
-	option library 'olsrd_nameservice.so.0.3'
-	option suffix '.olsr'
-	option latlon_file '/var/run/latlon.js'
-	option hosts_file '/tmp/hosts/olsr'
-	option lat '52.50355457229739'
-	option lon '13.454830790023667'
-	option ignore '0'
-#	list hosts '2001:BF7:F100:4818:0:0:0:1 pre1.Zwingli-Core'
-
-config LoadPlugin
-	option ignore '1'
-	option library 'olsrd_dyn_gw_plain.so.0.4'
-
-config Hna4
-	option netaddr '104.130.10.18'
-	option netmask '255.255.255.255'
-
-config Hna4
-	option netaddr '104.130.10.20'
-	option netmask '255.255.255.255'
-
-config Hna4
-	option netaddr '104.130.10.22'
-	option netmask '255.255.255.255'
-
-config Hna4
-	option netmask '255.255.255.255'
-	option netaddr '104.130.10.24'
-
-#config Hna6
-#	option prefix '61'
-#	option netaddr '2001:BF7:F100:4818:0:0:0:0'
-
-config Hna6
-	option prefix '60'
-	option netaddr '2001:bf7:750:1400::'
-
-#config Hna6
-#	option prefix '48'
-#	option netaddr 'FD1C:EBAA:D4A1:0:0:0:0:0'
+	option interface 'rhxb'
 

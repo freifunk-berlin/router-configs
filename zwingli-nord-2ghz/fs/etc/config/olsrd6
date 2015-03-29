@@ -1,0 +1,56 @@
+
+config LoadPlugin
+	option accept '0::'
+	option ipv6only 'true'
+	option library 'olsrd_txtinfo.so.0.1'
+	option port '2007'
+
+config LoadPlugin
+	option hosts_file '/tmp/hosts/olsr.ipv6'
+	option latlon_file '/var/run/latlon.js.ipv6'
+	option library 'olsrd_nameservice.so.0.3'
+	option services_file '/var/etc/services.olsr.ipv6'
+	option suffix '.olsr'
+
+config LoadPlugin
+	option accept '0::'
+	option ignore '0'
+	option ipv6only 'true'
+	option library 'olsrd_jsoninfo.so.0.0'
+
+config LoadPlugin
+	option file '/var/run/olsrd.watchdog'
+	option interval '30'
+	option library 'olsrd_watchdog.so.0.1'
+
+config olsrd
+	option FIBMetric 'flat'
+	option AllowNoInt 'yes'
+	option TcRedundancy '2'
+	option LinkQualityAlgorithm 'etx_ffeth'
+	option Pollrate '0.025'
+#	option RtTable '111'
+#	option RtTableDefault '112'
+#	option RtTablePriority '1000'
+#	option RtTableDefaultOlsrPriority '20000'
+
+config InterfaceDefaults
+	option HelloInterval '3.0'
+	option HelloValidityTime '125.0'
+	option HnaInterval '10.0'
+	option HnaValidityTime '125.0'
+	option MidInterval '25.0'
+	option MidValidityTime '500.0'
+	option TcInterval '2.0'
+	option TcValidityTime '500.0'
+
+config Interface
+	option Mode 'mesh'
+	option ignore '0'
+	option interface 'wireless0'
+
+config Interface
+	option Mode 'ether'
+	option ignore '0'
+	option interface 'lan'
+

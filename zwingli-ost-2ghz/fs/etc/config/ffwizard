@@ -1,0 +1,10 @@
+
+config settings 'settings'
+	option dhcpmesh '192.168.111.1/28'
+	option enableStats '1'
+	option meship_radio0 '10.31.10.35'
+	option private_ap '0'
+	option runbefore 'true'
+	option sharenet '0'
+	option ssid 'berlin.freifunk.net'
+

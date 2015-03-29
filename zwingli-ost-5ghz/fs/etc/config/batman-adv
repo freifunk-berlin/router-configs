@@ -1,6 +1,6 @@
 
 config mesh 'bat0'
-	option orig_interval '5000'
-
-config client 'gw_mode'
+	option bridge_loop_avoidance '0'
+	option distributed_arp_table '1'
+	option gw_mode 'client'
 

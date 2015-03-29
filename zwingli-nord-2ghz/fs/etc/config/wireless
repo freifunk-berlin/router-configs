@@ -1,21 +1,16 @@
-
-config wifi-device 'radio0'
-	option type 'mac80211'
-	option hwmode '11ng'
-	option macaddr 'dc:9f:db:3c:e9:5d'
-	list ht_capab 'SHORT-GI-40'
-	list ht_capab 'TX-STBC'
-	list ht_capab 'RX-STBC1'
-	list ht_capab 'DSSS_CCK-40'
-	option disabled '0'
-	option country 'DE'
-	option noscan '1'
-	option distance '2000'
-	option htmode 'HT20'
-	option channel '1'
-	option txpower '18'
-	option beacon_int '500'
+config wifi-device  radio0
 	option basic_rate '6000 9000 12000 18000 24000 36000 48000 54000'
+	option beacon_int '500'
+	option channel '1'
+	option country 'DE'
+	option distance '2000'
+	option htmode	HT20
+	option htmode 'HT20'
+	option hwmode	11g
+	option noscan '1'
+	option path	'pci0000:00/0000:00:00.0'
+	option txpower '18'
+	option type     mac80211
 
 config wifi-iface
 	option bssid '12:CA:FF:EE:BA:BE'

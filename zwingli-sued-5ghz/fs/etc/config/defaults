@@ -1,0 +1,8 @@
+
+config packages 'default'
+	option dhcp '1'
+	option luci_statistics '1'
+	option network '1'
+	option olsrd '1'
+	option uhttpd '1'
+

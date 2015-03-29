@@ -9,15 +9,18 @@ config interface wan
 
 # RULES:
 config classify
+	option comment      "ssh, dns"
 	option ports        "22,53"
 	option target       "Priority"
 
 config classify
+	option comment      "ftp, smtp, http(s), imap"
 	option ports        "20,21,25,80,110,443,993,995"
 	option proto        "tcp"
 	option target       "Normal"
 
 config classify
+	option comment      "AOL, iChat, ICQ"
 	option ports        "5190"
 	option target       "Express"
 
@@ -31,22 +34,8 @@ config reclassify
 	option target       "Priority"
 
 config default
-	option portrange    "1024-65535"
 	option target       "Bulk"
-
-config reclassify
-	option mark         "!Bulk"
-	option pktsize      "-128"
-	option proto        "tcp"
-	option target       "Priority"
-	option tcpflags     "SYN"
-
-config reclassify
-	option target       "Priority"
-	option proto        "tcp"
-	option pktsize      "-128"
-	option mark	        "!Bulk"
-	option tcpflags     "ACK"
+	option portrange    "1024-65535"
 
 
 # Don't change the stuff below unless you
@@ -58,7 +47,6 @@ config classgroup "Default"
 
 config class "Priority"
 	option avgrate     10
-	option maxsize     400
 	option packetsize  400
 	option priority    20
 
@@ -68,7 +56,6 @@ config class "Priority_down"
 
 config class "Express"
 	option avgrate     50
-	option maxsize     800
 	option packetsize  1000
 	option priority    10
 

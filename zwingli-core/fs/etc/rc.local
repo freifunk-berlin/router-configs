@@ -1,8 +1,4 @@
 # Put your custom commands here that should be executed once
 # the system init finished. By default this file does nothing.
-#ifconfig eth0 mtu 1528
-#ifconfig eth0.1 mtu 1528
-#ifconfig eth0.2 mtu 1528
-#ifconfig eth0.4 mtu 1528
-                                        
+
 exit 0
